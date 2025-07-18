@@ -513,8 +513,8 @@
 		if(be_special_flag)
 			if(!(M.client.prefs) || !(be_special_flag in M.client.prefs.be_special))
 				continue
-			if(!age_check(M.client))
-				continue
+			//if(!age_check(M.client))
+			//	continue
 		if(jobbanType)
 			if(is_banned_from(M.ckey, list(jobbanType, ROLE_SYNDICATE)) || QDELETED(M))
 				continue

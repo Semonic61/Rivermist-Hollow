@@ -44,8 +44,8 @@ GLOBAL_LIST_EMPTY(respawncounts)
 		return
 
 	// RATWOOD EDIT START
-	if(!maturity_prompt_whitelist && !SSmaturity_guard.age_check(usr, href_list))
-		return 0
+	//if(!maturity_prompt_whitelist && !SSmaturity_guard.age_check(usr, href_list))
+	//	return 0
 	// RATWOOD EDIT END
 
 	// asset_cache
