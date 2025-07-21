@@ -45,10 +45,11 @@
 		ORGAN_SLOT_ANTENNAS = /obj/item/organ/antennas/moth,
 		ORGAN_SLOT_NECK_FEATURE = /obj/item/organ/neck_feature/moth_fluff,
 		ORGAN_SLOT_WINGS = /obj/item/organ/wings/moth,
-		//ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
+		//ORGAN_SLOT_TESTICLES = /obj/item/organ/filling_organ/testicles,
 		//ORGAN_SLOT_PENIS = /obj/item/organ/penis/tapered,
-		//ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
-		//ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
+		//ORGAN_SLOT_BREASTS = /obj/item/organ/filling_organ/breasts,
+		//ORGAN_SLOT_VAGINA = /obj/item/organ/filling_organ/vagina,
+		ORGAN_SLOT_ANUS = /obj/item/organ/filling_organ/anus,
 		)
 	bodypart_features = list(
 		/datum/bodypart_feature/hair/head,

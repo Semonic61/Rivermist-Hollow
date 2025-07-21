@@ -35,7 +35,7 @@
 	icon = 'modular_azurepeak/icons/clothing/donor_clothes.dmi'
 	mob_overlay_icon = 'modular_azurepeak/icons/clothing/onmob/donor_clothes.dmi'
 	sleeved = 'modular_azurepeak/icons/clothing/onmob/donor_sleeves_armor.dmi'
-	flags_inv = HIDEBOOB
+	flags_inv = HIDEBOOB|HIDEBELLY
 	color = null
 	nodismemsleeves = TRUE // prevents sleeves from being torn
 

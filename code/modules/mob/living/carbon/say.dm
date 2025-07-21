@@ -18,3 +18,13 @@
 		. = T.could_speak_in_language(dt)
 	else
 		. = initial(dt.flags) & TONGUELESS_SPEECH
+
+//had to make this ghetto ass shit, fucks sake -vide noir
+/mob/living/carbon/proc/mob_slot_wearing(zone)
+	if(iscarbon(src))
+		var/mob/living/carbon/human/user = src
+		for(var/obj/item/clothing/equipped_item in user.get_equipped_items(include_pockets = FALSE))
+			if(equipped_item.slot_flags & zone)
+				return equipped_item
+			else
+				continue

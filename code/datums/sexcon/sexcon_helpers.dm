@@ -38,42 +38,31 @@
 	var/can_do_sex = TRUE
 	var/virginity = FALSE
 
-/mob/living/carbon/human/MiddleMouseDrop_T(mob/living/initiator, mob/living/user)
+/mob/living/MiddleMouseDrop_T(mob/living/target, mob/living/user)
 	if(user.mmb_intent)
 		return ..()
-	if(!istype(initiator))
+	if(!istype(target))
 		return
-	if(initiator != user)
+	if(target != user)
 		return
-	if(!user.can_do_sex())
+	if(!user.can_do_sex() || user.sexcon.need_to_be_violated(src)) // Changed to remove ZAPE
 		to_chat(user, "<span class='warning'>I can't do this.</span>")
-		return
-	if(!client || !client.prefs) // Don't bang someone that dosn't want it. //RMH edit, was: if(!client || !client.prefs || (client.prefs.sexable == FALSE)) // Don't bang someone that dosn't want it.
-		to_chat(initiator, "<span class='warning'>[src] dosn't wish to be touched. (Their ERP preference under options)</span>")
-		to_chat(src, "<span class='warning'>[initiator] failed to touch you. (Your ERP preference under options)</span>")
 		return
 	user.sexcon.start(src)
 
 /mob/living/proc/can_do_sex()
 	return TRUE
 
-/mob/living/carbon/human/proc/make_sucking_noise()
+/mob/living/proc/make_sucking_noise()
+	var/suckyvolume = 25
+	if(rogue_sneaking || alpha <= 100)
+		suckyvolume *= 0.5
 	if(gender == FEMALE)
-		playsound(src, pick('sound/misc/mat/girlmouth (1).ogg','sound/misc/mat/girlmouth (2).ogg'), 25, TRUE, ignore_walls = FALSE)
+		playsound(src, pick('sound/misc/mat/girlmouth (1).ogg','sound/misc/mat/girlmouth (2).ogg'), suckyvolume, TRUE, ignore_walls = FALSE)
 	else
-		playsound(src, pick('sound/misc/mat/guymouth (1).ogg','sound/misc/mat/guymouth (2).ogg','sound/misc/mat/guymouth (3).ogg','sound/misc/mat/guymouth (4).ogg','sound/misc/mat/guymouth (5).ogg'), 35, TRUE, ignore_walls = FALSE)
+		playsound(src, pick('sound/misc/mat/guymouth (1).ogg','sound/misc/mat/guymouth (2).ogg','sound/misc/mat/guymouth (3).ogg','sound/misc/mat/guymouth (4).ogg','sound/misc/mat/guymouth (5).ogg'), suckyvolume, TRUE, ignore_walls = FALSE)
 
-/mob/living/carbon/human/proc/try_impregnate(mob/living/carbon/human/wife)
-	var/obj/item/organ/testicles/testes = getorganslot(ORGAN_SLOT_TESTICLES)
-	if(!testes)
-		return
-	var/obj/item/organ/vagina/vag = wife.getorganslot(ORGAN_SLOT_VAGINA)
-	if(!vag)
-		return
-	if(prob(25) && wife.is_fertile() && is_virile())
-		vag.be_impregnated(src)
-
-/mob/living/carbon/human/proc/get_highest_grab_state_on(mob/living/carbon/human/victim)
+/mob/living/proc/get_highest_grab_state_on(mob/living/victim)
 	var/grabstate = null
 	if(r_grab && r_grab.grabbed == victim)
 		if(grabstate == null || r_grab.grab_state > grabstate)
@@ -87,3 +76,4 @@
 	if(!turfu || !isturf(turfu))
 		return
 	new /obj/effect/decal/cleanable/coom(turfu)
+

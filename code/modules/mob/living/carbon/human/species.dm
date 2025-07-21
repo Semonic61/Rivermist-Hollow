@@ -117,10 +117,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		//ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
+		//ORGAN_SLOT_TESTICLES = /obj/item/organ/filling_organ/testicles,
 		//ORGAN_SLOT_PENIS = /obj/item/organ/penis,
-		//ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
-		//ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
+		//ORGAN_SLOT_BREASTS = /obj/item/organ/filling_organ/breasts,
+		//ORGAN_SLOT_VAGINA = /obj/item/organ/filling_organ/vagina,
+		ORGAN_SLOT_ANUS = /obj/item/organ/filling_organ/anus,
 		)
 	/// List of bodypart features of this species
 	var/list/bodypart_features
@@ -933,17 +934,17 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //		hunger_rate *= H.physiology.hunger_mod
 		H.adjust_nutrition(-hunger_rate)
 
-		var/obj/item/organ/breasts/breasts = H.has_breasts()
+		/*var/obj/item/organ/filling_organ/breasts/breasts = H.has_breasts()
 		if(breasts)
-			if(H.nutrition > NUTRITION_LEVEL_HUNGRY && breasts.lactating && breasts.milk_max > breasts.milk_stored) //Vrell - numbers may need to be tweaked for balance but hey this works for now.
-				var/milk_to_make = min(hunger_rate, breasts.milk_max - breasts.milk_stored)
-				breasts.milk_stored += milk_to_make
+			if(H.nutrition > NUTRITION_LEVEL_HUNGRY && breasts.lactating && breasts.milk_max > breasts.reagents.total_volume) //Vrell - numbers may need to be tweaked for balance but hey this works for now.
+				var/milk_to_make = min(hunger_rate, breasts.milk_max - breasts.reagents.total_volume)
+				breasts.reagents.total_volume += milk_to_make
 				H.adjust_nutrition(-milk_to_make)
 
 			else if(H.nutrition < NUTRITION_LEVEL_STARVING && breasts.lactating) //Vrell - If starving, your milk drains automatically to slow your starvation.
-				var/milk_to_take = min(hunger_rate, breasts.milk_stored)
-				breasts.milk_stored -= milk_to_take
-				H.adjust_nutrition(milk_to_take)
+				var/milk_to_take = min(hunger_rate, breasts.reagents.total_volume)
+				breasts.reagents.total_volume -= milk_to_take
+				H.adjust_nutrition(milk_to_take)*/
 
 	if (H.hydration > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))
 		// THEY HUNGER

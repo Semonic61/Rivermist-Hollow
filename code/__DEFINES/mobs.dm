@@ -245,6 +245,11 @@
 #define AI_OFF		3
 #define AI_Z_OFF	4
 
+#define AI_COMBAT	5
+#define AI_RETREAT	6
+#define AI_HUNT		7
+#define AI_FLEE		8
+
 // these are exclusively for hostile humantype mobs
 #define NPC_AI_OFF		0
 #define NPC_AI_IDLE		1

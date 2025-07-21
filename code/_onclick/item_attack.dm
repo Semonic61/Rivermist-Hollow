@@ -82,6 +82,9 @@
 
 /mob/living
 	var/tempatarget = null
+	var/mouth_blocked = FALSE
+	var/show_genitals = FALSE
+	var/tail_toggle = TRUE
 	var/pegleg = 0			//Handles check & slowdown for peglegs. Fuckin' bootleg, literally, but hey it at least works.
 	var/construct = 0
 

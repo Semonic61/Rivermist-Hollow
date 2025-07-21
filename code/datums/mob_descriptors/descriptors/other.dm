@@ -41,7 +41,7 @@
 	var/obj/item/organ/penis/penis = H.getorganslot(ORGAN_SLOT_PENIS)
 	var/adjective
 	var/arousal_modifier
-	switch(penis.penis_size)
+	switch(penis.organ_size)
 		if(1)
 			adjective = "a small"
 		if(2)
@@ -61,7 +61,7 @@
 	if(penis.erect_state != ERECT_STATE_HARD && penis.sheath_type != SHEATH_TYPE_NONE)
 		switch(penis.sheath_type)
 			if(SHEATH_TYPE_NORMAL)
-				if(penis.penis_size == 3)
+				if(penis.organ_size == 3)
 					used_name = "a fat sheath"
 				else
 					used_name = "a sheath"
@@ -81,7 +81,7 @@
 	if(!ishuman(described))
 		return FALSE
 	var/mob/living/carbon/human/H = described
-	var/obj/item/organ/testicles/testes = H.getorganslot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/filling_organ/testicles/testes = H.getorganslot(ORGAN_SLOT_TESTICLES)
 	if(!testes)
 		return FALSE
 	if(H.underwear)
@@ -95,9 +95,9 @@
 
 /datum/mob_descriptor/testicles/get_description(mob/living/described)
 	var/mob/living/carbon/human/H = described
-	var/obj/item/organ/testicles/testes = H.getorganslot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/filling_organ/testicles/testes = H.getorganslot(ORGAN_SLOT_TESTICLES)
 	var/adjective
-	switch(testes.ball_size)
+	switch(testes.organ_size)
 		if(1)
 			adjective = "a small"
 		if(2)
@@ -116,7 +116,7 @@
 	if(!ishuman(described))
 		return FALSE
 	var/mob/living/carbon/human/H = described
-	var/obj/item/organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/filling_organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
 	if(!vagina)
 		return FALSE
 	if(H.underwear)
@@ -127,7 +127,7 @@
 
 /datum/mob_descriptor/vagina/get_description(mob/living/described)
 	var/mob/living/carbon/human/H = described
-	var/obj/item/organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/filling_organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
 	var/vagina_type
 	var/arousal_modifier
 	switch(vagina.accessory_type)
@@ -162,7 +162,7 @@
 	if(!ishuman(described))
 		return FALSE
 	var/mob/living/carbon/human/H = described
-	var/obj/item/organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
+	var/obj/item/organ/filling_organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
 	if(!breasts)
 		return FALSE
 	if(H.underwear && H.underwear.covers_breasts)
@@ -173,9 +173,9 @@
 
 /datum/mob_descriptor/breasts/get_description(mob/living/described)
 	var/mob/living/carbon/human/H = described
-	var/obj/item/organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
+	var/obj/item/organ/filling_organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
 	var/adjective
-	switch(breasts.breast_size)
+	switch(breasts.organ_size)
 		if(0)
 			adjective = "a flat"
 		if(1)

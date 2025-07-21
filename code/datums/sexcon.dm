@@ -1129,7 +1129,7 @@
 
 	if(owner.hasTesticles())
 		if(horny <= 0 && oldhorny > 0 && blueballs && !source)
-			owner.add_stress(/datum/stressevent/blueb)
+			owner.add_stress(/datum/stressevent/loinache)
 			horny = clamp(horny - 80, -100, 250)
 
 /datum/sex_controller/proc/cum(source)

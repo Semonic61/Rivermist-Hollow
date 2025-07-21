@@ -45,6 +45,8 @@
 	var/bodypart_emissive_blocker = TRUE
 	/// Type of organ DNA that this organ will create.
 	var/organ_dna_type = /datum/organ_dna
+	var/organ_size = 0
+
 	/// What food typepath should be used when eaten
 	var/food_type = /obj/item/reagent_containers/food/snacks/organ
 	/// Original owner of the organ, the one who had it inside them last
