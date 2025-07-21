@@ -341,6 +341,8 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 		observer.name = observer.real_name
 	observer.update_icon()
 	observer.stop_sound_channel(CHANNEL_LOBBYMUSIC)
+	if(istype(observer, /mob/dead/observer/admin))
+		observer.client.show_popup_menus = TRUE
 	QDEL_NULL(mind)
 	qdel(src)
 	return TRUE
