@@ -31,7 +31,6 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 /datum/controller/subsystem/processing/quirks/proc/AssignQuirks(mob/living/user, client/cli, spawn_effects)
 	var/badquirk = FALSE
-	to_chat(world, "QUIRK ADDING")
 	for(var/V in cli.prefs.all_quirks)
 		var/datum/quirk/Q = quirks[V]
 		if(Q)
