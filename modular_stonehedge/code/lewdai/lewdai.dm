@@ -211,13 +211,14 @@
 		if(sexcon.current_action)
 			stoppedfucking()
 
-/*/mob/living/simple_animal/Initialize()
+/mob/living/simple_animal/Initialize()
 	. = ..()
 	if(erpable)
-		give_genitals()
+		addtimer(CALLBACK(src, PROC_REF(give_genitals)), 0)
+		//give_genitals()
 	if(prob(hornychance))
 		seeksfuck = TRUE
-		fuckcd = rand(0,20)*/
+		fuckcd = rand(0,20)
 
 //--------------not so simple mobs ----------------
 //gonna be conversion of the simple mob stuff i made before somehow -videnoir
@@ -404,7 +405,8 @@
 /mob/living/carbon/human/Initialize()
 	. = ..()
 	if(erpable)
-		give_genitals()
+		addtimer(CALLBACK(src, PROC_REF(give_genitals)), 0)
+		//give_genitals()
 	if(prob(hornychance))
 		seeksfuck = TRUE
 		fuckcd = rand(0,20)
