@@ -1,5 +1,5 @@
 /obj/item/legwears
-	name = "stockings(under)"
+	name = "stockings (under)"
 	desc = "A legwear made just for the pure aesthetics. Popular in courts and brothels alike."
 	icon = 'modular_hearthstone/icons/obj/items/clothes/stockings.dmi'
 	icon_state = "stockings"
@@ -30,12 +30,69 @@
 				forceMove(H)
 				H.legwear_socks = src
 
+/obj/item/legwears/random/Initialize()
+	. = ..()
+	color = pick("#e6e5e5", CLOTHING_BLACK, CLOTHING_BLUE, "#6F0000", "#664357")
+
+/obj/item/legwears/white
+	color = "#e6e5e5"
+
+/obj/item/legwears/black
+	color = CLOTHING_BLACK
+
+/obj/item/legwears/blue
+	color = CLOTHING_BLUE
+
+/obj/item/legwears/red
+	color = "#6F0000"
+
+/obj/item/legwears/purple
+	color = "#664357"
+
 /obj/item/legwears/silk
-	name = "silk stockings(under)"
+	name = "silk stockings (under)"
 	desc = "A legwear made just for the pure aesthetics. Made out of thin silk. Popular among nobles."
 	icon_state = "silk"
 
+/obj/item/legwears/silk/random/Initialize()
+	. = ..()
+	color = pick("#e6e5e5", CLOTHING_BLACK, CLOTHING_BLUE, "#6F0000", "#664357")
+
+/obj/item/legwears/silk/white
+	color = "#e6e5e5"
+
+/obj/item/legwears/silk/black
+	color = CLOTHING_BLACK
+
+/obj/item/legwears/silk/blue
+	color = CLOTHING_BLUE
+
+/obj/item/legwears/silk/red
+	color = "#6F0000"
+
+/obj/item/legwears/silk/purple
+	color = "#664357"
+
 /obj/item/legwears/fishnet
-	name = "fishnet stockings(under)"
+	name = "fishnet stockings (under)"
 	desc = "A legwear popular among wenches."
 	icon_state = "fishnet"
+
+/obj/item/legwears/fishnet/random/Initialize()
+	. = ..()
+	color = pick("#e6e5e5", CLOTHING_BLACK, CLOTHING_BLUE, "#6F0000", "#664357")
+
+/obj/item/legwears/fishnet/white
+	color = "#e6e5e5"
+
+/obj/item/legwears/fishnet/black
+	color = CLOTHING_BLACK
+
+/obj/item/legwears/fishnet/blue
+	color = CLOTHING_BLUE
+
+/obj/item/legwears/fishnet/red
+	color = "#6F0000"
+
+/obj/item/legwears/fishnet/purple
+	color = "#664357"

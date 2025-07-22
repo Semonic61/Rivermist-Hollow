@@ -89,7 +89,7 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/longcoat
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/royal/prince
 	if(should_wear_femme_clothes(H))
-		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
+		pants = /obj/item/clothing/under/roguetown/tights/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/royal/princess
 	head = /obj/item/clothing/head/roguetown/circlet
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
@@ -152,7 +152,7 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/silkcoat
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/royal/princess
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
-		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
+		pants = /obj/item/clothing/under/roguetown/tights/random
 	H.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
