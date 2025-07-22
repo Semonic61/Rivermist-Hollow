@@ -49,7 +49,7 @@
 							C.Immobilize(15)
 							C.set_blurriness(2)
 							to_chat(C, "<span class='warning'>Your armor chaffs uncomfortably against your skin.</span>")
-			//S.adjust_charge(8)
+			S.adjust_charge(8)
 	return ..()
 
 /datum/reagent/consumable/ethanol/beer/emberwine/overdose_start(mob/living/carbon/human/C)

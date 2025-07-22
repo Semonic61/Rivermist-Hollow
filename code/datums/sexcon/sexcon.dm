@@ -15,6 +15,8 @@
 	var/manual_arousal = SEX_MANUAL_AROUSAL_DEFAULT
 	/// Our arousal
 	var/arousal = 0
+	/// Our charge
+	var/charge = 0
 	/// Whether we want to screw until finished, or non stop
 	var/do_until_finished = TRUE
 	/// Arousal won't change if active.
@@ -544,6 +546,8 @@
 /datum/sex_controller/proc/check_active_ejaculation()
 	if(arousal < ACTIVE_EJAC_THRESHOLD)
 		return FALSE
+	if(is_spent())
+		return FALSE
 	if(!can_ejaculate())
 		return FALSE
 	return TRUE
@@ -559,6 +563,8 @@
 
 /datum/sex_controller/proc/handle_passive_ejaculation()
 	if(arousal < PASSIVE_EJAC_THRESHOLD)
+		return
+	if(is_spent())
 		return
 	if(!can_ejaculate())
 		return FALSE
@@ -598,8 +604,36 @@
 		return FALSE
 	return TRUE
 
+/datum/sex_controller/proc/is_spent()
+	if(charge < CHARGE_FOR_CLIMAX)
+		return TRUE
+	return FALSE
+
+/datum/sex_controller/proc/set_charge(amount)
+	var/empty = (charge < CHARGE_FOR_CLIMAX)
+	charge = clamp(amount, 0, SEX_MAX_CHARGE)
+	var/after_empty = (charge < CHARGE_FOR_CLIMAX)
+	if(empty && !after_empty)
+		to_chat(user, span_notice("I feel like I'm not so spent anymore"))
+	if(!empty && after_empty)
+		to_chat(user, span_notice("I'm spent!"))
+
+/datum/sex_controller/proc/adjust_charge(amount)
+	set_charge(charge + amount)
+
+/datum/sex_controller/proc/handle_charge(dt)
+	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
+		dt *= 2
+	adjust_charge(dt * CHARGE_RECHARGE_RATE)
+	if(is_spent())
+		if(arousal > 60)
+			to_chat(user, span_warning("I'm too spent!"))
+			adjust_arousal(-20)
+		adjust_arousal(-dt * SPENT_AROUSAL_RATE)
+
 /datum/sex_controller/proc/process_sexcon(dt)
 	handle_arousal_unhorny(dt)
+	handle_charge(dt)
 	handle_passive_ejaculation()
 
 /datum/sex_controller/proc/handle_arousal_unhorny(dt)
