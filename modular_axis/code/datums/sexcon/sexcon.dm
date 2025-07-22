@@ -1,7 +1,7 @@
 /datum/sex_controller
 	var/aphrodisiac = 1
-	var/manual_arousal = SEX_MANUAL_AROUSAL_DEFAULT
-
+	//var/manual_arousal = SEX_MANUAL_AROUSAL_DEFAULT
+/*
 /proc/do_thrust_animate(atom/movable/user, atom/movable/target, pixels = 4, time = 2.7)
 	var/oldx = user.pixel_x
 	var/oldy = user.pixel_y
@@ -25,7 +25,7 @@
 
 /datum/sex_controller/proc/adjust_arousal_manual(amt)
 	manual_arousal = clamp(manual_arousal + amt, SEX_MANUAL_AROUSAL_MIN, SEX_MANUAL_AROUSAL_MAX)
-
+*/
 /datum/sex_controller/show_ui()
 	var/list/dat = list()
 	var/force_name = get_force_string()
@@ -100,7 +100,7 @@
 		if("freeze_arousal")
 			arousal_frozen = !arousal_frozen
 	show_ui()
-
+/*
 /datum/sex_controller/proc/get_manual_arousal_string()
 	switch(manual_arousal)
 		if(SEX_MANUAL_AROUSAL_DEFAULT)
@@ -110,4 +110,4 @@
 		if(SEX_MANUAL_AROUSAL_PARTIAL)
 			return "<font color='#f05ee1'>PARTIALLY ERECT</font>"
 		if(SEX_MANUAL_AROUSAL_FULL)
-			return "<font color='#d146f5'>FULLY ERECT</font>"
+			return "<font color='#d146f5'>FULLY ERECT</font>"*/

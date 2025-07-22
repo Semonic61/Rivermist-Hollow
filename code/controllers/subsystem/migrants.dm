@@ -215,7 +215,8 @@ SUBSYSTEM_DEF(migrants)
 
 	SSticker.minds += character.mind
 	GLOB.joined_player_list += character.ckey
-
+	
+	SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
 	if(humanc)
 		var/fakekey = character.ckey
 		if(character.ckey in GLOB.anonymize)

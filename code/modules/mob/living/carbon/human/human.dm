@@ -869,15 +869,19 @@
 	return getorganslot(ORGAN_SLOT_VAGINA)
 
 /mob/living/carbon/human/has_breasts()
-	RETURN_TYPE(/obj/item/organ/breasts)
+	RETURN_TYPE(/obj/item/organ/filling_organ/breasts)
 	return getorganslot(ORGAN_SLOT_BREASTS)
 
+/mob/living/carbon/human/proc/has_belly()
+	RETURN_TYPE(/obj/item/organ/belly)
+	return getorganslot(ORGAN_SLOT_BELLY)
+
 /mob/living/carbon/human/proc/is_fertile()
-	var/obj/item/organ/vagina/vagina = getorganslot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/filling_organ/vagina/vagina = getorganslot(ORGAN_SLOT_VAGINA)
 	return vagina.fertility
 
 /mob/living/carbon/human/proc/is_virile()
-	var/obj/item/organ/testicles/testicles = getorganslot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/filling_organ/testicles/testicles = getorganslot(ORGAN_SLOT_TESTICLES)
 	return testicles.virility
 
 /*/mob/living/carbon/human/proc/update_heretic_commune()

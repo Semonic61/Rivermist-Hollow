@@ -22,6 +22,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	"Mute"=/datum/charflaw/mute,
 	"Critical Weakness"=/datum/charflaw/critweakness,
 	"Random or No Flaw"=/datum/charflaw/randflaw,
+	"Pain Freek"=/datum/charflaw/addiction/masochist,
 	"No Flaw (3 TRIUMPHS)"=/datum/charflaw/noflaw,
 	))
 

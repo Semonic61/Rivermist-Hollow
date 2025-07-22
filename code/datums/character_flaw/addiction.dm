@@ -110,3 +110,11 @@
 	desc = "There is no greater pleasure than the suffering of another."
 	time = 40 MINUTES
 	needsate_text = "I need to hear someone whimper."
+
+/// PAIN FREEK
+
+/datum/charflaw/addiction/masochist
+	name = "Pain Freek"
+	desc = "They call me a freek, but it just feels so good..."
+	time = 25 MINUTES
+	needsate_text = "I need to feel good... punch me in the face!"

@@ -17,6 +17,10 @@
 	var/require_grab = FALSE
 	/// If a grab is required, this is the required state of it
 	var/required_grab_state = GRAB_AGGRESSIVE
+	/// Vrell - used for determining if the user/target should be gagged
+	var/gags_user = FALSE
+	var/gags_target = FALSE
+	var/segsovolume = 50 //volume for plaps
 
 /datum/sex_action/proc/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	return TRUE

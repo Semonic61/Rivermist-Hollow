@@ -57,6 +57,9 @@
 	sellprice = 1
 	var/naledicolor = FALSE
 
+	///for skirts etc that allow passage to fun lands.
+	var/genitalaccess = FALSE
+
 /obj/item
 	var/blocking_behavior
 	var/wetness = 0

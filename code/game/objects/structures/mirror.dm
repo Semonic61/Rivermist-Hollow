@@ -397,14 +397,14 @@
 			var/new_style = input(user, "Choose your testicles type", "Testicles Customization") as null|anything in valid_testicle_types
 			if(new_style)
 				if(new_style == "none")
-					var/obj/item/organ/testicles/testicles = H.getorganslot(ORGAN_SLOT_TESTICLES)
+					var/obj/item/organ/filling_organ/testicles/testicles = H.getorganslot(ORGAN_SLOT_TESTICLES)
 					if(testicles)
 						testicles.Remove(H)
 						qdel(testicles)
 						H.update_body()
 						should_update = TRUE
 				else
-					var/obj/item/organ/testicles/testicles = H.getorganslot(ORGAN_SLOT_TESTICLES)
+					var/obj/item/organ/filling_organ/testicles/testicles = H.getorganslot(ORGAN_SLOT_TESTICLES)
 					if(!testicles)
 						testicles = new()
 						testicles.Insert(H, TRUE, FALSE)
@@ -423,14 +423,14 @@
 
 			if(new_style)
 				if(new_style == "none")
-					var/obj/item/organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
+					var/obj/item/organ/filling_organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
 					if(breasts)
 						breasts.Remove(H)
 						qdel(breasts)
 						H.update_body()
 						should_update = TRUE
 				else
-					var/obj/item/organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
+					var/obj/item/organ/filling_organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
 					if(!breasts)
 						breasts = new()
 						breasts.Insert(H, TRUE, FALSE)
@@ -446,14 +446,14 @@
 
 			if(new_style)
 				if(new_style == "none")
-					var/obj/item/organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
+					var/obj/item/organ/filling_organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
 					if(vagina)
 						vagina.Remove(H)
 						qdel(vagina)
 						H.update_body()
 						should_update = TRUE
 				else
-					var/obj/item/organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
+					var/obj/item/organ/filling_organ/vagina/vagina = H.getorganslot(ORGAN_SLOT_VAGINA)
 					if(!vagina)
 						vagina = new()
 						vagina.Insert(H, TRUE, FALSE)
@@ -472,7 +472,7 @@
 			var/list/breast_sizes = list("flat", "very small", "small", "average", "large", "enormous")
 			var/new_size = input(user, "Choose your breast size", "Breast Size") as null|anything in breast_sizes
 			if(new_size)
-				var/obj/item/organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
+				var/obj/item/organ/filling_organ/breasts/breasts = H.getorganslot(ORGAN_SLOT_BREASTS)
 				if(breasts)
 					var/size_num
 					switch(new_size)
@@ -489,7 +489,7 @@
 						if("enormous")
 							size_num = 5
 					
-					breasts.breast_size = size_num
+					breasts.organ_size = size_num
 					H.update_body()
 					should_update = TRUE
 
@@ -508,7 +508,7 @@
 						if("large")
 							size_num = 3
 					
-					penis.penis_size = size_num
+					penis.organ_size = size_num
 					H.update_body()
 					should_update = TRUE
 
@@ -516,7 +516,7 @@
 			var/list/testicle_sizes = list("small", "average", "large")
 			var/new_size = input(user, "Choose your testicle size", "Testicle Size") as null|anything in testicle_sizes
 			if(new_size)
-				var/obj/item/organ/testicles/testicles = H.getorganslot(ORGAN_SLOT_TESTICLES)
+				var/obj/item/organ/filling_organ/testicles/testicles = H.getorganslot(ORGAN_SLOT_TESTICLES)
 				if(testicles)
 					var/size_num
 					switch(new_size)
@@ -527,7 +527,7 @@
 						if("large")
 							size_num = 3
 					
-					testicles.ball_size = size_num
+					testicles.organ_size = size_num
 					H.update_body()
 					should_update = TRUE
 

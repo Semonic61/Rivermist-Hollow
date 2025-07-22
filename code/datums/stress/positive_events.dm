@@ -231,3 +231,8 @@
 	stressadd = -2
 	desc = span_info("A Devout Eoran shone their brightness upon me.")
 	timer = 10 MINUTES
+
+/datum/stressevent/loinachegood
+	timer = 5 MINUTES
+	stressadd = -3
+	desc = list(span_green("My loins took a GOOD beating!~"),span_green("My loins got slammed GOOD!"),span_green("My loins got beaten GOOD!"))

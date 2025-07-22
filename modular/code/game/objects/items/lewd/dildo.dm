@@ -28,6 +28,23 @@
 	if(can_custom)
 		customize(user)
 
+/obj/item/dildo/equipped(mob/user, slot, initial = FALSE)
+	if(slot == SLOT_BELT)
+		var/mob/living/carbon/human/U = user
+		if(strapon)
+			var/obj/item/organ/penis/penis = U.getorganslot(ORGAN_SLOT_PENIS)
+			if(!penis)
+				penis = strapon
+				wearer = U
+				penis.Insert(U)
+	. = ..()
+
+/obj/item/dildo/proc/emptyStorage() //called when belt removed so we can use it to remove the strapon
+	if(wearer) // so males who already have a penis dont get their dicks removed
+		var/obj/item/organ/penis = wearer.getorganslot(ORGAN_SLOT_PENIS)
+		if (penis)
+			penis.Remove(wearer)
+
 /obj/item/dildo/proc/customize(mob/living/user)
 	if(!can_custom)
 		return FALSE
@@ -48,7 +65,32 @@
 				if("big")
 					pleasure = 8
 	update_appearance()
+	update_strapon()
 	return TRUE
+
+/obj/item/dildo/proc/update_strapon()
+	var/obj/item/organ/penis/temp = new /obj/item/organ/penis
+	temp.name = name
+	icon_state = "dildo_[dildo_type]_[dildo_size]"
+	switch(shape_choice)
+		if("knotted")
+			temp.penis_type = PENIS_TYPE_KNOTTED
+		if("human")
+			temp.penis_type = PENIS_TYPE_PLAIN
+		if("flared")
+			temp.penis_type = PENIS_TYPE_EQUINE
+	switch(dildo_size)
+		if("small")
+			temp.organ_size = DEFAULT_PENIS_SIZE-1
+		if("medium")
+			temp.organ_size = DEFAULT_PENIS_SIZE
+		if("big")
+			temp.organ_size = DEFAULT_PENIS_SIZE+1
+		if("huge")
+			temp.organ_size = DEFAULT_PENIS_SIZE+1 //huge doesnt exist in mobs
+	temp.always_hard = TRUE
+	temp.strapon = TRUE
+	strapon = temp
 
 /obj/item/dildo/proc/update_appearance()
 	icon_state = "dildo_[dildo_type]_[dildo_size]"
@@ -76,6 +118,83 @@
 	color = "#C6D5E1"
 	dildo_material = "silver"
 	sellprice = 30
+
+/obj/item/dildo/silver/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+	var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
+	if(ishuman(H))
+		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser) || H.mind.has_antag_datum(/datum/antagonist/vampire))
+			to_chat(H, span_userdanger("The silver sizzles and burns my hand!"))
+			H.adjustFireLoss(35)
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
+				to_chat(H, span_userdanger("The silver sizzles in my hand..."))
+				H.adjustFireLoss(15)
+		if(W && W.transformed == TRUE)
+			to_chat(H, span_userdanger("The silver sizzles and burns my hand!"))
+			H.adjustFireLoss(25)
+
+/obj/item/dildo/silver/funny_attack_effects(mob/living/target, mob/living/user = usr, nodmg)
+	if(world.time < src.last_used + 100)
+		to_chat(user, span_notice("The silver needs more time to purify again."))
+		return
+
+	. = ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/s_user = user
+		var/mob/living/carbon/human/H = target
+		var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
+		var/datum/antagonist/vampirelord/lesser/Vp = H.mind.has_antag_datum(/datum/antagonist/vampire)
+		var/datum/antagonist/vampirelord/lesser/V = H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+		var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+		if(Vp)
+			H.Stun(20)
+			to_chat(H, span_userdanger("The silver burns me!"))
+			H.adjustFireLoss(30)
+			H.Paralyze(20)
+			H.fire_act(1,4)
+			H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+			src.last_used = world.time
+		if(V)
+			if(V.disguised)
+				H.Stun(20)
+				H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
+				to_chat(H, span_userdanger("The silver burns me!"))
+				H.adjustFireLoss(30)
+				H.Paralyze(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+			else
+				H.Stun(20)
+				to_chat(H, span_userdanger("The silver burns me!"))
+				H.adjustFireLoss(30)
+				H.Paralyze(20)
+				H.fire_act(1,4)
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
+		if(V_lord)
+			if(V_lord.vamplevel < 4 && !V)
+				if(V_lord.disguised)
+					H.visible_message("<font color='white'>The silver weapon manifests the [H] curse!</font>")
+				to_chat(H, span_userdanger("The silver burns me!"))
+				H.Stun(10)
+				H.adjustFireLoss(25)
+				H.Paralyze(10)
+				H.fire_act(1,4)
+				src.last_used = world.time
+			if(V_lord.vamplevel == 4 && !V)
+				s_user.Stun(10)
+				s_user.Paralyze(10)
+				to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
+				H.visible_message(H, span_userdanger("This feeble metal can't hurt me, I AM THE ANCIENT!"))
+		if(W && W.transformed == TRUE)
+			H.Stun(40)
+			H.Paralyze(40)
+			to_chat(H, span_userdanger("The silver burns me!"))
+			src.last_used = world.time
 
 /obj/item/dildo/gold
 	color = "#A0A075"

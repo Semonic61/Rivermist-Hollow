@@ -33,10 +33,11 @@
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
-		//ORGAN_SLOT_TESTICLES = /obj/item/organ/testicles,
+		ORGAN_SLOT_ANUS = /obj/item/organ/filling_organ/anus,
+		//ORGAN_SLOT_TESTICLES = /obj/item/organ/filling_organ/testicles,
 		//ORGAN_SLOT_PENIS = /obj/item/organ/penis,
-		//ORGAN_SLOT_BREASTS = /obj/item/organ/breasts,
-		//ORGAN_SLOT_VAGINA = /obj/item/organ/vagina,
+		//ORGAN_SLOT_BREASTS = /obj/item/organ/filling_organ/breasts,
+		//ORGAN_SLOT_VAGINA = /obj/item/organ/filling_organ/vagina,
 		)
 	offset_features = list(
 		OFFSET_ID = list(0,-4), OFFSET_GLOVES = list(0,-4), OFFSET_WRISTS = list(0,-4),\
@@ -65,6 +66,7 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/human,
+		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/vagina/human_anthro,
 		/datum/customizer/organ/ears/goblin,
 		/datum/customizer/organ/horns/tusks,

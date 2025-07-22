@@ -115,7 +115,41 @@
 		bodypart_status += "<B>Embedded objects:</B>"
 		for(var/obj/item/embedded as anything in embedded_objects)
 			bodypart_status += "<a href='?src=[owner_ref];embedded_object=[REF(embedded)];embedded_limb=[REF(src)]'>[embedded.name]</a>"
-	
+
+	if(owner)
+		location_accessible = get_location_accessible(owner, body_zone) //Hidden by underwear
+		if(body_zone == BODY_ZONE_CHEST || body_zone == BODY_ZONE_PRECISE_GROIN) //Vrell - Makes genitals visible when inspecting the chest.
+			bodypart_status += "<B>Genitalia:</B>"
+			var/salami = FALSE
+			var/penisAdd = 0
+			var/obj/item/belt = owner.get_item_by_slot(SLOT_BELT)
+			if(belt)
+				for(var/atom/A in belt.contents)
+					if(istype(A, /obj/item/reagent_containers/food/snacks/rogue/meat/salami))
+						salami = TRUE
+						penisAdd = 1
+			var/mob/living/carbon/human/ownerussy = owner
+			if(ownerussy.getorganslot(ORGAN_SLOT_PENIS) || salami)
+				var/obj/item/organ/penis/ownerussypenis = ownerussy.getorganslot(ORGAN_SLOT_PENIS)
+				if (ownerussypenis)
+					bodypart_status += "[ownerussy] has a [find_key_by_value(GLOB.uns_named_penis_sizes, ownerussypenis.organ_size+penisAdd)] penis."
+				else
+					bodypart_status += "[ownerussy] has a [find_key_by_value(GLOB.uns_named_penis_sizes, 1)] penis."
+			if(ownerussy.getorganslot(ORGAN_SLOT_TESTICLES))
+				var/obj/item/organ/filling_organ/testicles/ownerussyballs = ownerussy.getorganslot(ORGAN_SLOT_TESTICLES)
+				bodypart_status += "[ownerussy] has [find_key_by_value(GLOB.uns_named_ball_sizes, ownerussyballs.organ_size)] testicles."
+			if(ownerussy.getorganslot(ORGAN_SLOT_BREASTS))
+				var/obj/item/organ/filling_organ/breasts/ownerussybreasts = ownerussy.getorganslot(ORGAN_SLOT_BREASTS)
+				bodypart_status += "[ownerussy] has [find_key_by_value(GLOB.uns_named_breast_sizes, ownerussybreasts.organ_size)] breasts."
+			if(ownerussy.getorganslot(ORGAN_SLOT_BELLY))
+				var/obj/item/organ/belly/ownerussybelly = ownerussy.getorganslot(ORGAN_SLOT_BELLY)
+				bodypart_status += "[ownerussy] has a [find_key_by_value(GLOB.named_belly_sizes, ownerussybelly.organ_size)] belly."
+			//if(ownerussy.getorganslot(ORGAN_SLOT_BUTT))
+			//	var/obj/item/organ/butt/ownerussybutt = ownerussy.getorganslot(ORGAN_SLOT_BUTT)
+			//	bodypart_status += "[ownerussy] has a [find_key_by_value(GLOB.uns_named_butt_sizes, ownerussybutt.organ_size)] butt."
+			if(ownerussy.getorganslot(ORGAN_SLOT_VAGINA))
+				bodypart_status += "[ownerussy] has a vagina."
+
 	return bodypart_status
 
 /obj/item/bodypart/proc/check_for_injuries(mob/user, advanced = FALSE)

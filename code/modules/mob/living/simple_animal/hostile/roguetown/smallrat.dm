@@ -115,7 +115,7 @@
 	if(prob(75) && !dead)
 		dir = pick(GLOB.cardinals)
 		step(src, dir)
-		for(var/obj/item/reagent_containers/food/snacks/S in loc)
+		/*for(var/obj/item/reagent_containers/food/snacks/S in loc)
 			if(S != src)
 				qdel(S)
 				playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
@@ -125,7 +125,7 @@
 						new /mob/living/simple_animal/hostile/retaliate/rogue/bigrat(T)
 						dead = TRUE
 						qdel(src)
-				break
+				break*/
 
 /obj/item/reagent_containers/food/snacks/smallrat/obj_destruction(damage_flag)
 	//..()
