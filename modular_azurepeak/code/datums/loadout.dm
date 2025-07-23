@@ -332,7 +332,7 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	path = /obj/item/clothing/under/roguetown/skirt
 
 //ACCESSORIES
-/datum/loadout_item/stockings
+/*/datum/loadout_item/stockings
 	name = "Stockings"
 	path = /obj/item/clothing/under/roguetown/tights/stockings
 
@@ -342,7 +342,7 @@ GLOBAL_LIST_EMPTY(loadout_items)
 
 /datum/loadout_item/fishnet
 	name = "Fishnet Stockings"
-	path = /obj/item/clothing/under/roguetown/tights/stockings/fishnet
+	path = /obj/item/clothing/under/roguetown/tights/stockings/fishnet*/
 
 /datum/loadout_item/wrappings
 	name = "Handwraps"
