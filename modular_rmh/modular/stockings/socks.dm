@@ -15,6 +15,7 @@
 	var/datum/bodypart_feature/legwear/legwears_feature
 	var/covers_breasts = FALSE
 	sewrepair = TRUE
+	salvage_result = /obj/item/natural/cloth
 
 /obj/item/legwears/attack(mob/M, mob/user, def_zone)
 	if(ishuman(M))
