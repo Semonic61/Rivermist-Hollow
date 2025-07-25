@@ -73,8 +73,8 @@
 		/datum/body_marking/nose,
 	)
 
-/datum/species/construct/metal/check_roundstart_eligible()
-	return TRUE
+///datum/species/construct/metal/check_roundstart_eligible()
+//	return TRUE
 	
 /datum/species/construct/metal/get_skin_list()
 	return list(
