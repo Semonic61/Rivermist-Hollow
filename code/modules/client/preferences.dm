@@ -1625,7 +1625,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						to_chat(user, "<font color='red'>Your character will now vocalize with a [lowertext(voice_type)] affect.</font>")
 				
 				if ("voiceselection")
-					to_chat(user, "<font color='yellow'>This option allws tou to manually choose your character's voicepach. Leave it on 'default' to automatically use your voice type and species' voicepack.</font>")
+					to_chat(user, "<font color='yellow'>This option allws you to manually choose your character's voicepack. Leave it on 'default' to automatically use your voice type and species' voicepack.</font>")
 					var voicepack_type_input = input(user, "Choose your character's voicepack type", "Voicepack Type") as null|anything in GLOB.voicepack_types_list
 					generate_selectable_voicepacks()
 					if(voicepack_type_input)
