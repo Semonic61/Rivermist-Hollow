@@ -12,8 +12,8 @@
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
 		return FALSE
-	if(!target.has_quirk(/datum/quirk/weirdo))
-		return FALSE
+	//if(!target.has_quirk(/datum/quirk/weirdo))
+		//return FALSE
 	if(!get_funobject_in_hand(user))
 		return FALSE
 	return TRUE

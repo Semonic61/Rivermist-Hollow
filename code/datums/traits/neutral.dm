@@ -88,10 +88,10 @@
 	value = 0
 
 //damn snowflakes.
-/datum/quirk/weirdo
+/*/datum/quirk/weirdo
 	name = "Freeky"
 	desc = "I can use my 'orifices' to store things and do more strange sexual things that wouldn't come to sane mind."
-	value = 0
+	value = 0*/
 
 /datum/quirk/virgin
 	name = "Virgin"
