@@ -165,9 +165,24 @@
 			else if(H.dna.species.soundpack_m)
 				possible_sounds = H.dna.species.soundpack_m.get_sound(key,modifier)
 			//RMH ADD - manual voicepack selection
-			if(H.voice_selection)
-				var/datum/voicepack/vpath = new H.voice_selection
-				possible_sounds = vpath.get_sound(key, modifier)
+			if(H.moan_selection && (key in list("sexmoanlight","sexmoanhvy","groan","painmoan","whimper")))
+				var/datum/moan_pack/vpath = new H.moan_selection
+				switch(key)
+					if("sexmoanlight")
+						if(vpath.sounds_sexmoanlight)
+							possible_sounds = vpath.get_moans(key)
+					if("sexmoanhvy")
+						if(vpath.sounds_sexmoanhvy)
+							possible_sounds = vpath.get_moans(key)
+					if("groan")
+						if(vpath.sounds_groan)
+							possible_sounds = vpath.get_moans(key)
+					if("painmoan")
+						if(vpath.sounds_painmoan)
+							possible_sounds = vpath.get_moans(key)
+					if("whimper")
+						if(vpath.sounds_whimper)
+							possible_sounds = vpath.get_moans(key)
 			// LETHALSTONE ADDITION BEGIN: use preference-set voice types where possible 
 			else if(H.voice_type) //was if(H.voice_type)
 				switch (H.voice_type)
