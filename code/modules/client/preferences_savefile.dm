@@ -439,7 +439,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_mcolor3"]	>> features["mcolor3"]
 	S["feature_ethcolor"]	>> features["ethcolor"]
 	S["pronouns"]			>> pronouns
-	S["voice_type"]			>> voice_type
+	S["voice_type"]			>> voice_type	//RMH edit
+	S["moan_selection"]	>> moan_selection
 	S["nickname"]			>> nickname
 	S["highlight_color"]	>> highlight_color
 
@@ -538,6 +539,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["pronouns"] >> pronouns
 	S["voice_type"] >> voice_type
+	S["moan_selection"]	>> moan_selection 	//RMH edit
 	S["body_size"] >> features["body_size"]
 	if (!features["body_size"])
 		features["body_size"] = BODY_SIZE_NORMAL
@@ -581,6 +583,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
 	pronouns = sanitize_text(pronouns, THEY_THEM)
 	voice_type = sanitize_text(voice_type, VOICE_TYPE_MASC)
+	moan_selection = sanitize_text(moan_selection, MOANPACK_TYPE_DEF)	//RMH edit
 	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 6, 0)
 	features["mcolor2"]	= sanitize_hexcolor(features["mcolor2"], 6, 0)
 	features["mcolor3"]	= sanitize_hexcolor(features["mcolor3"], 6, 0)
@@ -694,6 +697,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["is_legacy"], is_legacy)
 	WRITE_FILE(S["char_accent"] , char_accent)
 	WRITE_FILE(S["voice_type"] , voice_type)
+	WRITE_FILE(S["moan_selection"] , moan_selection)	//RMH edit
 	WRITE_FILE(S["pronouns"] , pronouns)
 	WRITE_FILE(S["statpack"] , statpack.type)
 	WRITE_FILE(S["virtue"] , virtue.type)

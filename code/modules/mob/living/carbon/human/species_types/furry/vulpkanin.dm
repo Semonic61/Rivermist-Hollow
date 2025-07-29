@@ -111,8 +111,8 @@
 		/datum/language/common,
 	)
 
-/datum/species/vulpkanin/check_roundstart_eligible()
-	return TRUE
+///datum/species/vulpkanin/check_roundstart_eligible()
+//	return TRUE
 
 /datum/species/vulpkanin/qualifies_for_rank(rank, list/features)
 	return TRUE

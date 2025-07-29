@@ -71,8 +71,8 @@
 		return FALSE
 	if(!pref_species.check_roundstart_eligible())
 		return FALSE
-	if(user && (pref_species.patreon_req > user.patreonlevel()))
-		return FALSE
+	//if(user && (pref_species.patreon_req > user.patreonlevel()))
+	//	return FALSE
 	return TRUE
 
 /mob/proc/patreonlevel()

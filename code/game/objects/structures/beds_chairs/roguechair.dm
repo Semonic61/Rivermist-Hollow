@@ -178,11 +178,12 @@
 			if(isturf(loc))
 				var/movefrom = get_dir(M.loc, loc)
 				if(movefrom == dir && item_chair)
-					playsound(loc, 'sound/foley/chairfall.ogg', 100, FALSE)
-					var/obj/item/I = new item_chair(loc)
-					item_chair = null
-					I.dir = dir
-					qdel(src)
+					if(M.cmode) //RHM edit: chairs fall down only on combat mode 
+						playsound(loc, 'sound/foley/chairfall.ogg', 100, FALSE)
+						var/obj/item/I = new item_chair(loc)
+						item_chair = null
+						I.dir = dir
+						qdel(src)
 					return FALSE
 	return ..()
 
@@ -205,11 +206,12 @@
 			if(isturf(loc))
 				var/movefrom = get_dir(M.loc, target)
 				if(movefrom == turn(dir, 180) && item_chair != null)
-					playsound(loc, 'sound/foley/chairfall.ogg', 100, FALSE)
-					var/obj/item/I = new item_chair(loc)
-					item_chair = null
-					I.dir = dir
-					qdel(src)
+					if(M.cmode) //RHM edit: chairs fall down only on combat mode 
+						playsound(loc, 'sound/foley/chairfall.ogg', 100, FALSE)
+						var/obj/item/I = new item_chair(loc)
+						item_chair = null
+						I.dir = dir
+						qdel(src)
 					return FALSE
 	return ..()
 

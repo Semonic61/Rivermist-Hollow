@@ -128,8 +128,8 @@
 		/datum/language/common,
 	)
 
-/datum/species/lupian/check_roundstart_eligible()
-	return TRUE
+///datum/species/lupian/check_roundstart_eligible()
+//	return TRUE
 
 /datum/species/lupian/qualifies_for_rank(rank, list/features)
 	return TRUE
