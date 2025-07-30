@@ -598,6 +598,7 @@
 /datum/antagonist/vampirelord/lesser/secret
 	//ashes = FALSE
 	//is_solo = TRUE
+	quirk = TRUE
 	confess_lines = list(
 		"THE CRIMSON CALLS!",
 		"THE SUN IS ENEMY!",
