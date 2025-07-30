@@ -295,13 +295,13 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	owner.announce_objectives()
 
 /datum/antagonist/vampirelord/proc/finalize_vampire()
-	owner.current.forceMove(pick(GLOB.vlord_starts))
+	//owner.current.forceMove(pick(GLOB.vlord_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
 
 
 /datum/antagonist/vampirelord/proc/finalize_vampire_lesser()
-	if(!sired && !quirk)
-		owner.current.forceMove(pick(GLOB.vspawn_starts))
+	//if(!sired && !quirk)
+	//	owner.current.forceMove(pick(GLOB.vspawn_starts))
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/vampintro.ogg', 80, FALSE, pressure_affected = FALSE)
 
 
@@ -1075,15 +1075,25 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 /obj/effect/landmark/start/vampirelord
 	name = "Vampire Lord"
 	icon_state = "arrow"
+
+/obj/effect/landmark/start/vampirelordlate
+	name = "vlordlate"
+	icon_state = "arrow"
+	jobspawn_override = list("Vampire Lord")
 	delete_after_roundstart = FALSE
 
-/obj/effect/landmark/start/vampirelord/Initialize()
+/*/obj/effect/landmark/start/vampirelord/Initialize()
 	. = ..()
-	GLOB.vlord_starts += loc
+	GLOB.vlord_starts += loc*/
 
 /obj/effect/landmark/start/vampirespawn
 	name = "Vampire Spawn"
 	icon_state = "arrow"
+
+/obj/effect/landmark/start/vampirespawnlate
+	name = "vspawnlate"
+	icon_state = "arrow"
+	jobspawn_override = list("Vampire Spawn")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampireknight
@@ -1092,9 +1102,19 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	jobspawn_override = list("Death Knight")
 	delete_after_roundstart = FALSE
 
-/obj/effect/landmark/start/vampirespawn/Initialize()
+/obj/effect/landmark/start/vampiresmith
+	name = "Vampire Artificer"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/vampiresmithlate
+	name = "vsmithlate"
+	icon_state = "arrow"
+	jobspawn_override = list("Vampire Artificer")
+	delete_after_roundstart = FALSE
+
+/*/obj/effect/landmark/start/vampirespawn/Initialize()
 	. = ..()
-	GLOB.vspawn_starts += loc
+	GLOB.vspawn_starts += loc*/
 
 /obj/effect/landmark/vteleport
 	name = "Teleport Destination"

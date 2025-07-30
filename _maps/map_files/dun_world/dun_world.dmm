@@ -10155,6 +10155,7 @@
 /obj/structure/rack/rogue,
 /obj/item/clothing/gloves/roguetown/leather,
 /obj/item/clothing/head/roguetown/fisherhat,
+/obj/structure/vampire/portalmaker,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/under/cavewet/bogcaves/north)
 "dhP" = (
@@ -11044,6 +11045,10 @@
 "dwu" = (
 /turf/closed/mineral/random/rogue,
 /area/rogue/under/cavewet/bogcaves/central)
+"dwx" = (
+/obj/effect/landmark/start/vampiresmith,
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/under/cavewet/bogcaves/north)
 "dwy" = (
 /obj/item/natural/stone{
 	pixel_x = -5;
@@ -13141,6 +13146,10 @@
 "efo" = (
 /turf/open/floor/rogue/tile/harem1,
 /area/rogue/indoors/town/bath)
+"efu" = (
+/obj/effect/landmark/start/vampiresmithlate,
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/under/cavewet/bogcaves/north)
 "efw" = (
 /mob/living/carbon/human/species/skeleton/npc/medium,
 /turf/open/floor/rogue/dirt/road,
@@ -24964,6 +24973,7 @@
 /obj/structure/chair/wood/rogue{
 	dir = 1
 	},
+/obj/effect/landmark/start/vampireknight,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/under/cavewet/bogcaves/north)
 "hGM" = (
@@ -36486,6 +36496,10 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/garrison)
+"ljv" = (
+/obj/structure/vampire/bloodpool,
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/under/cavewet/bogcaves/north)
 "ljA" = (
 /obj/effect/landmark/quest_spawner/hard,
 /turf/open/floor/rogue/dirt,
@@ -51583,6 +51597,7 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/natural/clay/clayfancyvase,
+/obj/effect/landmark/start/vampirelord,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/under/cavewet/bogcaves/north)
 "pWp" = (
@@ -55357,6 +55372,10 @@
 "rbi" = (
 /turf/open/water/pond,
 /area/rogue/outdoors/beach/forest/south)
+"rbj" = (
+/obj/effect/landmark/start/vampirespawn,
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/under/cavewet/bogcaves/north)
 "rbs" = (
 /mob/living/carbon/human/species/orc/npc/marauder,
 /turf/open/floor/rogue/churchbrick,
@@ -64362,6 +64381,7 @@
 /obj/structure/chair/wood/rogue{
 	dir = 8
 	},
+/obj/effect/landmark/start/vampirelordlate,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/under/cavewet/bogcaves/north)
 "tNQ" = (
@@ -68813,6 +68833,10 @@
 /obj/effect/decal/cleanable/debris/glassy,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/beach/north)
+"vfq" = (
+/obj/effect/landmark/start/vampirespawnlate,
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/under/cavewet/bogcaves/north)
 "vft" = (
 /obj/structure/table/wood{
 	icon_state = "longtable_mid"
@@ -154999,7 +155023,7 @@ dNP
 sez
 pWc
 hGH
-ehL
+vfq
 dhO
 ord
 qrx
@@ -155450,8 +155474,8 @@ dNP
 dNP
 sez
 tNP
-ehL
-ehL
+dwx
+ljv
 ehL
 cxE
 avW
@@ -155901,8 +155925,8 @@ dNP
 dNP
 dNP
 sez
-ehL
-ehL
+efu
+rbj
 ehL
 bfN
 pbI

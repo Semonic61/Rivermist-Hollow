@@ -177,6 +177,14 @@ GLOBAL_LIST_INIT(roguefight_positions, list(
 	"Green Fighter",
 ))
 
+GLOBAL_LIST_INIT(vampire_positions, list(
+	"Vampire Lord",
+	"Vampire Spawn",
+	"Vampire Artificer",
+	"Vampire Servant",
+	"Vampire Guard"
+))
+
 GLOBAL_LIST_INIT(test_positions, list(
 	"Tester",
 ))

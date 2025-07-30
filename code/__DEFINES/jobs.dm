@@ -210,6 +210,13 @@
 #define GUILDSMAN  	(1<<2)
 #define TAILOR		(1<<3)
 
+#define VAMPIRE		(1<<12)
+#define VAMPLORD	(1<<1)
+#define VAMPTHRALL	(1<<2)
+#define VAMPSMITH	(1<<3)
+#define VAMPGUARD	(1<<4)
+#define VAMPSERVANT	(1<<5)
+
 #define JCOLOR_NOBLE "#aa83b9"
 #define JCOLOR_COURTIER "#81adc8"
 #define JCOLOR_CHURCH "#c0ba8d"
@@ -308,6 +315,13 @@
 #define JDO_PURITAN 40
 #define JDO_ORTHODOXIST 40.1
 
+#define JDO_VAMPLORD 41
+#define JDO_VAMPTHRALL 42
+#define JDO_VAMPSMITH 43
+#define JDO_VAMPGUARD 44
+#define JDO_VAMPSERVANT 45
+
+
 #define BITFLAG_CHURCH (1<<0)
 #define BITFLAG_ROYALTY (1<<1)
 #define BITFLAG_CONSTRUCTOR (1<<2)
@@ -394,3 +408,8 @@
 #define INQUISITION_ROLES \
 	/datum/job/roguetown/puritan,\
 	/datum/job/roguetown/orthodoxist
+
+#define VAMPIRE_ROLES \
+	/datum/job/roguetown/vampire/vamplord,\
+	/datum/job/roguetown/vampire/vampthrall,\
+	/datum/job/roguetown/vampire/vampsmith
