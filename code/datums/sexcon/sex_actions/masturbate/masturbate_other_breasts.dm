@@ -1,5 +1,5 @@
 /datum/sex_action/masturbate_other_breasts
-	name = "Полапать грудь"
+	name = "Rub their breasts"
 	check_same_tile = FALSE
 
 /datum/sex_action/masturbate_other_breasts/shows_on_menu(mob/living/user, mob/living/target)

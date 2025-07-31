@@ -1,5 +1,5 @@
 /datum/sex_action/masturbate_anus
-	name = "Фингеринг ануса"
+	name = "Finger butt"
 
 /datum/sex_action/masturbate_anus/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

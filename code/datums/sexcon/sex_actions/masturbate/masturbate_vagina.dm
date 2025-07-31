@@ -1,5 +1,5 @@
 /datum/sex_action/masturbate_vagina
-	name = "Вздрочнуть клитор"
+	name = "Stroke clit"
 
 /datum/sex_action/masturbate_vagina/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

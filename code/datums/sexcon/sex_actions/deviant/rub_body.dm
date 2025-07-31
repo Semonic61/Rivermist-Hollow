@@ -1,5 +1,5 @@
 /datum/sex_action/rub_body
-	name = "Облапать"
+	name = "Rub their body"
 	check_same_tile = FALSE
 
 /datum/sex_action/rub_body/shows_on_menu(mob/living/user, mob/living/target)

@@ -1,5 +1,5 @@
 /datum/sex_action/vaginal_sex
-	name = "Трахнуть"
+	name = "Fuck their cunt"
 	stamina_cost = 1.0
 	check_incapacitated = FALSE
 

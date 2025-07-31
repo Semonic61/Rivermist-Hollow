@@ -1,5 +1,5 @@
 /datum/sex_action/throat_sex
-	name = "Трахнуть глотку"
+	name = "Fuck their throat"
 	stamina_cost = 1.0
 	gags_target = TRUE
 

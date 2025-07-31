@@ -1,5 +1,5 @@
 /datum/sex_action/toy_other_oral
-	name = "Трахнуть игрушкой (орал)"
+	name = "Use toy on their mouth"
 
 /datum/sex_action/toy_other_oral/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))
@@ -48,7 +48,7 @@
 
 /datum/sex_action/toy_other_oral/on_finish(mob/living/user, mob/living/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)
-	user.visible_message(span_warning("[user] вынимает [dildo] из рта [target]."))
+	user.visible_message(span_warning("[user] pulls \the [dildo] from [target]'s mouth."))
 
 /datum/sex_action/toy_other_oral/is_finished(mob/living/user, mob/living/target)
 	if(target.sexcon.finished_check())

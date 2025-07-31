@@ -1,5 +1,5 @@
 /datum/sex_action/masturbate_breasts
-	name = "Лапать грудь"
+	name = "Rub breasts"
 
 /datum/sex_action/masturbate_breasts/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

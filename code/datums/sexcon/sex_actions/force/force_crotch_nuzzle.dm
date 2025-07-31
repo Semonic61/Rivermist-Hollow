@@ -1,5 +1,5 @@
 /datum/sex_action/force_crotch_nuzzle
-	name = "Прижать к паху"
+	name = "Force them to nuzzle"
 	require_grab = TRUE
 	stamina_cost = 1.0
 	gags_target = TRUE

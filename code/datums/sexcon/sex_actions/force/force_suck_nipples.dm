@@ -1,5 +1,5 @@
 /datum/sex_action/force_suck_nipples
-	name = "Заставить пососать груди"
+	name = "Force them to suck nipples"
 	require_grab = TRUE
 	stamina_cost = 1.0
 

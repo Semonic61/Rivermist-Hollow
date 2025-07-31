@@ -25,7 +25,7 @@
 
 /datum/sex_controller/proc/adjust_arousal_manual(amt)
 	manual_arousal = clamp(manual_arousal + amt, SEX_MANUAL_AROUSAL_MIN, SEX_MANUAL_AROUSAL_MAX)
-*/
+
 /datum/sex_controller/proc/handle_cock_milking(mob/living/carbon/human/milker)
 	if(arousal < ACTIVE_EJAC_THRESHOLD)
 		return
@@ -36,8 +36,8 @@
 	ejaculate_container(milker.get_active_held_item())
 
 /datum/sex_controller/proc/ejaculate_container(obj/item/reagent_containers/glass/C)
-	log_combat(user, user, "Кончает в емкость")
-	user.visible_message(span_lovebold("[user.name] наполняет [C.name] семенем!"))
+	log_combat(user, user, "Cum into container")
+	user.visible_message(span_lovebold("[user.name] fills the [C.name] with their seed!"))
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	C.reagents.add_reagent(/datum/reagent/erpjuice/cum, 3)
 	after_ejaculation()
@@ -49,7 +49,7 @@
 		return
 	if(!can_ejaculate())
 		return FALSE
-	ejaculate_container(user.get_active_held_item())
+	ejaculate_container(user.get_active_held_item())*/
 /*
 /datum/sex_controller/proc/get_manual_arousal_string()
 	switch(manual_arousal)

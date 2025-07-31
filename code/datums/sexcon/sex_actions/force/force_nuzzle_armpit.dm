@@ -1,5 +1,5 @@
 /datum/sex_action/force_armpit_nuzzle
-	name = "Прижать к своим подмыхам"
+	name = "Force them against armpit"
 	require_grab = TRUE
 	stamina_cost = 1.0
 	gags_target = TRUE

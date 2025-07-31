@@ -1,5 +1,5 @@
 /datum/sex_action/force_rimming
-	name = "Принудить к риммингу"
+	name = "Force them to rim you"
 	require_grab = TRUE
 	stamina_cost = 1.0
 	gags_target = TRUE

@@ -1,5 +1,5 @@
 /datum/sex_action/masturbate_other_vagina
-	name = "Вздрочнуть ей"
+	name = "Stroke their clit"
 	check_same_tile = FALSE
 
 /datum/sex_action/masturbate_other_vagina/shows_on_menu(mob/living/user, mob/living/target)

@@ -1,5 +1,5 @@
 /datum/sex_action/pitjob
-	name = "Воспользоваться подмышками"
+	name = "Use their armpit to get off"
 	check_same_tile = FALSE
 	check_incapacitated = FALSE
 
@@ -23,10 +23,10 @@
 
 /datum/sex_action/pitjob/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	..()
-	user.visible_message(span_warning("[user] зажимает член [target] под своим плечом..."))
+	user.visible_message(span_warning("[user] squeezes the member of [target] under their armpit..."))
 
 /datum/sex_action/pitjob/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] придавливает пенис [target] к своей подмышке и двигает плечом..."))
+	user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] holds [target]'s penis with their armpit and starts to move their shoulder..."))
 	playsound(user, 'sound/misc/mat/fingering.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(target, 2, 4, TRUE)
@@ -35,7 +35,7 @@
 
 /datum/sex_action/pitjob/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	..()
-	user.visible_message(span_warning("[user] расслабив руку, выпускает пенис [target] из под своей руки."))
+	user.visible_message(span_warning("[user] relaxes their arm and releases [target] from their armpit."))
 
 /datum/sex_action/pitjob/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(target.sexcon.finished_check())

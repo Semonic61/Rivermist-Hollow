@@ -1,5 +1,5 @@
 /datum/sex_action/force_thighjob
-	name = "Вздрочнуть ляжками"
+	name = "Jerk them off with thighs"
 
 /datum/sex_action/force_thighjob/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

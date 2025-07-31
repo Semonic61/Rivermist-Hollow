@@ -212,7 +212,7 @@
 
 /datum/sex_controller/proc/cum_into(oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE, girljuice = FALSE)
 	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
-	if(target.mind)
+	/*if(target.mind)
 		if(!issimple(target))
 			log_combat(user, target, "Came inside [target]")
 			if(HAS_TRAIT(target, TRAIT_GOODLOVER))
@@ -233,7 +233,7 @@
 					target.add_stress(/datum/stressevent/cummax)
 					to_chat(target, span_love("Our sex was a true TRIUMPH!"))
 				else
-					target.add_stress(/datum/stressevent/cumok)
+					target.add_stress(/datum/stressevent/cumok)*/
 	if(girljuice)
 		if(!issimple(target))
 			target.reagents.add_reagent(/datum/reagent/water/pussjuice, 10)
@@ -272,7 +272,8 @@
 	if(testes && testes.reagents.total_volume <= testes.reagents.maximum_volume / 4)
 		to_chat(user, span_info("Damn, my [pick(testes.altnames)] are pretty dry now."))
 	after_ejaculation()
-	after_intimate_climax()
+	if(!oral)
+		after_intimate_climax()
 
 /datum/sex_controller/proc/ejaculate()
 	if(!issimple(user))
@@ -329,11 +330,11 @@
 	if(user == target)
 		return
 	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
-			if(!user.mob_timers["cumtri"])
-				user.mob_timers["cumtri"] = world.time
-				user.adjust_triumphs(1)
-				user.add_stress(/datum/stressevent/cummax)
-				to_chat(user, span_love("Our sex was a true TRIUMPH!"))
+		if(!user.mob_timers["cumtri"])
+			user.mob_timers["cumtri"] = world.time
+			user.adjust_triumphs(1)
+			user.add_stress(/datum/stressevent/cummax)
+			to_chat(user, span_love("Our sex was a true TRIUMPH!"))
 		else
 			user.add_stress(/datum/stressevent/cumok)
 	if(!issimple(user) && user.mind)
@@ -346,6 +347,7 @@
 				to_chat(target, span_love("Our sex was a true TRIUMPH!"))
 	else
 		target.add_stress(/datum/stressevent/cumok)
+
 /datum/sex_controller/proc/just_ejaculated()
 	return (last_ejaculation_time + 2 SECONDS >= world.time)
 
@@ -601,6 +603,8 @@
 /datum/sex_controller/proc/handle_cock_milking(mob/living/carbon/human/milker)
 	if(arousal < ACTIVE_EJAC_THRESHOLD)
 		return
+	if(is_spent())
+		return
 	if(!can_ejaculate())
 		return FALSE
 	ejaculate_container(milker.get_active_held_item())
@@ -684,11 +688,11 @@
 	dat += "<center>| <a href='?src=[REF(src)];task=toggle_finished'>[do_until_finished ? "UNTIL IM FINISHED" : "UNTIL I STOP"]</a> |</center>"
 	dat += "<center><a href='?src=[REF(src)];task=set_arousal'>SET AROUSAL</a> | <a href='?src=[REF(src)];task=freeze_arousal'>[arousal_frozen ? "UNFREEZE AROUSAL" : "FREEZE AROUSAL"]</a></center>"
 	if(target == user)
-		dat += "<center>Самоудовлетворение</center>"
+		dat += "<center>Doing unto yourself</center>"
 	else
-		dat += "<center>Соитие с [target]</center>"
+		dat += "<center>Doing unto [target]'s</center>"
 	if(current_action)
-		dat += "<center><a href='?src=[REF(src)];task=stop'>Прекратить</a></center>"
+		dat += "<center><a href='?src=[REF(src)];task=stop'>Stop</a></center>"
 	else
 		dat += "<br>"
 	dat += "<table width='100%'><td width='50%'></td><td width='50%'></td><tr>"
@@ -747,7 +751,7 @@
 		if("toggle_finished")
 			do_until_finished = !do_until_finished
 		if("set_arousal")
-			var/amount = input(user, "Значение выше 120 приведет к немедленному экстазу!", "Задать возбуждение", arousal) as num
+			var/amount = input(user, "Value above 120 will immediately cause orgasm!", "Set Arousal", arousal) as num
 			set_arousal(amount)
 		if("freeze_arousal")
 			arousal_frozen = !arousal_frozen
@@ -926,35 +930,24 @@
 /datum/sex_controller/proc/get_force_string()
 	switch(force)
 		if(SEX_FORCE_LOW)
-			return "<font color='#eac8de'>НЕЖНО</font>"
+			return "<font color='#eac8de'>GENTLE</font>"
 		if(SEX_FORCE_MID)
-			return "<font color='#e9a8d1'>НАСТОЙЧИВО</font>"
+			return "<font color='#e9a8d1'>FIRM</font>"
 		if(SEX_FORCE_HIGH)
-			return "<font color='#f05ee1'>ГРУБО</font>"
+			return "<font color='#f05ee1'>ROUGH</font>"
 		if(SEX_FORCE_EXTREME)
-			return "<font color='#d146f5'>ЖЕСТОКО</font>"
+			return "<font color='#d146f5'>BRUTAL</font>"
 
 /datum/sex_controller/proc/get_speed_string()
 	switch(speed)
 		if(SEX_SPEED_LOW)
-			return "<font color='#eac8de'>МЕДЛЕННО</font>"
+			return "<font color='#eac8de'>SLOW</font>"
 		if(SEX_SPEED_MID)
-			return "<font color='#e9a8d1'>ПОСТЕПЕННО</font>"
+			return "<font color='#e9a8d1'>STEADY</font>"
 		if(SEX_SPEED_HIGH)
-			return "<font color='#f05ee1'>БЫСТРО</font>"
+			return "<font color='#f05ee1'>QUICK</font>"
 		if(SEX_SPEED_EXTREME)
-			return "<font color='#d146f5'>НЕУМОЛИМО</font>"
-
-/datum/sex_controller/proc/get_manual_arousal_string()
-	switch(manual_arousal)
-		if(SEX_MANUAL_AROUSAL_DEFAULT)
-			return "<font color='#eac8de'>NATURAL</font>"
-		if(SEX_MANUAL_AROUSAL_UNAROUSED)
-			return "<font color='#e9a8d1'>UNAROUSED</font>"
-		if(SEX_MANUAL_AROUSAL_PARTIAL)
-			return "<font color='#f05ee1'>PARTIALLY ERECT</font>"
-		if(SEX_MANUAL_AROUSAL_FULL)
-			return "<font color='#d146f5'>FULLY ERECT</font>"
+			return "<font color='#d146f5'>UNRELENTING</font>"
 
 /datum/sex_controller/proc/get_manual_arousal_string()
 	switch(manual_arousal)
@@ -972,11 +965,11 @@
 		if(SEX_FORCE_LOW)
 			return pick(list("gently", "carefully", "tenderly", "gingerly", "delicately", "lazingly"))
 		if(SEX_FORCE_MID)
-			return pick(list("решительно", "энергично", "страстно", "уверенно", "увлеченно"))
+			return pick(list("firmly", "vigorously", "eagerly", "steadily", "intently"))
 		if(SEX_FORCE_HIGH)
-			return pick(list("грубо", "небрежно", "жестко", "пылко", "свирепо"))
+			return pick(list("roughly", "carelessly", "forcefully", "fervently", "fiercely"))
 		if(SEX_FORCE_EXTREME)
-			return pick(list("жестоко", "неистово", "неумолимо", "свирепо", "безжалостно"))
+			return pick(list("brutally", "violently", "relentlessly", "savagely", "mercilessly"))
 
 /datum/sex_controller/proc/spanify_force(string)
 	switch(force)

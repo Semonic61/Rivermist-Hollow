@@ -1,5 +1,5 @@
 /datum/sex_action/masturbate_other_anus
-	name = "Трахнуть зад пальцем"
+	name = "Finger their butt"
 	check_same_tile = FALSE
 
 /datum/sex_action/masturbate_other_anus/shows_on_menu(mob/living/user, mob/living/target)
