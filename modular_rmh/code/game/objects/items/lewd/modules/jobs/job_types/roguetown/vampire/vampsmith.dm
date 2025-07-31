@@ -17,7 +17,7 @@
 	display_order = JDO_VAMPSMITH
 	//min_pq = 5
 	max_pq = null
-	//cmode_music = 'sound/music/combat_vamp.ogg'
+	cmode_music = 'sound/music/combat_vamp.ogg'
 
 /datum/outfit/job/roguetown/vampsmith/pre_equip(mob/living/carbon/human/H)
 	..()

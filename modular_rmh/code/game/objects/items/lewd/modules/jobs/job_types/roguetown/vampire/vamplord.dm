@@ -13,13 +13,10 @@
 	tutorial = "You are the one and only lord of these lands. Make sure your cattle - or dear subjects - obey you, least you remain without a source of nourishment."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/vamplord/regular
-	/* advclass_cat_rolls = list(CTAG_ADVENTURER = 20)
-	PQ_boost_divider = 10 */ //Tried to give them adventure roles, but this doesn't work.
-
 	display_order = JDO_VAMPLORD
 	//min_pq = 4
 	max_pq = null
-	//cmode_music = 'sound/music/combat_vamp.ogg'
+	cmode_music = 'sound/music/combat_vamp.ogg'
 
 /datum/outfit/job/roguetown/vamplord/regular/pre_equip(mob/living/carbon/human/H)
 	..()

@@ -9,15 +9,12 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	show_in_credits = FALSE		//Stops Scom from announcing their arrival.
-	//spells = list(/obj/effect/proc_holder/spell/self/convertrole/vampire,
-	///obj/effect/proc_holder/spell/targeted/shapeshift/bat)
 	tutorial = "You don't really remember how you got here, but your present reality is grim: you serve the Vampire Lord and his underlings; not much better than cattle. Follow their oders, and don't draw anyone's ire."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/vampservant
-	display_order = JDO_VAMPSMITH
+	display_order = JDO_VAMPSERVANT
 	//min_pq = 5
 	max_pq = null
-	//cmode_music = 'sound/music/combat_vamp.ogg'
 
 /datum/outfit/job/roguetown/vampservant/pre_equip(mob/living/carbon/human/H)
 	..()

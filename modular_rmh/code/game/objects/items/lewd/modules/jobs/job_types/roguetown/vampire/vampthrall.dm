@@ -14,13 +14,10 @@
 	tutorial = "You are one of the fallen, sired by the lord of the underkeep. You are a vampire thrall; and you find yourself within the undercity as one of it's subjects."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/vampthrall/regular
-	/* advclass_cat_rolls = list(CTAG_ADVENTURER = 20)
-	PQ_boost_divider = 10 */ //Tried to give them adventure roles, but this doesn't work.
-
 	display_order = JDO_VAMPTHRALL
 	//min_pq = 4
 	max_pq = null
-	//cmode_music = 'sound/music/combat_vamp.ogg'
+	cmode_music = 'sound/music/combat_vamp.ogg'
 
 /datum/outfit/job/roguetown/vampthrall/regular/pre_equip(mob/living/carbon/human/H)
 	..()
