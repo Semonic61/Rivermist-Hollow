@@ -1,5 +1,5 @@
 /datum/sex_action/suck_nipples
-	name = "Suck their nipples"
+	name = "Пососать груди"
 	check_same_tile = FALSE
 
 /datum/sex_action/suck_nipples/shows_on_menu(mob/living/user, mob/living/target)

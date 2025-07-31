@@ -1,5 +1,5 @@
 /datum/sex_action/masturbate_penis
-	name = "Jerk off"
+	name = "Вздрочнуть"
 
 /datum/sex_action/masturbate_penis/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

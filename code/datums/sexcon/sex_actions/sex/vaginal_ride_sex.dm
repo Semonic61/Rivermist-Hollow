@@ -1,5 +1,5 @@
 /datum/sex_action/vaginal_ride_sex
-	name = "Ride them"
+	name = "Оседлать (вагина)"
 	stamina_cost = 1.0
 	aggro_grab_instead_same_tile = FALSE
 	check_incapacitated = FALSE

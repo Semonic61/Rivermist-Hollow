@@ -1,5 +1,5 @@
 /datum/sex_action/toy_other_anal
-	name = "Use toy on their butt"
+	name = "Трахнуть игрушкой (анал)"
 
 /datum/sex_action/toy_other_anal/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))
@@ -65,7 +65,7 @@
 
 /datum/sex_action/toy_other_anal/on_finish(mob/living/user, mob/living/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)
-	user.visible_message(span_warning("[user] pulls \the [dildo] from [target]'s butt."))
+	user.visible_message(span_warning("[user] вынимает [dildo] из задницы [target]."))
 
 /datum/sex_action/toy_other_anal/is_finished(mob/living/user, mob/living/target)
 	if(target.sexcon.finished_check())

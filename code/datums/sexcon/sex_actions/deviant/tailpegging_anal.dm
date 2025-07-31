@@ -1,5 +1,5 @@
 /datum/sex_action/tailpegging_anal
-	name = "Peg butt with tail"
+	name = "Трахнуть зад хвостом"
 	check_incapacitated = FALSE
 
 /datum/sex_action/tailpegging_anal/shows_on_menu(mob/living/user, mob/living/target)
@@ -71,4 +71,4 @@
 
 /datum/sex_action/tailpegging_anal/on_finish(mob/living/user, mob/living/target)
 	..()
-	user.visible_message(span_warning("[user] pulls their tail out of [target]'s butt."))
+	user.visible_message(span_warning("[user] освобождая отверстие [target], вываливает свой хвост."))

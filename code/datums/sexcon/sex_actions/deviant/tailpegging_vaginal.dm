@@ -1,5 +1,5 @@
 /datum/sex_action/tailpegging_vaginal
-	name = "Peg cunt with tail"
+	name = "Трахнуть хвостом"
 	check_incapacitated = FALSE
 
 /datum/sex_action/tailpegging_vaginal/shows_on_menu(mob/living/user, mob/living/target)
@@ -71,4 +71,4 @@
 
 /datum/sex_action/tailpegging_vaginal/on_finish(mob/living/user, mob/living/target)
 	..()
-	user.visible_message(span_warning("[user] pulls their tail out of [target]'s cunt."))
+	user.visible_message(span_warning("[user] вынимает отросток из лона [target]."))

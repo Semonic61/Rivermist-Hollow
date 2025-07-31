@@ -1,5 +1,5 @@
 /datum/sex_action/masturbate_penis_over
-	name = "Jerk over them"
+	name = "Вздрочнуть на кого-то"
 	check_same_tile = FALSE
 
 /datum/sex_action/masturbate_penis_over/shows_on_menu(mob/living/user, mob/living/target)
@@ -44,7 +44,7 @@
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
 
 	if(user.sexcon.check_active_ejaculation())
-		user.visible_message(span_love("[user] cums over [target]'s body!"))
+		user.visible_message(span_lovebold("[user] кончает на [target]!"))
 		user.sexcon.cum_onto()
 
 /datum/sex_action/masturbate_penis_over/on_finish(mob/living/user, mob/living/target)

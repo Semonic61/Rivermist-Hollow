@@ -1,5 +1,5 @@
 /datum/sex_action/foot_lick
-	name = "Lick their feet"
+	name = "Вылизать ножки"
 	check_same_tile = FALSE
 	check_incapacitated = FALSE
 

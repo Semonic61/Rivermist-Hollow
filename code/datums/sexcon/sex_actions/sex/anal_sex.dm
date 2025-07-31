@@ -1,5 +1,5 @@
 /datum/sex_action/anal_sex
-	name = "Sodomize them"
+	name = "Анал"
 	stamina_cost = 1.0
 	check_incapacitated = FALSE
 

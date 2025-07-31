@@ -1,5 +1,5 @@
 /datum/sex_action/force_footjob
-	name = "Use their feet to get off"
+	name = "Вздрочнуть чужими ножками"
 	check_same_tile = FALSE
 	require_grab = TRUE
 	stamina_cost = 1.0

@@ -1,5 +1,5 @@
 /datum/sex_action/toy_vagina
-	name = "Pleasure cunt with toy"
+	name = "Игрушка (вагина)"
 
 /datum/sex_action/toy_vagina/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))

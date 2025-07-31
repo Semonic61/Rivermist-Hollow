@@ -1,5 +1,5 @@
 /datum/sex_action/toy_oral
-	name = "Swallow toy"
+	name = "Игрушка (орал)"
 
 /datum/sex_action/toy_oral/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))
@@ -46,7 +46,7 @@
 
 /datum/sex_action/toy_oral/on_finish(mob/living/user, mob/living/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)
-	user.visible_message(span_warning("[user] stops blowing \the [dildo]."))
+	user.visible_message(span_warning("[user] перестает играться с [dildo]."))
 
 /datum/sex_action/toy_oral/is_finished(mob/living/user, mob/living/target)
 	if(user.sexcon.finished_check())

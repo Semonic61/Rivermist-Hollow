@@ -1,5 +1,5 @@
 /datum/sex_action/toy_other_vagina
-	name = "Use toy on their cunt"
+	name = "Трахнуть игрушкой (вагина)"
 
 /datum/sex_action/toy_other_vagina/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))
@@ -78,7 +78,7 @@
 
 /datum/sex_action/toy_other_vagina/on_finish(mob/living/user, mob/living/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)
-	user.visible_message(span_warning("[user] pulls out \the [dildo] from [target]'s cunt."))
+	user.visible_message(span_warning("[user] вытаскивает [dildo] из лона [target]."))
 
 /datum/sex_action/toy_other_vagina/is_finished(mob/living/user, mob/living/target)
 	if(target.sexcon.finished_check())

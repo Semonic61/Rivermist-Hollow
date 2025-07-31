@@ -1,5 +1,5 @@
 /datum/sex_action/titjob
-	name = "Use their tits to get off"
+	name = "Вздрочнуть сиськами"
 
 /datum/sex_action/titjob/shows_on_menu(mob/living/user, mob/living/target)
 	if(!target.erpable && issimple(target))
@@ -37,12 +37,17 @@
 		return FALSE
 	return TRUE
 
+<<<<<<< HEAD
 /datum/sex_action/titjob/on_start(mob/living/user, mob/living/target)
 	..()
 	/*if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))
 		user.visible_message(span_warning("[user] grabs [target] and starts rubbing their body against his cock!"))
 	else*/
 	user.visible_message(span_warning("[user] grabs [target]'s tits and shoves his cock inbetween!"))
+=======
+/datum/sex_action/titjob/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	user.visible_message(span_warning("[user] хватает сиськи [target] и погружает свой хер в ложбинку!"))
+>>>>>>> cbe273c003d48765b13fb12f051d72493aec72f7
 
 /datum/sex_action/titjob/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.sexcon.do_message_signature("[type]"))
@@ -57,9 +62,14 @@
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
 	user.sexcon.handle_passive_ejaculation()
 
+<<<<<<< HEAD
 /datum/sex_action/titjob/on_finish(mob/living/user, mob/living/target)
 	..()
 	/*if(HAS_TRAIT(target, TRAIT_TINY) && !(HAS_TRAIT(user, TRAIT_TINY)))
 		user.visible_message(span_warning("[user] pulls his cock away from [target]'s body."))
 	else*/
 	user.visible_message(span_warning("[user] pulls his cock out from inbetween [target]'s tits."))
+=======
+/datum/sex_action/titjob/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	user.visible_message(span_warning("[user] поднимает хер из ложбинки меж грудей [target]."))
+>>>>>>> cbe273c003d48765b13fb12f051d72493aec72f7

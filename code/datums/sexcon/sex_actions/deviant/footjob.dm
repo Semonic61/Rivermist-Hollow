@@ -1,5 +1,5 @@
 /datum/sex_action/footjob
-	name = "Jerk them off with feet"
+	name = "Вздрочнуть ножками"
 	check_same_tile = FALSE
 	check_incapacitated = FALSE
 

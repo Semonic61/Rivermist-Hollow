@@ -1,5 +1,5 @@
 /datum/sex_action/force_foot_lick
-	name = "Force them to lick your feet"
+	name = "Заставить вылизать ножки"
 	check_same_tile = FALSE
 	require_grab = TRUE
 	stamina_cost = 1.0

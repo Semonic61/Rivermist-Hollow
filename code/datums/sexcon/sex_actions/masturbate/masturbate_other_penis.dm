@@ -1,5 +1,5 @@
 /datum/sex_action/masturbate_penis_other
-	name = "Jerk them off"
+	name = "Вздрочнуть ему"
 	check_same_tile = FALSE
 
 /datum/sex_action/masturbate_penis_other/shows_on_menu(mob/living/user, mob/living/target)

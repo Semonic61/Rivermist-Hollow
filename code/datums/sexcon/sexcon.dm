@@ -272,8 +272,7 @@
 	if(testes && testes.reagents.total_volume <= testes.reagents.maximum_volume / 4)
 		to_chat(user, span_info("Damn, my [pick(testes.altnames)] are pretty dry now."))
 	after_ejaculation()
-	if(!oral)
-		after_intimate_climax()
+	after_intimate_climax()
 
 /datum/sex_controller/proc/ejaculate()
 	if(!issimple(user))
@@ -329,7 +328,24 @@
 /datum/sex_controller/proc/after_intimate_climax()
 	if(user == target)
 		return
-
+	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
+			if(!user.mob_timers["cumtri"])
+				user.mob_timers["cumtri"] = world.time
+				user.adjust_triumphs(1)
+				user.add_stress(/datum/stressevent/cummax)
+				to_chat(user, span_love("Our sex was a true TRIUMPH!"))
+		else
+			user.add_stress(/datum/stressevent/cumok)
+	if(!issimple(user) && user.mind)
+		log_combat(target, user, "Came inside [user]")
+		if(HAS_TRAIT(user, TRAIT_GOODLOVER))
+			if(!target.mob_timers["cumtri"])
+				target.mob_timers["cumtri"] = world.time
+				target.adjust_triumphs(1)
+				target.add_stress(/datum/stressevent/cummax)
+				to_chat(target, span_love("Our sex was a true TRIUMPH!"))
+	else
+		target.add_stress(/datum/stressevent/cumok)
 /datum/sex_controller/proc/just_ejaculated()
 	return (last_ejaculation_time + 2 SECONDS >= world.time)
 
@@ -668,11 +684,11 @@
 	dat += "<center>| <a href='?src=[REF(src)];task=toggle_finished'>[do_until_finished ? "UNTIL IM FINISHED" : "UNTIL I STOP"]</a> |</center>"
 	dat += "<center><a href='?src=[REF(src)];task=set_arousal'>SET AROUSAL</a> | <a href='?src=[REF(src)];task=freeze_arousal'>[arousal_frozen ? "UNFREEZE AROUSAL" : "FREEZE AROUSAL"]</a></center>"
 	if(target == user)
-		dat += "<center>Doing unto yourself</center>"
+		dat += "<center>Самоудовлетворение</center>"
 	else
-		dat += "<center>Doing unto [target]'s</center>"
+		dat += "<center>Соитие с [target]</center>"
 	if(current_action)
-		dat += "<center><a href='?src=[REF(src)];task=stop'>Stop</a></center>"
+		dat += "<center><a href='?src=[REF(src)];task=stop'>Прекратить</a></center>"
 	else
 		dat += "<br>"
 	dat += "<table width='100%'><td width='50%'></td><td width='50%'></td><tr>"
@@ -724,10 +740,14 @@
 			adjust_arousal_manual(1)
 		if("manual_arousal_down")
 			adjust_arousal_manual(-1)
+		if("manual_arousal_up")
+			adjust_arousal_manual(1)
+		if("manual_arousal_down")
+			adjust_arousal_manual(-1)
 		if("toggle_finished")
 			do_until_finished = !do_until_finished
 		if("set_arousal")
-			var/amount = input(user, "Value above 120 will immediately cause orgasm!", "Set Arousal", arousal) as num
+			var/amount = input(user, "Значение выше 120 приведет к немедленному экстазу!", "Задать возбуждение", arousal) as num
 			set_arousal(amount)
 		if("freeze_arousal")
 			arousal_frozen = !arousal_frozen
@@ -906,24 +926,35 @@
 /datum/sex_controller/proc/get_force_string()
 	switch(force)
 		if(SEX_FORCE_LOW)
-			return "<font color='#eac8de'>GENTLE</font>"
+			return "<font color='#eac8de'>НЕЖНО</font>"
 		if(SEX_FORCE_MID)
-			return "<font color='#e9a8d1'>FIRM</font>"
+			return "<font color='#e9a8d1'>НАСТОЙЧИВО</font>"
 		if(SEX_FORCE_HIGH)
-			return "<font color='#f05ee1'>ROUGH</font>"
+			return "<font color='#f05ee1'>ГРУБО</font>"
 		if(SEX_FORCE_EXTREME)
-			return "<font color='#d146f5'>BRUTAL</font>"
+			return "<font color='#d146f5'>ЖЕСТОКО</font>"
 
 /datum/sex_controller/proc/get_speed_string()
 	switch(speed)
 		if(SEX_SPEED_LOW)
-			return "<font color='#eac8de'>SLOW</font>"
+			return "<font color='#eac8de'>МЕДЛЕННО</font>"
 		if(SEX_SPEED_MID)
-			return "<font color='#e9a8d1'>STEADY</font>"
+			return "<font color='#e9a8d1'>ПОСТЕПЕННО</font>"
 		if(SEX_SPEED_HIGH)
-			return "<font color='#f05ee1'>QUICK</font>"
+			return "<font color='#f05ee1'>БЫСТРО</font>"
 		if(SEX_SPEED_EXTREME)
-			return "<font color='#d146f5'>UNRELENTING</font>"
+			return "<font color='#d146f5'>НЕУМОЛИМО</font>"
+
+/datum/sex_controller/proc/get_manual_arousal_string()
+	switch(manual_arousal)
+		if(SEX_MANUAL_AROUSAL_DEFAULT)
+			return "<font color='#eac8de'>NATURAL</font>"
+		if(SEX_MANUAL_AROUSAL_UNAROUSED)
+			return "<font color='#e9a8d1'>UNAROUSED</font>"
+		if(SEX_MANUAL_AROUSAL_PARTIAL)
+			return "<font color='#f05ee1'>PARTIALLY ERECT</font>"
+		if(SEX_MANUAL_AROUSAL_FULL)
+			return "<font color='#d146f5'>FULLY ERECT</font>"
 
 /datum/sex_controller/proc/get_manual_arousal_string()
 	switch(manual_arousal)
@@ -941,11 +972,11 @@
 		if(SEX_FORCE_LOW)
 			return pick(list("gently", "carefully", "tenderly", "gingerly", "delicately", "lazingly"))
 		if(SEX_FORCE_MID)
-			return pick(list("firmly", "vigorously", "eagerly", "steadily", "intently"))
+			return pick(list("решительно", "энергично", "страстно", "уверенно", "увлеченно"))
 		if(SEX_FORCE_HIGH)
-			return pick(list("roughly", "carelessly", "forcefully", "fervently", "fiercely"))
+			return pick(list("грубо", "небрежно", "жестко", "пылко", "свирепо"))
 		if(SEX_FORCE_EXTREME)
-			return pick(list("brutally", "violently", "relentlessly", "savagely", "mercilessly"))
+			return pick(list("жестоко", "неистово", "неумолимо", "свирепо", "безжалостно"))
 
 /datum/sex_controller/proc/spanify_force(string)
 	switch(force)

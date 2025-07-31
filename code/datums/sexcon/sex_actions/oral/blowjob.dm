@@ -1,5 +1,5 @@
 /datum/sex_action/blowjob
-	name = "Suck them off"
+	name = "Отсосать"
 	check_same_tile = FALSE
 	check_incapacitated = FALSE
 	gags_user = TRUE
