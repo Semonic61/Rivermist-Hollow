@@ -212,7 +212,7 @@
 
 /datum/sex_controller/proc/cum_into(oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE, girljuice = FALSE)
 	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
-	if(target.mind)
+	/*if(target.mind)
 		if(!issimple(target))
 			log_combat(user, target, "Came inside [target]")
 			if(HAS_TRAIT(target, TRAIT_GOODLOVER))
@@ -233,7 +233,7 @@
 					target.add_stress(/datum/stressevent/cummax)
 					to_chat(target, span_love("Our sex was a true TRIUMPH!"))
 				else
-					target.add_stress(/datum/stressevent/cumok)
+					target.add_stress(/datum/stressevent/cumok)*/
 	if(girljuice)
 		if(!issimple(target))
 			target.reagents.add_reagent(/datum/reagent/water/pussjuice, 10)
@@ -329,6 +329,24 @@
 /datum/sex_controller/proc/after_intimate_climax()
 	if(user == target)
 		return
+	if(HAS_TRAIT(target, TRAIT_GOODLOVER))
+		if(!user.mob_timers["cumtri"])
+			user.mob_timers["cumtri"] = world.time
+			user.adjust_triumphs(1)
+			user.add_stress(/datum/stressevent/cummax)
+			to_chat(user, span_love("Our sex was a true TRIUMPH!"))
+		else
+			user.add_stress(/datum/stressevent/cumok)
+	if(!issimple(user) && user.mind)
+		log_combat(target, user, "Came inside [user]")
+		if(HAS_TRAIT(user, TRAIT_GOODLOVER))
+			if(!target.mob_timers["cumtri"])
+				target.mob_timers["cumtri"] = world.time
+				target.adjust_triumphs(1)
+				target.add_stress(/datum/stressevent/cummax)
+				to_chat(target, span_love("Our sex was a true TRIUMPH!"))
+	else
+		target.add_stress(/datum/stressevent/cumok)
 
 /datum/sex_controller/proc/just_ejaculated()
 	return (last_ejaculation_time + 2 SECONDS >= world.time)
@@ -585,6 +603,8 @@
 /datum/sex_controller/proc/handle_cock_milking(mob/living/carbon/human/milker)
 	if(arousal < ACTIVE_EJAC_THRESHOLD)
 		return
+	if(is_spent())
+		return
 	if(!can_ejaculate())
 		return FALSE
 	ejaculate_container(milker.get_active_held_item())
@@ -720,6 +740,10 @@
 			adjust_force(1)
 		if("force_down")
 			adjust_force(-1)
+		if("manual_arousal_up")
+			adjust_arousal_manual(1)
+		if("manual_arousal_down")
+			adjust_arousal_manual(-1)
 		if("manual_arousal_up")
 			adjust_arousal_manual(1)
 		if("manual_arousal_down")
