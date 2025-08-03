@@ -44,7 +44,7 @@
 	craftdiff = 3
 
 /datum/crafting_recipe/roguetown/sewing/athletic_leotard
-	name = "athletic_leotard (1 fibers, 1 silk)"
+	name = "athletic leotard (1 fibers, 1 silk)"
 	result = list(/obj/item/undies/athletic_leotard)
 	reqs = list(/obj/item/natural/silk = 1,
 				/obj/item/natural/fibers = 1)
