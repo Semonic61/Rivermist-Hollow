@@ -25,6 +25,10 @@
 		if(!H.underwear)
 			if(!get_location_accessible(H, BODY_ZONE_PRECISE_GROIN))
 				return
+			if(!undies_feature) //RMH Addition Start
+				var/datum/bodypart_feature/underwear/undies_new = new /datum/bodypart_feature/underwear()
+				undies_new.set_accessory_type(sprite_acc, color, H)
+				undies_feature = undies_new //RMH Addition End
 			user.visible_message(span_notice("[user] tries to put [src] on [H]..."))
 			if(do_after(user, 50, needhand = 1, target = H))
 				var/obj/item/bodypart/chest = H.get_bodypart(BODY_ZONE_CHEST)
