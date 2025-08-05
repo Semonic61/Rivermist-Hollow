@@ -20,6 +20,9 @@ map dun_manor
 endmap
 
 map dun_world
+endmap
+
+map hsector
 	default
 	votable
 endmap
