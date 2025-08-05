@@ -34,7 +34,7 @@
 	added_traits = list(TRAIT_LIGHT_STEP)
 	added_skills = list(list(/datum/skill/misc/sneaking, 3, 6))
 
-/datum/virtue/utility/resident
+/*/datum/virtue/utility/resident
 	name = "Resident"
 	desc = "I'm a resident of Twilight Axis. I have an account in the city's treasury and a home in the city."
 	added_traits = list(TRAIT_RESIDENT)
@@ -84,7 +84,7 @@
 				if(length(possible_spawns))
 					var/turf/spawn_loc = pick(possible_spawns)
 					recipient.forceMove(spawn_loc)
-					to_chat(recipient, span_notice("As a resident of Twilight Axis, you find yourself in the local tavern."))
+					to_chat(recipient, span_notice("As a resident of Twilight Axis, you find yourself in the local tavern."))*/
 
 /datum/virtue/utility/failed_squire
 	name = "Failed Squire"
