@@ -13,7 +13,10 @@
 		tag = tag + "_f"
 	if(is_species(owner,/datum/species/dwarf))
 		tag = tag + "_dwarf"
-	
+	if(is_species(owner,/datum/species/elf) && owner.gender == MALE)
+		tag = tag + "_f"
+		pixel_y = -2
+
 	return tag
 
 /datum/sprite_accessory/legwear/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
