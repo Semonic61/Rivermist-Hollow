@@ -16,6 +16,7 @@
 	var/covers_breasts = FALSE
 	sewrepair = TRUE
 	salvage_result = /obj/item/natural/cloth
+	var/sprite_acc = /datum/sprite_accessory/legwear/stockings
 
 /obj/item/legwears/attack(mob/M, mob/user, def_zone)
 	if(ishuman(M))
@@ -23,6 +24,10 @@
 		if(!H.legwear_socks)
 			if(!get_location_accessible(H, BODY_ZONE_PRECISE_GROIN))
 				return
+			if(!legwears_feature)
+				var/datum/bodypart_feature/legwear/legwear_new = new /datum/bodypart_feature/legwear()
+				legwear_new.set_accessory_type(sprite_acc, color, H)
+				legwears_feature = legwear_new
 			user.visible_message(span_notice("[user] tries to put [src] on [H]..."))
 			if(do_after(user, 50, needhand = 1, target = H))
 				var/obj/item/bodypart/chest = H.get_bodypart(BODY_ZONE_CHEST)
