@@ -2577,6 +2577,7 @@
 #include "modular_rmh\code\game\objects\items\lewd\modules\jobs\job_types\roguetown\vampire\vampthrall.dm"
 #include "modular_rmh\modular\helpers\lewd_helpers.dm"
 #include "modular_rmh\modular\selectable_moanpacks\moanpacks_defs.dm"
+#include "modular_rmh\modular\stockings\supply.dm"
 #include "modular_rmh\modular\stockings\undies.dm"
 #include "modular_stonehedge\code\datums\status_effects\debuffs.dm"
 #include "modular_stonehedge\code\datums\traits\unspecial.dm"
