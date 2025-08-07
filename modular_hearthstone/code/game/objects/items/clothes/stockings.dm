@@ -22,7 +22,9 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(!H.legwear_socks)
-			if(!get_location_accessible(H, BODY_ZONE_PRECISE_GROIN))
+			if(!get_location_accessible(H, BODY_ZONE_PRECISE_L_FOOT))
+				return
+			if(!get_location_accessible(H, BODY_ZONE_PRECISE_R_FOOT))
 				return
 			if(!legwears_feature)
 				var/datum/bodypart_feature/legwear/legwear_new = new /datum/bodypart_feature/legwear()
@@ -107,3 +109,32 @@
 
 /obj/item/legwears/fishnet/purple
 	color = "#664357"
+
+//CRAFTING
+
+/datum/crafting_recipe/roguetown/sewing/undies
+	name = "briefs (1 fibers, 1 cloth)"
+	result = list(/obj/item/undies)
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/sewing/stockings
+	name = "stockings (2 fibers, 2 cloth)"
+	result = list(/obj/item/legwears)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 2)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/sewing/silk_stockings
+	name = "silk stockings (2 silk, 2 fibers)"
+	result = list(/obj/item/undies/panties)
+	reqs = list(/obj/item/natural/silk = 2,
+				/obj/item/natural/fibers = 2)
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/sewing/fishnet
+	name = "fishnet (4 fibers)"
+	result = list(/obj/item/legwears/fishnet)
+	reqs = list(/obj/item/natural/fibers = 4)
+	craftdiff = 2
