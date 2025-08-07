@@ -62,6 +62,7 @@
 	name = "silk stockings"
 	desc = "A legwear made just for the pure aesthetics. Made out of thin silk. Popular among nobles."
 	icon_state = "silk"
+	sprite_acc = /datum/sprite_accessory/legwear/stockings/silk
 
 /obj/item/legwears/silk/random/Initialize()
 	. = ..()
@@ -88,6 +89,7 @@
 	name = "fishnet stockings"
 	desc = "A legwear popular among wenches."
 	icon_state = "fishnet"
+	sprite_acc = /datum/sprite_accessory/legwear/stockings/fishnet
 
 /obj/item/legwears/fishnet/random/Initialize()
 	. = ..()
