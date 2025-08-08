@@ -22,7 +22,9 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(!H.legwear_socks)
-			if(!get_location_accessible(H, BODY_ZONE_PRECISE_GROIN))
+			if(!get_location_accessible(H, BODY_ZONE_PRECISE_L_FOOT))
+				return
+			if(!get_location_accessible(H, BODY_ZONE_PRECISE_R_FOOT))
 				return
 			if(!legwears_feature)
 				var/datum/bodypart_feature/legwear/legwear_new = new /datum/bodypart_feature/legwear()
