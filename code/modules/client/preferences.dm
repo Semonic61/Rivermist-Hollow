@@ -1632,27 +1632,35 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					if(voicetype_input)
 						voice_type = voicetype_input
 						to_chat(user, "<font color='red'>Your character will now vocalize with a [lowertext(voice_type)] affect.</font>")
+						moan_selection = MOANPACK_TYPE_DEF //RMH ADD: Moanpack selection (down below)
 				
 				if ("moanselection")
-					to_chat(user, "<font color='yellow'>This option allws you to manually choose your character's moanpack. Leave it on 'default' to automatically use your voice type and species' moanpack.</font>")
-					var moanpack_type_input = input(user, "Choose your character's moanpack type", "Moanpack Type") as null|anything in GLOB.moanpack_types_list
+					to_chat(user, "<font color='yellow'>This option allws you to customize your character's moanpack, dependant on the voice type. Leave it on 'default' to automatically use your voice type and species' moanpack.</font>")
+					var moanpack_type_input = input(user, "Choose your character's moanpack type", "Moanpack Type") as null|anything in list(MOANPACK_TYPE_DEF, "Custom")
 					generate_selectable_moanpacks()
 					if(moanpack_type_input)
 						if(moanpack_type_input == MOANPACK_TYPE_DEF)
 							moan_selection = MOANPACK_TYPE_DEF
 							to_chat(user, "<font color='red'>You will use your default species' moanpack.</font>")
-						else if(moanpack_type_input == MOANPACK_TYPE_MALE)
-							generate_selectable_moanpacks()
-							var moanpack_sel_input = input(user, "Choose your character's moanpack", "Moanpack") as null|anything in GLOB.selectable_moanpacks_male
-							if(moanpack_sel_input)
-								moan_selection = moanpack_sel_input
-								to_chat(user, "<font color='red'>Your character will now use the '[lowertext(moanpack_sel_input)]' moanpack.</font>")
-						else if(moanpack_type_input == MOANPACK_TYPE_FEMALE)
-							generate_selectable_moanpacks()
-							var moanpack_sel_input = input(user, "Choose your character's moanpack", "Moanpack") as null|anything in GLOB.selectable_moanpacks_female
-							if(moanpack_sel_input)
-								moan_selection = moanpack_sel_input
-								to_chat(user, "<font color='red'>Your character will now use the '[lowertext(moanpack_sel_input)]' moanpack.</font>")
+						else if(moanpack_type_input == "Custom")
+							if (user.client.prefs.voice_type == VOICE_TYPE_MASC)
+								generate_selectable_moanpacks()
+								var moanpack_sel_input = input(user, "Choose your character's moanpack", "Moanpack") as null|anything in GLOB.selectable_moanpacks_male
+								if(moanpack_sel_input)
+									moan_selection = moanpack_sel_input
+									to_chat(user, "<font color='red'>Your character will now use the '[lowertext(moanpack_sel_input)]' moanpack.</font>")
+							else
+								generate_selectable_moanpacks()
+								var moanpack_sel_input = input(user, "Choose your character's moanpack", "Moanpack") as null|anything in GLOB.selectable_moanpacks_female
+								if(moanpack_sel_input)
+									moan_selection = moanpack_sel_input
+									to_chat(user, "<font color='red'>Your character will now use the '[lowertext(moanpack_sel_input)]' moanpack.</font>")
+							/*else
+								generate_selectable_moanpacks()
+								var moanpack_sel_input = input(user, "Choose your character's moanpack", "Moanpack") as null|anything in GLOB.selectable_moanpacks
+								if(moanpack_sel_input)
+									moan_selection = moanpack_sel_input
+									to_chat(user, "<font color='red'>Your character will now use the '[lowertext(moanpack_sel_input)]' moanpack.</font>")*/
 
 				if("taur_type")
 					var/list/species_taur_list = pref_species.get_taur_list()
