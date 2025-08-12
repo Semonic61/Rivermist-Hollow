@@ -1,5 +1,5 @@
 <p align="center">
- < <h1 align="center">Rivermist Hollw</h1>
+<h1 align="center">Rivermist Hollw</h1>
 
   ## LICENSE
 Original Fork Originates from [commit c28b351807bad950d2b323ada048190844bbda32](https://github.com/tgstation/tgstation/commit/c28b351807bad950d2b323ada048190844bbda32).
