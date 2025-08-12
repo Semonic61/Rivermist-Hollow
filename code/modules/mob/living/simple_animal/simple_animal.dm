@@ -199,8 +199,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 /mob/living/simple_animal/Destroy()
 	our_cells = null
 	GLOB.simple_animals[AIStatus] -= src
-	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
-		SSnpcpool.currentrun -= src
+	SSnpcpool.currentrun -= src
 
 	if(nest)
 		nest.spawned_mobs -= src
@@ -947,7 +946,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 /mob/living/simple_animal/proc/update_grid()
 	var/turf/our_turf = get_turf(src)
-	if(isnull(our_turf))
+	if(isnull(our_turf) || isnull(our_cells))
 		return
 
 	var/list/cell_collections = our_cells.recalculate_cells(our_turf)

@@ -96,7 +96,7 @@
 	. = ..()
 	if(isliving(firer) && (istype(fired_from, /obj/item/gun/ballistic/twilight_firearm) || istype(fired_from, /obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock)))
 		var/mob/living/M = firer
-		var/obj/item/gun/G = fired_from
+//		var/obj/item/gun/G = fired_from
 		var/skill = (M?.mind ? M.get_skill_level(/datum/skill/combat/twilight_firearms) : 1)
 		if(isliving(target))
 			var/mob/living/T = target
