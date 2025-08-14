@@ -232,7 +232,7 @@
 		reagent_to_make = /datum/reagent/consumable/cum/sterile
 		reagents.clear_reagents()
 		reagents.add_reagent(reagent_to_make, reagents.maximum_volume)
-/*
+
 /obj/item/organ/butt
 	name = "butt"
 	icon = 'modular_stonehedge/licensed-eaglephntm/icons/obj/surgery.dmi'
@@ -243,7 +243,6 @@
 	organ_dna_type = /datum/organ_dna/butt
 	accessory_type = /datum/sprite_accessory/butt/pair
 	organ_size = DEFAULT_BUTT_SIZE
-*/
 
 /obj/item/organ/filling_organ/testicles/internal
 	name = "internal testicles"

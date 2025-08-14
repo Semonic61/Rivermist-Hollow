@@ -66,6 +66,24 @@ GLOBAL_LIST_INIT(named_belly_sizes, list(
 	"large" = 3,
 ))
 
+GLOBAL_LIST_INIT(named_butt_sizes, list(
+	"flat" = 0,
+	"small" = 1,
+	"medium" = 2,
+	"large" = 3,
+	"massive" = 4,
+))
+
+//unselectables included.
+GLOBAL_LIST_INIT(uns_named_butt_sizes, list(
+	"flat" = 0,
+	"small" = 1,
+	"medium" = 2,
+	"large" = 3,
+	"massive" = 4,
+	"enormous" = 5,
+))
+
 
 GLOBAL_LIST_INIT(customizer_choices, build_customizer_choices())
 GLOBAL_LIST_INIT(customizers, build_customizers())
