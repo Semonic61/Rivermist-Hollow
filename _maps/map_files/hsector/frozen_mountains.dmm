@@ -107,11 +107,8 @@
 	first_time_text = "The Dwarven Smeltery"
 	})
 "aG" = (
-/mob/living/simple_animal/hostile/retaliate/rogue/direbear{
-	dir = 1
-	},
-/turf/open/floor/rogue/snow,
-/area/rogue/outdoors/mountains/decap)
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/shelter/mountains)
 "aH" = (
 /turf/open/floor/rogue/tile/checker,
 /area/rogue/indoors/town/manor)
@@ -1304,6 +1301,9 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
+"fM" = (
+/turf/open/floor/rogue/snowrough,
+/area/rogue/indoors/shelter/mountains)
 "fO" = (
 /obj/structure/chair/bench/couchamagenta/r,
 /turf/open/floor/rogue/tile/harem2,
@@ -1551,6 +1551,10 @@
 /area/rogue/outdoors/town/dwarf{
 	first_time_text = "The Dwarven Smeltery"
 	})
+"gY" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/direbear,
+/turf/open/floor/rogue/snow,
+/area/rogue/outdoors/mountains/decap)
 "he" = (
 /obj/structure/bed/rogue/inn/double{
 	dir = 1
@@ -1850,6 +1854,9 @@
 /obj/structure/flora/grass/green,
 /turf/open/floor/rogue/snowrough,
 /area/rogue/outdoors/mountains/decap)
+"iH" = (
+/turf/open/floor/rogue/snowpatchy,
+/area/rogue/indoors/shelter/mountains)
 "iL" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -3278,6 +3285,10 @@
 	},
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/town/manor)
+"pX" = (
+/obj/effect/landmark/quest_spawner/hard,
+/turf/open/floor/rogue/snowpatchy,
+/area/rogue/outdoors/mountains/decap)
 "qd" = (
 /obj/effect/landmark/vteleportsending,
 /turf/open/floor/rogue/metal,
@@ -3377,6 +3388,9 @@
 /obj/structure/bookcase,
 /turf/open/floor/rogue/tile/brownbrick,
 /area/rogue/indoors/town/manor)
+"qE" = (
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/cave)
 "qF" = (
 /obj/effect/decal/cleanable/debris/stony,
 /turf/open/floor/rogue/concrete,
@@ -4329,7 +4343,6 @@
 /area/rogue/indoors/cave/underdark)
 "va" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/rogueweapon/sword/long/vlord,
 /turf/open/floor/rogue/tile/harem1,
 /area/rogue/indoors/town/manor)
 "vb" = (
@@ -5405,6 +5418,10 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/under/town/basement/keep)
+"zU" = (
+/obj/effect/landmark/quest_spawner/medium,
+/turf/open/floor/rogue/snowrough,
+/area/rogue/outdoors/mountains/decap)
 "zV" = (
 /obj/effect/decal/cleanable/dreamfiend_ichor,
 /obj/effect/decal/cleanable/debris/stony,
@@ -9243,6 +9260,10 @@
 "SF" = (
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/shelter/mountains)
+"SI" = (
+/obj/effect/landmark/quest_spawner/medium,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cave)
 "SJ" = (
 /turf/closed/wall/mineral/rogue/pipe{
 	icon_state = "iron_line"
@@ -9281,6 +9302,10 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/town/basement/keep)
+"SZ" = (
+/obj/effect/landmark/quest_spawner/hard,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/shelter/mountains)
 "Ta" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -10914,7 +10939,7 @@
 	})
 "ZW" = (
 /obj/effect/decal/remains/wolf,
-/turf/open/floor/rogue/cobblerock,
+/turf/open/floor/rogue/dirt,
 /area/rogue/indoors/shelter/mountains)
 "ZX" = (
 /obj/machinery/light/rogue/torchholder/r,
@@ -59410,8 +59435,8 @@ QL
 QL
 QL
 QL
-oK
-oK
+aG
+aG
 mE
 mE
 mE
@@ -59466,7 +59491,7 @@ Oz
 Oz
 Oz
 QL
-AN
+zU
 AN
 Jc
 Jc
@@ -59539,8 +59564,8 @@ QL
 QL
 QL
 mE
-wi
-wi
+aG
+aG
 wi
 mE
 mE
@@ -59669,7 +59694,7 @@ QL
 mE
 mE
 mE
-oK
+aG
 wi
 wi
 mE
@@ -60060,7 +60085,7 @@ mE
 mE
 mE
 oK
-oK
+aG
 mE
 mE
 mE
@@ -60189,8 +60214,8 @@ mE
 mE
 mE
 mE
-oK
-wi
+aG
+aG
 mE
 mE
 mE
@@ -60578,7 +60603,7 @@ mE
 mE
 mE
 wi
-wi
+aG
 mE
 mE
 mE
@@ -60706,7 +60731,7 @@ mE
 mE
 mE
 mE
-wi
+aG
 oK
 mE
 mE
@@ -60834,8 +60859,8 @@ mE
 mE
 mE
 mE
-oK
-wi
+aG
+aG
 mE
 mE
 mE
@@ -60963,7 +60988,7 @@ mE
 mE
 mE
 mE
-wi
+aG
 oK
 mE
 mE
@@ -61348,7 +61373,7 @@ mE
 mE
 mE
 oK
-oK
+aG
 ym
 mE
 mE
@@ -61476,8 +61501,8 @@ mE
 mE
 mE
 mE
-oK
-oK
+aG
+aG
 oK
 mE
 mE
@@ -62772,7 +62797,7 @@ mE
 mE
 mE
 mE
-oK
+aG
 wi
 mE
 mE
@@ -62901,7 +62926,7 @@ mE
 mE
 mE
 mE
-oK
+aG
 wi
 mE
 mE
@@ -63030,7 +63055,7 @@ mE
 mE
 mE
 mE
-oK
+aG
 wi
 mE
 mE
@@ -63159,7 +63184,7 @@ mE
 mE
 mE
 mE
-oK
+aG
 oK
 mE
 mE
@@ -63802,8 +63827,8 @@ mE
 oK
 oK
 wi
-wi
-oK
+aG
+aG
 mE
 mE
 mE
@@ -63930,8 +63955,8 @@ mE
 oK
 oK
 wi
-wi
-oK
+aG
+aG
 mE
 mE
 mE
@@ -64059,7 +64084,7 @@ mE
 oK
 wi
 wi
-oK
+aG
 mE
 mE
 mE
@@ -64188,7 +64213,7 @@ oK
 wi
 wi
 oK
-oK
+aG
 mE
 mE
 mE
@@ -64313,7 +64338,7 @@ QL
 QL
 QL
 mE
-oK
+fM
 wi
 oK
 oK
@@ -64442,8 +64467,8 @@ QL
 QL
 QL
 mE
-wi
-wi
+fM
+fM
 mE
 mE
 mE
@@ -64571,8 +64596,8 @@ QL
 QL
 QL
 QL
-oK
-oK
+fM
+fM
 mE
 mE
 mE
@@ -64700,7 +64725,7 @@ QL
 QL
 QL
 QL
-oK
+fM
 mE
 mE
 mE
@@ -66365,8 +66390,8 @@ wi
 wi
 wi
 wi
-oK
-oK
+aG
+aG
 mE
 QL
 QL
@@ -66494,9 +66519,9 @@ mE
 mE
 mE
 mE
-oK
-oK
-oK
+aG
+aG
+aG
 QL
 QL
 QL
@@ -66624,8 +66649,8 @@ mE
 mE
 mE
 mE
-wi
-oK
+aG
+aG
 QL
 QL
 QL
@@ -68844,8 +68869,8 @@ mE
 mE
 mE
 oK
-oK
-oK
+aG
+aG
 mE
 mE
 "}
@@ -68974,7 +68999,7 @@ mE
 oK
 oK
 oK
-oK
+aG
 mE
 mE
 "}
@@ -69100,10 +69125,10 @@ mE
 mE
 mE
 oK
+wi
 oK
-oK
-oK
-oK
+wi
+aG
 mE
 mE
 "}
@@ -69212,8 +69237,8 @@ QL
 QL
 QL
 mE
-oK
-oK
+fM
+fM
 mE
 mE
 mE
@@ -69229,8 +69254,8 @@ mE
 mE
 mE
 oK
-oK
-oK
+wi
+SZ
 oK
 oK
 mE
@@ -69341,8 +69366,8 @@ mE
 mE
 mE
 mE
-oK
-oK
+fM
+aG
 mE
 mE
 mE
@@ -69357,8 +69382,8 @@ mE
 mE
 mE
 mE
-oK
-oK
+wi
+wi
 oK
 oK
 mE
@@ -69471,8 +69496,8 @@ mE
 mE
 mE
 mE
-oK
-oK
+aG
+aG
 mE
 mE
 mE
@@ -69601,7 +69626,7 @@ mE
 mE
 mE
 oK
-oK
+wi
 mE
 mE
 mE
@@ -69617,7 +69642,7 @@ mE
 mE
 mE
 oK
-oK
+wi
 mE
 mE
 mE
@@ -69731,7 +69756,7 @@ mE
 mE
 mE
 oK
-oK
+wi
 mE
 mE
 mE
@@ -69743,9 +69768,9 @@ mE
 mE
 mE
 mE
-oK
-oK
-oK
+aG
+aG
+wi
 oK
 mE
 mE
@@ -69859,9 +69884,9 @@ mE
 mE
 mE
 mE
-oK
-oK
-oK
+aG
+wi
+wi
 mE
 mE
 mE
@@ -69872,9 +69897,9 @@ mE
 mE
 mE
 oK
-oK
-oK
-oK
+aG
+wi
+wi
 oK
 mE
 mE
@@ -69989,8 +70014,8 @@ mE
 mE
 mE
 mE
-oK
-oK
+aG
+wi
 oK
 mE
 mE
@@ -70000,9 +70025,9 @@ mE
 mE
 mE
 oK
-oK
-oK
-oK
+aG
+aG
+wi
 oK
 oK
 mE
@@ -70119,8 +70144,8 @@ mE
 mE
 mE
 mE
-oK
-oK
+wi
+wi
 oK
 mE
 mE
@@ -70128,8 +70153,8 @@ mE
 mE
 oK
 oK
-oK
-oK
+wi
+aG
 oK
 oK
 mE
@@ -70249,15 +70274,15 @@ mE
 mE
 mE
 oK
-oK
+wi
 oK
 mE
 mE
 mE
 oK
 oK
-oK
-oK
+wi
+wi
 oK
 oK
 mE
@@ -70363,9 +70388,9 @@ Lb
 Lb
 Lb
 mE
-oK
-oK
-oK
+aG
+wi
+wi
 oK
 mE
 mE
@@ -70373,6 +70398,8 @@ mE
 mE
 mE
 oK
+aG
+aG
 oK
 oK
 oK
@@ -70381,9 +70408,7 @@ oK
 oK
 oK
 oK
-oK
-oK
-oK
+aG
 oK
 oK
 mE
@@ -70492,6 +70517,16 @@ EM
 Lb
 Lb
 Lb
+aG
+oK
+oK
+wi
+wi
+wi
+wi
+oK
+oK
+aG
 oK
 oK
 oK
@@ -70500,19 +70535,9 @@ oK
 oK
 oK
 oK
-oK
-oK
-oK
-oK
-oK
-oK
-oK
-oK
-oK
-oK
-oK
-oK
-oK
+aG
+aG
+aG
 oK
 mE
 mE
@@ -70585,9 +70610,9 @@ QL
 QL
 mE
 mE
-oK
-oK
-oK
+fM
+aG
+aG
 oK
 mE
 mE
@@ -70627,7 +70652,7 @@ mE
 mE
 mE
 oK
-oK
+aG
 oK
 mE
 mE
@@ -70636,11 +70661,11 @@ mE
 mE
 mE
 mE
-oK
-oK
-oK
-oK
-oK
+wi
+wi
+aG
+aG
+wi
 mE
 mE
 mE
@@ -70712,10 +70737,10 @@ QL
 QL
 QL
 QL
-oK
-oK
-wi
-wi
+fM
+fM
+iH
+aG
 oK
 mE
 mE
@@ -70766,7 +70791,7 @@ mE
 mE
 mE
 mE
-oK
+aG
 oK
 mE
 mE
@@ -70841,10 +70866,10 @@ QL
 QL
 QL
 QL
-oK
-wi
-wi
-oK
+fM
+iH
+aG
+aG
 mE
 mE
 mE
@@ -72612,7 +72637,7 @@ dT
 QL
 lg
 AN
-ml
+pX
 ml
 aD
 lg
@@ -73121,7 +73146,7 @@ QL
 QL
 QL
 QL
-QL
+gY
 QL
 QL
 QL
@@ -73143,7 +73168,7 @@ QL
 QL
 QL
 QL
-aG
+QL
 QL
 QL
 QL
@@ -75527,8 +75552,8 @@ WO
 Oz
 Oz
 WO
-WO
-WO
+lY
+lY
 Oz
 Oz
 WO
@@ -75655,8 +75680,8 @@ mE
 mE
 mE
 mE
-mE
-mE
+qE
+qE
 mE
 mE
 Oz
@@ -75783,9 +75808,9 @@ mE
 mE
 mE
 mE
-mE
-mE
-mE
+qE
+qE
+Fr
 mE
 mE
 mE
@@ -75912,14 +75937,14 @@ mE
 mE
 mE
 mE
+qE
+Fr
+Fr
+XI
 mE
 mE
-mE
-mE
-mE
-mE
-mE
-mE
+XI
+qE
 mE
 mE
 mE
@@ -76041,18 +76066,18 @@ mE
 mE
 mE
 mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
+XI
+XI
+XI
+Fr
+XI
+XI
+XI
+qE
+qE
+qE
+qE
+XI
 mE
 mE
 mE
@@ -76173,15 +76198,15 @@ mE
 mE
 mE
 mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
+qE
+qE
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+qE
 mE
 mE
 mE
@@ -76303,15 +76328,15 @@ mE
 mE
 mE
 mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
+qE
+qE
+qE
+Fr
+XI
+SI
+Fr
+qE
+XI
 mE
 mE
 mE
@@ -76433,13 +76458,13 @@ mE
 mE
 mE
 mE
-mE
-mE
-mE
-mE
-mE
-mE
-mE
+qE
+qE
+XI
+qE
+qE
+Fr
+XI
 mE
 mE
 mE
@@ -76566,8 +76591,8 @@ mE
 mE
 mE
 mE
-mE
-mE
+qE
+XI
 mE
 mE
 mE
