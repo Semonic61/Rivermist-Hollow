@@ -165,11 +165,14 @@
 			else if(H.dna.species.soundpack_m)
 				possible_sounds = H.dna.species.soundpack_m.get_sound(key,modifier)
 			//RMH ADD - manual voicepack selection
-			if(H.moan_selection && (key in list("sexmoanlight","sexmoanhvy","groan","painmoan","whimper")))
+			if(H.moan_selection && (key in list("sexmoanlight","sexmoanmed","sexmoanhvy","groan","painmoan","whimper","sexmoangag","sexmoangag_org")))
 				var/datum/moan_pack/vpath = new H.moan_selection
 				switch(key)
 					if("sexmoanlight")
 						if(vpath.sounds_sexmoanlight)
+							possible_sounds = vpath.get_moans(key)
+					if("sexmoanmed")
+						if(vpath.sounds_sexmoanmed)
 							possible_sounds = vpath.get_moans(key)
 					if("sexmoanhvy")
 						if(vpath.sounds_sexmoanhvy)
@@ -183,7 +186,14 @@
 					if("whimper")
 						if(vpath.sounds_whimper)
 							possible_sounds = vpath.get_moans(key)
-			// LETHALSTONE ADDITION BEGIN: use preference-set voice types where possible 
+					if("sexmoangag")
+						if(vpath.sounds_sexmoangag)
+							possible_sounds = vpath.get_moans(key)
+					if("sexmoangag_org")
+						if(vpath.sounds_sexmoangag_org)
+							possible_sounds = vpath.get_moans(key)
+
+			// LETHALSTONE ADDITION BEGIN: use preference-set voice types where possible
 			else if(H.voice_type) //was if(H.voice_type)
 				switch (H.voice_type)
 					if (VOICE_TYPE_MASC)
@@ -228,12 +238,12 @@
 		var/mob/living/carbon/C = user
 		if(C.silent)
 			. = message_muffled
-		if(!muzzle_ignore && HAS_TRAIT(C, TRAIT_MUTE) && emote_type == EMOTE_AUDIBLE)	
+		if(!muzzle_ignore && HAS_TRAIT(C, TRAIT_MUTE) && emote_type == EMOTE_AUDIBLE)
 			. = message_muffled
 		if(!muzzle_ignore && C.mouth?.muteinmouth && emote_type == EMOTE_AUDIBLE)
 			. = message_muffled
 		if(!muzzle_ignore && emote_type == EMOTE_AUDIBLE && HAS_TRAIT(C, TRAIT_BAGGED))
-			. = message_muffled	
+			. = message_muffled
 	if(user.mind && user.mind.miming && message_mime)
 		. = message_mime
 	else if(ismonkey(user) && message_monkey)
@@ -282,16 +292,16 @@
 /datum/emote/proc/get_target(mob/user, list/params)
 	if(!params.len)
 		return null
-	
+
 	var/target_name = params[1]
 	var/mob/target = null
-	
+
 	for(var/mob/M in view(user))
 		if(M.name == target_name)
 			target = M
 			break
 	return target
-	
+
 /datum/emote/proc/is_emote_muffled(mob/living/carbon/H) //ONLY for audible emote use
 	if(H.mouth?.muteinmouth)
 		return FALSE
