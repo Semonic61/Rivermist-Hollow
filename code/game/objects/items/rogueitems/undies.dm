@@ -19,6 +19,8 @@
 	grid_height = 32
 	grid_width = 32
 	var/sprite_acc = /datum/sprite_accessory/underwear/briefs
+	slot_flags = ITEM_SLOT_MOUTH
+	muteinmouth = TRUE
 
 /obj/item/undies/attack(mob/M, mob/user, def_zone)
 	if(ishuman(M))
