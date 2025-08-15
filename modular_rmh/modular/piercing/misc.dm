@@ -7,8 +7,13 @@
 /datum/customizer_choice/bodypart_feature/piercing
 	name = "Piercing"
 	feature_type = /datum/bodypart_feature/piercing
-	//default_accessory = /datum/sprite_accessory/legwear/stockings
 	sprite_accessories = list(
-		/datum/sprite_accessory/legwear/piercing/rings,
-		/datum/sprite_accessory/legwear/stockings/beads,
+		/datum/sprite_accessory/piercing/rings,
+		/datum/sprite_accessory/piercing/beads,
+		/datum/sprite_accessory/piercing/rings/emerald,
+		/datum/sprite_accessory/piercing/rings/gold,
+		/datum/sprite_accessory/piercing/rings/silver,
+		/datum/sprite_accessory/piercing/beads/emerald,
+		/datum/sprite_accessory/piercing/beads/gold,
+		/datum/sprite_accessory/piercing/beads/silver,
 		)

@@ -56,6 +56,17 @@
 					legwear_socks.forceMove(get_turf(src))
 					src.put_in_hands(legwear_socks)
 					legwear_socks = null
+		if(user.zone_selected == BODY_ZONE_CHEST)
+			if(get_location_accessible(src, BODY_ZONE_CHEST, skipundies = TRUE))
+				if(!piercings_item)
+					return
+				src.visible_message(span_notice("[src] begins to take off [piercings_item]..."))
+				if(do_after(user, 30, needhand = 1, target = src))
+					var/obj/item/bodypart/chest = get_bodypart(BODY_ZONE_CHEST)
+					chest.remove_bodypart_feature(piercings_item.piercings_feature)
+					piercings_item.forceMove(get_turf(src))
+					src.put_in_hands(piercings_item)
+					piercings_item = null
 #endif
 
 /mob/living/carbon/human/Initialize()
