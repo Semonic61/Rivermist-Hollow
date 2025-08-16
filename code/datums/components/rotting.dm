@@ -1,4 +1,4 @@
-#define DEAD_TO_ZOMBIE_TIME 7 MINUTES	//Time before death -> raised as zombie (when outside of the city)	
+#define DEAD_TO_ZOMBIE_TIME 1 MINUTES	//Time before death -> raised as zombie (when outside of the city)	
 										//(This isn't exact time. Extended 5 -> 7 because only takes 2-3 min in testing at 5.)
 
 /datum/component/rot
@@ -68,12 +68,12 @@
 		qdel(src)
 		return
 	
-	if(amount > DEAD_TO_ZOMBIE_TIME)
+	/*if(amount > DEAD_TO_ZOMBIE_TIME)
 		if(is_zombie)
 			var/datum/antagonist/zombie/Z = C.mind.has_antag_datum(/datum/antagonist/zombie)
 			if(Z && !Z.has_turned && !Z.revived && C.stat == DEAD)
 				C.infected = TRUE
-				wake_zombie(C, infected_wake = TRUE, converted = FALSE)
+				wake_zombie(C, infected_wake = TRUE, converted = FALSE)*/
 
 	var/findonerotten = FALSE
 	var/shouldupdate = FALSE
@@ -85,14 +85,14 @@
 					B.rotted = TRUE
 					findonerotten = TRUE
 					shouldupdate = TRUE
-					C.apply_status_effect(/datum/status_effect/debuff/rotted_zombie)	//-8 con to rotting zombie corpse.
+					//C.apply_status_effect(/datum/status_effect/debuff/rotted_zombie)	//-8 con to rotting zombie corpse.
 			else
 				if(amount > 40 MINUTES)
 					if(!is_zombie)
 						B.skeletonize()
 						if(C.dna && C.dna.species)
 							C.dna.species.species_traits |= NOBLOOD
-						C.apply_status_effect(/datum/status_effect/debuff/rotted_zombie)	//-8 con to rotting zombie corpse - duplicate as a failsafe.
+						//C.apply_status_effect(/datum/status_effect/debuff/rotted_zombie)	//-8 con to rotting zombie corpse - duplicate as a failsafe.
 						shouldupdate = TRUE
 				else
 					findonerotten = TRUE
