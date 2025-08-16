@@ -2598,7 +2598,6 @@
 #include "modular_stonehedge\code\datums\traits\unspecial.dm"
 #include "modular_stonehedge\code\game\area\roguetownareas.dm"
 #include "modular_stonehedge\code\game\objects\items\rogueweapons\melee\swords.dm"
-#include "modular_stonehedge\code\game\objects\structures\dungeon\lewd_statues.dm"
 #include "modular_stonehedge\code\lewdai\lewdai.dm"
 #include "modular_stonehedge\code\modules\balloon_alert\balloon_alert.dm"
 #include "modular_stonehedge\code\modules\roguetown\roguejobs\alchemist\toxins.dm"
