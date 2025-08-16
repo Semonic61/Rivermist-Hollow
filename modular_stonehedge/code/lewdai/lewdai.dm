@@ -215,7 +215,6 @@
 	. = ..()
 	if(erpable)
 		addtimer(CALLBACK(src, PROC_REF(give_genitals)), 0)
-		//give_genitals()
 	if(prob(hornychance))
 		seeksfuck = TRUE
 		fuckcd = rand(0,20)
@@ -406,7 +405,6 @@
 	. = ..()
 	if(erpable)
 		addtimer(CALLBACK(src, PROC_REF(give_genitals)), 0)
-		//give_genitals()
 	if(prob(hornychance))
 		seeksfuck = TRUE
 		fuckcd = rand(0,20)

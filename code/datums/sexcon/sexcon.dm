@@ -590,7 +590,7 @@
 /datum/sex_controller/proc/check_active_ejaculation()
 	if(arousal < ACTIVE_EJAC_THRESHOLD)
 		return FALSE
-	if(is_spent())
+	if(is_spent() && !issimple(user))
 		return FALSE
 	if(!can_ejaculate())
 		return FALSE
@@ -608,7 +608,7 @@
 /datum/sex_controller/proc/handle_passive_ejaculation()
 	if(arousal < PASSIVE_EJAC_THRESHOLD)
 		return
-	if(is_spent())
+	if(is_spent() && !issimple(user))
 		return
 	if(!can_ejaculate())
 		return FALSE

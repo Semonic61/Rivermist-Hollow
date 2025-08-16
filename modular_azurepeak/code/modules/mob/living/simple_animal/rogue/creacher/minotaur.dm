@@ -59,6 +59,7 @@
 	AIStatus = AI_OFF
 	can_have_ai = FALSE
 	ai_controller = /datum/ai_controller/minotaur
+	erpable = TRUE
 
 //	stat_attack = UNCONSCIOUS
 

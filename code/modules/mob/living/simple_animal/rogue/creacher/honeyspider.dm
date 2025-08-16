@@ -55,6 +55,9 @@
 	ai_controller = /datum/ai_controller/spider
 	melee_cooldown = HONEYSPIDER_ATTACK_SPEED
 	stat_attack = UNCONSCIOUS
+	erpable = TRUE
+	hornychance = 100
+	lewd_talk = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated
 	icon = 'icons/roguetown/mob/monster/spider.dmi'

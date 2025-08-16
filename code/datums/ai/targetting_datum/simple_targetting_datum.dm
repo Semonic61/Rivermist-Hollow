@@ -30,6 +30,15 @@
 		if(M.status_flags & GODMODE)
 			return FALSE
 
+	if(ishuman(the_target))
+		var/mob/living/carbon/human/th = the_target
+		if(th.has_quirk(/datum/quirk/monsterhuntermale) || th.has_quirk(/datum/quirk/monsterhunterfemale) || HAS_TRAIT(th, TRAIT_PACIFISM))
+			return FALSE
+		if(!(th.mobility_flags & MOBILITY_STAND) && !th.get_active_held_item() && th.ckey) //if is laying and holding nothing, and not in cmode. Ignore.
+			if(prob(4) && (th.has_quirk(/datum/quirk/monsterhuntermale) || th.has_quirk(/datum/quirk/monsterhunterfemale)) && attacker.erpable) //tiny chance to trigger abuss.
+				attacker.fuckcd = 0
+			return FALSE
+
 	if(living_mob.see_invisible < the_target.invisibility)//Target's invisible to us, forget it
 		return FALSE
 
