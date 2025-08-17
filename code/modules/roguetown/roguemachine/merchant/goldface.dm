@@ -55,6 +55,7 @@
 	)
 	var/is_public = FALSE // Whether it is a public access vendor.
 	var/extra_fee = 0 // Extra Guild Fees on purchases. Meant to make publicface very unprofitable.
+	var/obj/structure/resurrection_rune/rune
 
 /obj/structure/roguemachine/goldface/public
 	name = "SILVERFACE"
@@ -128,6 +129,7 @@
 /obj/structure/roguemachine/goldface/Initialize()
 	. = ..()
 	update_icon()
+	add_rune()
 
 /obj/structure/roguemachine/goldface/update_icon()
 	cut_overlays()
@@ -237,6 +239,27 @@
 			if("Stop Paying Taxes")
 				upgrade_flags |= UPGRADE_NOTAX
 				playsound(loc, 'sound/misc/gold_misc.ogg', 100, FALSE, -1)
+	if(href_list["rune_link"])
+		add_rune()
+		var/sel = input(usr, "Do you wish to offer your blood in exchange for salvation?.", "SALVATION", null) as null|anything in list("YES", "NO", "UNLINK")
+		var/mob/living/carbon/human/human = usr
+		switch(sel)
+			if("YES")
+				if(rune.resrunecontroler.add_user(human))
+					to_chat(human, span_boldred("Your Soul is safe now."))
+					src.visible_message(span_red("A needle shoots out of the machine and stabs [human.name]!"))
+					to_chat(human, span_red("The machine drinks some of your blood - you are now linked to the resurrection rune."))
+					human.blood_volume = human.blood_volume - 100
+					human.updatehealth()
+					//add vamp blood transfer here
+				else
+					to_chat(human, span_red("You are already linked."))
+				
+			if("NO")
+				to_chat(human, span_red("You will come back eventually."))
+			if("UNLINK")
+				rune.resrunecontroler.remove_user(human)
+				to_chat(human, span_red("You will come back eventually."))
 	return attack_hand(usr)
 
 /obj/structure/roguemachine/goldface/attack_hand(mob/living/user)
@@ -304,6 +327,11 @@
 	if(!canread)
 		contents = stars(contents)
 
+	contents += "<BR><center>SAVE YOUR SOUL<BR>"
+	contents += "<center>Obtain immortality in exchange for a small donation.<BR>"
+	//"<a href='?_src_=prefs;preference=moanselection;task=input'>"<a href='?src=[REF(src)];change=1'>MAMMON LOADED:</a>
+	contents += "<a href='?src=[REF(src)];rune_link=1'>Give your blood.</a></center>"
+
 	var/datum/browser/popup = new(user, "VENDORTHING", "", 500, 800)
 	popup.set_content(contents)
 	popup.open()
@@ -324,5 +352,12 @@
 	update_icon()
 //	held_items[/obj/item/reagent_containers/glass/bottle/rogue/wine] = list("PRICE" = rand(23,33),"NAME" = "vino")
 //	held_items[/obj/item/dmusicbox] = list("PRICE" = rand(444,777),"NAME" = "Music Box")
+
+/obj/structure/roguemachine/goldface/proc/add_rune()
+	if(rune)
+		return
+	for(var/obj/structure/resurrection_rune/rune_l in GLOB.global_resurrunes)
+		if(!rune_l.is_main)
+			rune = rune_l
 
 #undef UPGRADE_NOTAX
