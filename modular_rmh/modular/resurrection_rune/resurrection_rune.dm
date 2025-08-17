@@ -1,43 +1,3 @@
-
-//For revive - your body DIDN'T rot, but it did suffer damage. Unlike being rotted, this one is only timed. Not forever.
-/datum/status_effect/debuff/revived/rune
-	id = "revived"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/revived/rune
-	effectedstats = list("strength" = -1, "perception" = -1, "intelligence" = -1, "endurance" = -1, "constitution" = -1, "speed" = -1, "fortune" = -1)
-	duration = 15 MINUTES		//Should be long enough to stop someone from running back into battle. Plus, this stacks with body-rot debuff. RIP.
-
-/atom/movable/screen/alert/status_effect/debuff/revived
-	name = "Revival Sickness"
-	desc = "You felt lyfe itself course through you, restoring your lux and your essance. You.. live - but your body aches. It still needs time to recover.."
-	icon_state = "revived"
-
-#define REVIVAL_FILTER "revival_glow"
-/atom/movable/screen/alert/status_effect/debuff/revived/rune
-	name = "Revival Afterglow"
-	desc = "You have been reknit and transported by unfathomable forces. You need time to recover,"
-	icon_state = "revived"
-
-/datum/status_effect/debuff/rune_glow
-	var/outline_colour ="#b86cf7"
-	id = "rune_revival"
-	alert_type = /atom/movable/screen/alert/status_effect/debuff/revived/rune
-	duration = 30 SECONDS
-
-/datum/status_effect/debuff/rune_glow/on_apply()
-	. = ..()
-	var/filter = owner.get_filter(REVIVAL_FILTER)
-	owner.SetKnockdown(duration)
-	owner.SetStun(duration)
-	if (!filter)
-		owner.add_filter(REVIVAL_FILTER, 2, list("type" = "outline", "color" = outline_colour, "alpha" = 200, "size" = 1))
-
-/datum/status_effect/debuff/rune_glow/on_remove()
-	. = ..()
-	to_chat(owner, span_warning("The revival sickness has eased a little..."))
-	owner.remove_filter(REVIVAL_FILTER)
-
-#undef REVIVAL_FILTER
-
 /datum/resurrection_rune_controller
 	var/obj/structure/resurrection_rune/control/control_rune
 	var/obj/structure/resurrection_rune/sub_rune
@@ -62,6 +22,10 @@
 
 
 /datum/resurrection_rune_controller/process()
+	if(!sub_rune.main_rune_link)
+		sub_rune.find_master()
+	if(control_rune.disabled_res && !sub_rune.is_main)
+		return
 	if(!linked_users_minds.len)
 		return
 	for(var/datum/mind/mind_user in linked_users_minds)
@@ -94,7 +58,7 @@
 		return FALSE
 	linked_users += user
 	linked_users_minds += user.mind
-	linked_users_names[user.name] += user
+	linked_users_names[user.name] = user
 	body_mind_link[user.mind] = user
 	RegisterSignal(user, COMSIG_LIVING_HEALTH_UPDATE, PROC_REF(start_revive))
 	return TRUE
@@ -104,15 +68,17 @@
 		return FALSE
 	linked_users -= user
 	linked_users_minds -= user.mind
-	linked_users_names[user.name] -= user
-	body_mind_link[user.mind] = user
+	linked_users_names[user.name] = user
+	body_mind_link.Remove(user.mind)
 	UnregisterSignal(user, COMSIG_LIVING_HEALTH_UPDATE, PROC_REF(start_revive))
 	return TRUE
 
 /datum/resurrection_rune_controller/proc/start_revive(mob/living/carbon/target)
 	SIGNAL_HANDLER
 
-
+	if(control_rune.disabled_res && !sub_rune.is_main)
+		return
+	
 	if(target.IsSleeping())
 		return
 	
@@ -133,13 +99,18 @@
 
 
 /datum/resurrection_rune_controller/proc/revive_linked(mob/living/carbon/user)
+	if(!IS_DEAD_OR_INCAP(user))
+		resurrecting -= user
+		to_chat(user.mind, span_blue("The tugging stops; you seem to be recovering."))
+		return
 	var/turf/T = get_turf(sub_rune)
 	var/mob/living/body = user
 	if(!body)
 		sub_rune.visible_message(span_blue("The rune flickers, connection to a body suddenly severed."))
 		resurrecting -= user
 		return
-
+	body.visible_message(span_blue("With a loud pop, [body.name] suddenly disappears!"))
+	playsound(T, 'sound/magic/repulse.ogg', 100, FALSE, -1)
 	body.forceMove(T)
 	body.revive(full_heal = TRUE, admin_revive = TRUE)
 	user.grab_ghost(TRUE)
@@ -149,6 +120,9 @@
 	body.apply_status_effect(/datum/status_effect/debuff/rune_glow)
 	playsound(T, 'sound/misc/vampirespell.ogg', 100, FALSE, -1)
 	to_chat(body, span_blue("You are back."))
+
+
+
 
 /obj/structure/resurrection_rune
 	name = "grand rune"
@@ -169,34 +143,39 @@
 	. = ..()
 	resrunecontroler = new /datum/resurrection_rune_controller()
 	resrunecontroler.sub_rune = src
-	for(var/rune in GLOB.global_resurrunes)
-		if(istype(rune, /obj/structure/resurrection_rune/control) || !(rune == src))
-			main_rune_link = rune
-			resrunecontroler.control_rune = rune
+	find_master()
 	GLOB.global_resurrunes += src
 
 /obj/structure/resurrection_rune/Destroy()
 	qdel(resrunecontroler)
 	. = ..()
 
+/obj/structure/resurrection_rune/proc/find_master()
+	for(var/rune in GLOB.global_resurrunes)
+		if(istype(rune, /obj/structure/resurrection_rune/control))
+			main_rune_link = rune
+			resrunecontroler.control_rune = rune
+
 /obj/structure/resurrection_rune/attack_hand(mob/user)
 	. = ..()
+	if(!main_rune_link)
+		find_master()
 
 	if(!istype(user, /mob/living/carbon))
 		return
 	
 	if(!resrunecontroler)
 		return
-	if(!main_rune_link)
+	if(!main_rune_link && !is_main)
 		to_chat(user, span_blue("Somehow, the main rune is not connected..."))
 		return
 
-	if(main_rune_link.disabled_res || !is_main)
+	if(main_rune_link.disabled_res && !is_main)
 		to_chat(user, span_blue("Your masters have disabled the rune!"))
 		return
 	
 	if(!is_main)
-		var/input = input(user, "What do you wish to do?", "Rune of Souls") as anything in list("Link Soul", "Revive a lost Soul")
+		var/input = input(user, "What do you wish to do?", "Rune of Souls") as anything in list("Link Soul", "Revive a lost Soul", "Cancel")
 		switch(input)
 			if("Link Soul")
 				if(user in resrunecontroler.linked_users)
@@ -226,7 +205,8 @@
 
 /obj/structure/resurrection_rune/control/attack_hand(mob/user)
 	. = ..()
-	var/input = input(user, "What do you wish to do?", "Master Rune") as anything in list("Link Soul", "Unlink a Soul", "Disable Sub Rune")
+	
+	var/input = input(user, "What do you wish to do?", "Master Rune") as anything in list("Link Soul", "Unlink a Soul", "Toggle Sub Rune", "Cancel")
 	switch(input)
 		if("Link Soul")
 			if(user in resrunecontroler.linked_users)
@@ -237,13 +217,25 @@
 			resrunecontroler.add_user(user)
 			return
 		if("Unlink a Soul")
-			var/mob/target = input(user, "Choose.", "Souls") as anything in resrunecontroler.linked_users_names
-			resrunecontroler.remove_user(target)
-			to_chat(user, span_blue("They are now damned."))
+			var/obj/structure/resurrection_rune/sub_rune
+			for(var/obj/structure/resurrection_rune/rune_l in GLOB.global_resurrunes)
+				if(!rune_l.is_main)
+					sub_rune = rune_l
+					break
+			if(!sub_rune)
+				return
+			var/mob/target = input(user, "Choose.", "Souls") as null|anything in sub_rune.resrunecontroler.linked_users_names
+			if(target)
+				sub_rune.resrunecontroler.remove_user(sub_rune.resrunecontroler.linked_users_names[target])
+				to_chat(user, span_blue("They are now damned."))
 			return
-		if("Disable Sub Rune")
-			disabled_res = TRUE
-			to_chat(user, span_blue("Let them perish."))
+		if("Toggle Sub Rune")
+			if(!disabled_res)
+				disabled_res = TRUE
+				to_chat(user, span_blue("Let them perish."))
+			else
+				disabled_res = FALSE
+				to_chat(user, span_blue("Another chance."))
 			return
 		else
 			return

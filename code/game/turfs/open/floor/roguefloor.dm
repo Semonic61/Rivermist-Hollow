@@ -1084,6 +1084,9 @@
 	icon_state = "herringbonewood"
 
 /turf/open/floor/rogue/wood/herringbone
+	smooth = SMOOTH_FALSE
+	smooth_icon = null
+	canSmoothWith = null
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW

@@ -245,6 +245,11 @@
 		var/mob/living/carbon/human/human = usr
 		switch(sel)
 			if("YES")
+				if(!rune.main_rune_link)
+					rune.find_master()
+				if(rune.main_rune_link.disabled_res)
+					to_chat(human, span_blue("Your masters have disabled the rune!"))
+					return attack_hand(usr)
 				if(rune.resrunecontroler.add_user(human))
 					to_chat(human, span_boldred("Your Soul is safe now."))
 					src.visible_message(span_red("A needle shoots out of the machine and stabs [human.name]!"))

@@ -371,7 +371,6 @@
 "asP" = (
 /turf/open/floor/rogue/grassred,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -1154,11 +1153,6 @@
 /obj/structure/flora/roguegrass/bush/wall,
 /turf/open/floor/rogue/grassyel,
 /area/rogue/under/cave)
-"bcr" = (
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/underdark{
-	name = "North-West Caves"
-	})
 "bda" = (
 /obj/structure/stationary_bell{
 	density = 0
@@ -1335,7 +1329,6 @@
 "bkn" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -1398,13 +1391,6 @@
 /obj/structure/mineral_door/wood/towner/miner,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
-"boF" = (
-/obj/structure/flora/roguegrass/bush/wall,
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/grassyel,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
 "boV" = (
 /obj/effect/decal/mossy{
 	dir = 4;
@@ -2088,11 +2074,6 @@
 "bPu" = (
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town)
-"bPM" = (
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/underdark{
-	name = "North Caves"
-	})
 "bQg" = (
 /obj/structure/bars/passage/steel{
 	layer = 2;
@@ -2342,11 +2323,6 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town)
-"bYs" = (
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/mountains{
-	name = "Hill Cave"
-	})
 "bYO" = (
 /turf/closed/wall/mineral/rogue/roofwall/innercorner,
 /area/rogue/indoors/town/tavern)
@@ -2714,7 +2690,6 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -2853,11 +2828,7 @@
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/outdoors/river)
 "cpS" = (
-/obj/effect/decal/cobbleedge{
-	icon = 'icons/effects/160x160.dmi';
-	icon_state = "portal";
-	name = "rune"
-	},
+/obj/structure/resurrection_rune,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/church/basement{
 	first_time_text = "THE CRYPT OF THE MORTUALS"
@@ -2964,11 +2935,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/town/shop)
-"ctU" = (
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	name = "North Gates"
-	})
 "cup" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/rogue/grassyel,
@@ -2984,7 +2950,6 @@
 "cvs" = (
 /turf/open/floor/rogue/snowrough,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -3519,7 +3484,6 @@
 	},
 /turf/open/floor/rogue/metal/barograte/open,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -3605,7 +3569,6 @@
 "dai" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -4588,12 +4551,6 @@
 /obj/item/roguebin/water,
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town/roofs)
-"dKO" = (
-/obj/item/natural/rock,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/underdark{
-	name = "North Caves"
-	})
 "dLo" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle{
 	dir = 1
@@ -4737,11 +4694,6 @@
 /obj/item/bedsheet/rogue/double_pelt,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/dwarfin)
-"dSx" = (
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	name = "Between North Cliffs"
-	})
 "dSG" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/church,
@@ -5460,11 +5412,6 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
-"eCu" = (
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
 "eCw" = (
 /obj/machinery/light/rogue/chand,
 /turf/open/transparent/openspace,
@@ -5473,7 +5420,6 @@
 /obj/structure/stairs/stone,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -5667,11 +5613,6 @@
 "eJL" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy,
 /area/rogue/indoors/cave/minotaurcave)
-"eKb" = (
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/underdark{
-	name = "North Caves"
-	})
 "eKg" = (
 /obj/structure/fluff/railing/border{
 	dir = 5
@@ -6005,11 +5946,6 @@
 /obj/item/natural/stoneblock,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
-"eXN" = (
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/cave{
-	name = "Buried Caves"
-	})
 "eXR" = (
 /obj/structure/flora/roguegrass/water/reeds,
 /turf/open/floor/rogue/grassred,
@@ -6537,12 +6473,6 @@
 "fDM" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
-"fEl" = (
-/obj/effect/landmark/quest_spawner/medium,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	name = "Between North Cliffs"
-	})
 "fEp" = (
 /obj/structure/fluff/walldeco/maidensigil{
 	pixel_y = 16
@@ -6780,9 +6710,7 @@
 "fPh" = (
 /obj/effect/landmark/quest_spawner/hard,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/under/cave{
-	name = "Lake Cave"
-	})
+/area/rogue/under/cave)
 "fPk" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -6938,7 +6866,6 @@
 	},
 /turf/open/floor/rogue/snowrough,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -7425,7 +7352,6 @@
 "gnH" = (
 /turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -7881,7 +7807,6 @@
 	},
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -8392,7 +8317,6 @@
 "hbm" = (
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -8508,9 +8432,7 @@
 "hgA" = (
 /obj/effect/landmark/quest_spawner/medium,
 /turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/rtfield{
-	name = "North Gates"
-	})
+/area/rogue/outdoors/rtfield)
 "hgF" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 1
@@ -9044,18 +8966,10 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town)
-"hHx" = (
-/obj/structure/flora/roguetree/stump/log,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	name = "North Gates"
-	})
 "hHO" = (
 /obj/effect/landmark/quest_spawner/hard,
 /turf/open/floor/rogue/naturalstone,
-/area/rogue/under/underdark{
-	name = "North Caves"
-	})
+/area/rogue/under/underdark)
 "hId" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -9178,11 +9092,6 @@
 /obj/effect/decal/cleanable/debris/stony,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/cave/minotaurcave)
-"hNO" = (
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/indoors/cave{
-	name = "Buried Caves"
-	})
 "hNT" = (
 /obj/machinery/light/rogue/firebowl/standing/blue,
 /turf/open/floor/rogue/tile/tilerg,
@@ -9398,12 +9307,6 @@
 /obj/structure/fluff/statue/small,
 /turf/closed/wall/mineral/rogue/decostone/cand,
 /area/rogue/indoors/town/shop)
-"hXQ" = (
-/obj/structure/flora/roguegrass/bush/westleach,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	name = "Between North Cliffs"
-	})
 "hXV" = (
 /obj/structure/bed/rogue/inn/double,
 /obj/item/bedsheet/rogue/double_pelt,
@@ -9600,7 +9503,6 @@
 	},
 /turf/open/floor/rogue/snowrough,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -10208,7 +10110,6 @@
 "iJa" = (
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -10387,11 +10288,6 @@
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
-"iRc" = (
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/underdark{
-	name = "North-West Caves"
-	})
 "iRe" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -10667,11 +10563,6 @@
 "iYs" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/outdoors/town/roofs)
-"iYt" = (
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/rtfield{
-	name = "Between North Cliffs"
-	})
 "iYL" = (
 /obj/structure/vine,
 /turf/open/water/swamp/deep,
@@ -11093,7 +10984,6 @@
 	},
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -12145,11 +12035,6 @@
 	},
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/town/tavern)
-"kjQ" = (
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
 "kkg" = (
 /obj/effect/decal/mossy{
 	dir = 4
@@ -12690,12 +12575,6 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/magician)
-"kGM" = (
-/obj/item/natural/rock,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/underdark{
-	name = "North Caves"
-	})
 "kGP" = (
 /turf/open/floor/rogue/ruinedwood/platform,
 /area/rogue/outdoors/town/roofs)
@@ -13006,12 +12885,6 @@
 /obj/structure/mineral_door/bars,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/cave)
-"kZE" = (
-/obj/item/natural/rock,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/underdark{
-	name = "North-West Caves"
-	})
 "lar" = (
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/sewer)
@@ -13938,11 +13811,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/tavern)
-"lNZ" = (
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/cave{
-	name = "Lake Cave"
-	})
 "lOI" = (
 /obj/structure/flora/newleaf,
 /turf/open/floor/rogue/grassred,
@@ -14226,7 +14094,6 @@
 /obj/structure/flora/roguegrass/bush/westleach,
 /turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -14332,9 +14199,7 @@
 /obj/structure/flora/roguegrass/bush,
 /obj/effect/landmark/quest_spawner/easy,
 /turf/open/floor/rogue/grassyel,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
+/area/rogue/outdoors/rtfield)
 "meX" = (
 /obj/structure/rack/rogue,
 /obj/item/broom,
@@ -14588,7 +14453,6 @@
 "mpV" = (
 /turf/open/floor/rogue/herringbone,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -14722,7 +14586,6 @@
 	},
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -15469,12 +15332,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/shelter/woods)
-"nhW" = (
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/grassyel,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
 "niE" = (
 /obj/structure/fluff/walldeco/stone{
 	pixel_y = 32
@@ -16193,11 +16050,6 @@
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town)
-"nNG" = (
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/cave{
-	name = "Lake Cave"
-	})
 "nOA" = (
 /obj/structure/flora/roguegrass/herb/random,
 /turf/open/floor/rogue/grassyel,
@@ -16217,12 +16069,6 @@
 /obj/effect/landmark/quest_spawner/easy,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
-"nQf" = (
-/obj/structure/flora/roguegrass/bush/wall,
-/turf/open/floor/rogue/grassyel,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
 "nQz" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10;
@@ -16393,11 +16239,6 @@
 	},
 /turf/open/floor/rogue/tile/brownbrick,
 /area/rogue/indoors/town)
-"nYo" = (
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/shelter/mountains{
-	name = "Hill Cave"
-	})
 "nYx" = (
 /obj/effect/landmark/start/marshal,
 /turf/open/floor/rogue/wood,
@@ -16860,11 +16701,6 @@
 /area/rogue/outdoors/town{
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
-	})
-"oth" = (
-/turf/closed/mineral/rogue/bedrock,
-/area/rogue/indoors/shelter/mountains{
-	name = "Hill Cave"
 	})
 "otj" = (
 /obj/structure/stairs{
@@ -17359,7 +17195,6 @@
 "oLj" = (
 /turf/open/floor/rogue/metal,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -17762,9 +17597,7 @@
 "paP" = (
 /obj/effect/landmark/quest_spawner/medium,
 /turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave{
-	name = "Buried Caves"
-	})
+/area/rogue/indoors/cave)
 "paZ" = (
 /obj/structure/closet/dirthole/closed{
 	dir = 8
@@ -18062,9 +17895,7 @@
 "pqN" = (
 /obj/effect/landmark/quest_spawner/hard,
 /turf/open/floor/rogue/dirt,
-/area/rogue/indoors/shelter/mountains{
-	name = "Hill Cave"
-	})
+/area/rogue/indoors/shelter/mountains)
 "pqQ" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
@@ -18237,11 +18068,6 @@
 /obj/effect/landmark/start/innkeep,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
-"pyI" = (
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/underdark{
-	name = "East Caves"
-	})
 "pyU" = (
 /obj/structure/stairs{
 	dir = 1
@@ -18612,12 +18438,6 @@
 /obj/structure/flora/newleaf,
 /turf/open/floor/rogue/grassred,
 /area/rogue/indoors/shelter/woods)
-"pQr" = (
-/obj/item/natural/rock,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/underdark{
-	name = "East Caves"
-	})
 "pQI" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "cobbleedge-sread"
@@ -19062,11 +18882,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/tavern)
-"qsR" = (
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
 "qtf" = (
 /obj/structure/stairs/stone{
 	dir = 1
@@ -19247,12 +19062,6 @@
 /area/rogue/outdoors/town{
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
-	})
-"qzI" = (
-/obj/effect/landmark/quest_spawner/hard,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/underdark{
-	name = "North-West Caves"
 	})
 "qzL" = (
 /obj/structure/fluff/railing/border{
@@ -19563,11 +19372,6 @@
 	},
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/outdoors/town/dwarf)
-"qND" = (
-/turf/open/floor/rogue/grassyel,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
 "qNW" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town/magician{
@@ -19748,7 +19552,6 @@
 "qVG" = (
 /turf/open/floor/rogue/metal/barograte,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -19908,11 +19711,6 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains)
-"raQ" = (
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/underdark{
-	name = "East Caves"
-	})
 "rbb" = (
 /obj/structure/fluff/railing/border,
 /obj/effect/decal/cobbleedge{
@@ -20764,11 +20562,6 @@
 /obj/item/natural/stone,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/cave)
-"rLj" = (
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave{
-	name = "Buried Caves"
-	})
 "rLL" = (
 /obj/structure/rack/rogue/shelf,
 /obj/item/storage/roguebag{
@@ -21071,9 +20864,7 @@
 "rWC" = (
 /obj/effect/landmark/quest_spawner/hard,
 /turf/open/floor/rogue/naturalstone,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
+/area/rogue/outdoors/rtfield)
 "rXH" = (
 /obj/effect/landmark/start/watchman,
 /turf/open/floor/rogue/blocks,
@@ -21091,9 +20882,7 @@
 /obj/effect/spawner/lootdrop/light_armor_spawner,
 /obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave{
-	name = "Buried Caves"
-	})
+/area/rogue/indoors/cave)
 "rYA" = (
 /obj/effect/decal/mossy{
 	dir = 4;
@@ -21161,7 +20950,6 @@
 "saI" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -21174,7 +20962,6 @@
 /obj/structure/flora/roguegrass/bush/westleach,
 /turf/open/floor/rogue/grassred,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -21229,7 +21016,6 @@
 	},
 /turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -21668,7 +21454,6 @@
 	},
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -21878,7 +21663,6 @@
 "sKy" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -22143,7 +21927,6 @@
 "sTk" = (
 /turf/open/floor/rogue/snowpatchy,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -22218,7 +22001,6 @@
 	},
 /turf/open/floor/rogue/metal,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -22416,12 +22198,6 @@
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church/chapel{
 	first_time_text = "THE HALL OF THE MORTUALS"
-	})
-"tgW" = (
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	name = "North Gates"
 	})
 "thA" = (
 /obj/structure/rack/rogue/shelf,
@@ -22786,11 +22562,6 @@
 /obj/item/natural/stone,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
-"tug" = (
-/turf/closed/mineral/random/rogue/high,
-/area/rogue/under/underdark{
-	name = "North-West Caves"
-	})
 "tui" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -23039,7 +22810,6 @@
 	},
 /turf/open/floor/rogue/snowpatchy,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -23343,9 +23113,7 @@
 "tSc" = (
 /obj/effect/landmark/quest_spawner/medium,
 /turf/open/floor/rogue/grassyel,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
+/area/rogue/outdoors/rtfield)
 "tSR" = (
 /turf/closed/wall/mineral/rogue/decostone/mossy/long,
 /area/rogue/indoors/town/magician{
@@ -23548,11 +23316,6 @@
 	desc = "Not clear and shallow water, what a shame..."
 	},
 /area/rogue/under/town/sewer)
-"uaC" = (
-/turf/open/floor/rogue/dirt,
-/area/rogue/indoors/shelter/mountains{
-	name = "Hill Cave"
-	})
 "ubj" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -23583,12 +23346,6 @@
 /obj/item/natural/rock,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave)
-"ueb" = (
-/obj/structure/flora/roguegrass/bush/westleach,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	name = "North Gates"
-	})
 "ueh" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -23629,11 +23386,6 @@
 "ueP" = (
 /turf/open/water/pond,
 /area/rogue/under/cavewet)
-"ufq" = (
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/rtfield{
-	name = "North Gates"
-	})
 "ufv" = (
 /obj/item/natural/rock,
 /turf/open/floor/rogue/dirt,
@@ -23870,9 +23622,7 @@
 /obj/structure/flora/roguegrass,
 /obj/effect/landmark/quest_spawner/easy,
 /turf/open/floor/rogue/grassyel,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
+/area/rogue/outdoors/rtfield)
 "urg" = (
 /obj/structure/flora/roguegrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -24035,9 +23785,7 @@
 "uwE" = (
 /obj/effect/landmark/quest_spawner/hard,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/shelter/mountains{
-	name = "Hill Cave"
-	})
+/area/rogue/indoors/shelter/mountains)
 "uwK" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/shovel,
@@ -24804,7 +24552,6 @@
 	},
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -24958,12 +24705,6 @@
 /area/rogue/outdoors/town{
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
-	})
-"vgG" = (
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield{
-	name = "Between North Cliffs"
 	})
 "vhE" = (
 /obj/structure/fluff/railing/fence,
@@ -25235,12 +24976,6 @@
 /obj/item/broom,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
-"vue" = (
-/obj/effect/landmark/quest_spawner/medium,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/rtfield{
-	name = "Northern forest under the mountainside"
-	})
 "vuj" = (
 /turf/open/floor/rogue/grassred,
 /area/rogue/indoors/town/church)
@@ -25712,9 +25447,7 @@
 "vVd" = (
 /obj/machinery/light/rogue/campfire,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/cave{
-	name = "Buried Caves"
-	})
+/area/rogue/indoors/cave)
 "vWm" = (
 /obj/structure/flora/newleaf,
 /obj/structure/flora/newleaf,
@@ -26562,7 +26295,6 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -27452,7 +27184,6 @@
 "xub" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -28234,9 +27965,7 @@
 "ydL" = (
 /obj/effect/landmark/quest_spawner/hard,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/under/underdark{
-	name = "East Caves"
-	})
+/area/rogue/under/underdark)
 "ydN" = (
 /obj/structure/stairs{
 	dir = 1
@@ -67386,7 +67115,7 @@ iQe
 iQe
 iQe
 iQe
-cpS
+iQe
 ojY
 hRW
 eWM
@@ -67898,7 +67627,7 @@ hkN
 vUG
 iQe
 iQe
-iQe
+cpS
 iQe
 iQe
 xZX
@@ -78472,9 +78201,9 @@ hud
 hud
 loA
 loA
-lNZ
-nNG
-lNZ
+loA
+acc
+loA
 acc
 acc
 eWM
@@ -78729,9 +78458,9 @@ eWM
 acc
 acc
 loA
-nNG
+acc
 fPh
-lNZ
+loA
 loA
 acc
 eWM
@@ -78986,9 +78715,9 @@ eWM
 eWM
 loA
 loA
-lNZ
-lNZ
-nNG
+loA
+loA
+acc
 loA
 loA
 eWM
@@ -124595,9 +124324,9 @@ rNJ
 rNJ
 sry
 eve
-tug
-tug
-tug
+sry
+sry
+sry
 sry
 sry
 sry
@@ -124852,9 +124581,9 @@ rNJ
 rNJ
 rNJ
 eve
-kZE
-qzI
-iRc
+bSZ
+ydL
+eve
 eve
 sry
 sry
@@ -125109,9 +124838,9 @@ rNJ
 gDt
 gDt
 gDt
-bcr
-bcr
-bcr
+gDt
+gDt
+gDt
 eve
 bSZ
 eve
@@ -141034,9 +140763,9 @@ sry
 sry
 sry
 sry
-bPM
-eKb
-dKO
+eve
+gDt
+csA
 gDt
 gDt
 rNJ
@@ -141291,9 +141020,9 @@ sry
 sry
 sry
 sry
-kGM
+bSZ
 hHO
-eKb
+gDt
 gDt
 rNJ
 rNJ
@@ -141548,9 +141277,9 @@ sry
 sry
 sry
 sry
-bPM
-eKb
-eKb
+eve
+gDt
+gDt
 rNJ
 rNJ
 rNJ
@@ -146214,9 +145943,9 @@ rNJ
 rNJ
 rNJ
 bSZ
-raQ
-pyI
-pyI
+eve
+gDt
+gDt
 rNJ
 rNJ
 eWM
@@ -146471,9 +146200,9 @@ sry
 sry
 rNJ
 rNJ
-raQ
+eve
 ydL
-pyI
+gDt
 rNJ
 rNJ
 eWM
@@ -146728,9 +146457,9 @@ sry
 sry
 sry
 sry
-raQ
-pQr
-raQ
+eve
+bSZ
+eve
 rNJ
 rNJ
 eWM
@@ -156069,8 +155798,8 @@ arR
 arR
 aUw
 arR
-eXN
-eXN
+wXc
+wXc
 vVd
 wXc
 oGt
@@ -156326,9 +156055,9 @@ arR
 arR
 vQM
 arR
-rLj
+arR
 paP
-rLj
+arR
 oGt
 dDW
 arR
@@ -156583,8 +156312,8 @@ wXc
 aUw
 yiT
 abG
-hNO
-hNO
+oGt
+oGt
 rYm
 bCd
 bCd
@@ -162214,9 +161943,9 @@ akU
 akU
 dVr
 dVr
-uaC
-oth
-oth
+dVr
+nyz
+nyz
 nyz
 nyz
 nyz
@@ -162391,9 +162120,9 @@ okp
 okp
 okp
 tLr
-ufq
-ctU
-tgW
+jZV
+fFw
+xQn
 fFw
 xte
 xQn
@@ -162471,9 +162200,9 @@ akU
 vvL
 vvL
 vvL
-uaC
+dVr
 pqN
-uaC
+dVr
 dVr
 dVr
 nyz
@@ -162648,9 +162377,9 @@ okp
 cbG
 cbG
 fFw
-ufq
+jZV
 hgA
-tgW
+xQn
 fFw
 fFw
 xQn
@@ -162728,9 +162457,9 @@ vvL
 vvL
 akU
 akU
-nYo
-nYo
-uaC
+akU
+akU
+dVr
 dVr
 dVr
 dVr
@@ -162905,9 +162634,9 @@ cbG
 cbG
 cbG
 xQn
-hHx
-ufq
-ueb
+eIY
+jZV
+hyn
 fFw
 qyl
 jZV
@@ -173181,9 +172910,9 @@ fFw
 fFw
 xQn
 eTi
-dSx
-hXQ
-iYt
+fFw
+hyn
+jZV
 fFw
 okp
 cbG
@@ -173438,9 +173167,9 @@ jZV
 xQn
 fFw
 xQn
-dSx
-fEl
-dSx
+fFw
+iRh
+fFw
 okp
 okp
 mqw
@@ -173695,9 +173424,9 @@ jZV
 xQn
 fFw
 xQn
-vgG
-vgG
-dSx
+xQn
+xQn
+fFw
 okp
 okp
 xQn
@@ -179582,9 +179311,9 @@ usS
 wur
 wur
 wur
-eCu
-kjQ
-kjQ
+wur
+jZV
+jZV
 fFw
 fFw
 fFw
@@ -179839,9 +179568,9 @@ wur
 wur
 uSg
 wur
-eCu
-vue
-kjQ
+wur
+hgA
+jZV
 fFw
 fFw
 fFw
@@ -180096,9 +179825,9 @@ eWM
 wur
 aDm
 aDm
-eCu
-kjQ
-kjQ
+wur
+jZV
+jZV
 fFw
 fFw
 fFw
@@ -182421,9 +182150,9 @@ jZV
 jZV
 all
 fFw
-qsR
-qsR
-qsR
+fFw
+fFw
+fFw
 okp
 okp
 xQn
@@ -182678,9 +182407,9 @@ edR
 fFw
 fFw
 fFw
-qsR
+fFw
 meL
-qND
+okp
 okp
 okp
 xQn
@@ -182935,9 +182664,9 @@ fFw
 fFw
 fFw
 fFw
-qsR
-qND
-nhW
+fFw
+okp
+cbG
 cbG
 okp
 okp
@@ -217105,9 +216834,9 @@ aDm
 aDm
 aDm
 okp
-nhW
-nhW
-qND
+cbG
+cbG
+okp
 cbG
 fFw
 fFw
@@ -217362,9 +217091,9 @@ aDm
 okp
 okp
 cbG
-nhW
+cbG
 tSc
-nhW
+cbG
 cbG
 tkt
 tkt
@@ -217619,9 +217348,9 @@ aDm
 okp
 cbG
 okp
-qND
-qND
-nhW
+okp
+okp
+cbG
 cbG
 cdZ
 cdZ
@@ -221223,9 +220952,9 @@ cbG
 cbG
 okp
 cbG
-nQf
-boF
-nQf
+iXg
+ajz
+iXg
 cbG
 mdH
 cdZ
@@ -221480,9 +221209,9 @@ okp
 okp
 cbG
 cbG
-nhW
+cbG
 uqG
-nQf
+iXg
 cbG
 cdZ
 mdH
@@ -221737,9 +221466,9 @@ okp
 okp
 okp
 okp
-nhW
-nhW
-nhW
+cbG
+cbG
+cbG
 cbG
 okp
 okp
@@ -222754,7 +222483,7 @@ eWM
 eWM
 eWM
 rWC
-eCu
+wur
 wur
 wur
 aDm
@@ -223011,7 +222740,7 @@ eWM
 eWM
 eWM
 eWM
-eCu
+wur
 wur
 wur
 usS
@@ -306555,9 +306284,9 @@ nyz
 nyz
 dVr
 dVr
-bYs
-nYo
-nYo
+vvL
+akU
+akU
 vvL
 dVr
 dVr
@@ -306812,9 +306541,9 @@ nyz
 nyz
 dEI
 dVr
-nYo
+akU
 uwE
-bYs
+vvL
 vvL
 akU
 dVr
@@ -307069,9 +306798,9 @@ nyz
 nyz
 nyz
 akU
-nYo
-nYo
-bYs
+akU
+akU
+vvL
 akU
 vvL
 vvL
