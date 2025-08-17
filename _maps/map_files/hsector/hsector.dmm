@@ -365,7 +365,6 @@
 "asP" = (
 /turf/open/floor/rogue/grassred,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -1306,7 +1305,6 @@
 "bkn" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -2660,7 +2658,6 @@
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -2925,7 +2922,6 @@
 "cvs" = (
 /turf/open/floor/rogue/snowrough,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -3461,7 +3457,6 @@
 	},
 /turf/open/floor/rogue/metal/barograte/open,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -3547,7 +3542,6 @@
 "dai" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -5352,7 +5346,6 @@
 /obj/structure/stairs/stone,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -6778,7 +6771,6 @@
 	},
 /turf/open/floor/rogue/snowrough,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -7265,7 +7257,6 @@
 "gnH" = (
 /turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -7721,7 +7712,6 @@
 	},
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -8232,7 +8222,6 @@
 "hbm" = (
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -9395,7 +9384,6 @@
 	},
 /turf/open/floor/rogue/snowrough,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -9989,7 +9977,6 @@
 "iJa" = (
 /turf/open/floor/rogue/hexstone,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -10828,7 +10815,6 @@
 	},
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -13892,7 +13878,6 @@
 /obj/structure/flora/roguegrass/bush/westleach,
 /turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -14261,7 +14246,6 @@
 "mpV" = (
 /turf/open/floor/rogue/herringbone,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -14399,7 +14383,6 @@
 	},
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -16986,7 +16969,6 @@
 "oLj" = (
 /turf/open/floor/rogue/metal,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -19326,7 +19308,6 @@
 "qVG" = (
 /turf/open/floor/rogue/metal/barograte,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -20709,7 +20690,6 @@
 "saI" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -20722,7 +20702,6 @@
 /obj/structure/flora/roguegrass/bush/westleach,
 /turf/open/floor/rogue/grassred,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -20773,7 +20752,6 @@
 	},
 /turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -21214,7 +21192,6 @@
 	},
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -21420,7 +21397,6 @@
 "sKy" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -21685,7 +21661,6 @@
 "sTk" = (
 /turf/open/floor/rogue/snowpatchy,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -21760,7 +21735,6 @@
 	},
 /turf/open/floor/rogue/metal,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -22564,7 +22538,6 @@
 	},
 /turf/open/floor/rogue/snowpatchy,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -24269,7 +24242,6 @@
 	},
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -25991,7 +25963,6 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
@@ -26881,7 +26852,6 @@
 "xub" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/outdoors/mountains/decap{
-	ambush_types = null;
 	ambush_mobs = null;
 	name = "Lord Mansion";
 	first_time_text = "THE LAND OF THE LORDS"
