@@ -246,6 +246,13 @@
 		if(M.name in friends)
 			return FALSE
 
+	if(ishuman(the_target))
+		var/mob/living/carbon/human/th = the_target
+		if(!(th.mobility_flags & MOBILITY_STAND) && !th.get_active_held_item() && th.ckey) //if is laying and holding nothing, and not in cmode. Ignore.
+			if(prob(4) && (th.has_quirk(/datum/quirk/monsterhuntermale) || th.has_quirk(/datum/quirk/monsterhunterfemale)) && erpable) //tiny chance to trigger abuss.
+				fuckcd = 0
+			return FALSE
+
 	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it
 		return FALSE
 	if(search_objects < 2)

@@ -205,7 +205,7 @@
 	name = "Belly"
 	color_key_defaults = list(KEY_CHEST_COLOR)
 
-/*/datum/sprite_accessory/butt
+/datum/sprite_accessory/butt
 	icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/butt.dmi'
 	color_key_name = "Butt"
 	relevant_layers = list(BODY_ADJ_LAYER)
@@ -215,6 +215,7 @@
 		generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_PANTS, OFFSET_PANTS_F)
 	else
 		generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BUTT, OFFSET_BUTT)
+
 /datum/sprite_accessory/butt/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	var/obj/item/organ/butt/buttie = organ
 	return "butt_[icon_state]_[buttie.organ_size]"
@@ -230,4 +231,4 @@
 /datum/sprite_accessory/butt/pair
 	name = "Pair"
 	icon_state = "pair"
-	color_key_defaults = list(KEY_SKIN_COLOR)*/
+	color_key_defaults = list(KEY_SKIN_COLOR)

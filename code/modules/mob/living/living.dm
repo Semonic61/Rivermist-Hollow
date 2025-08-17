@@ -803,6 +803,7 @@
 			for(var/S in mind.spell_list)
 				var/obj/effect/proc_holder/spell/spell = S
 				spell.updateButtonIcon()
+			client.verbs -= (GLOB.ghost_verbs)//RMH ADD
 		qdel(GetComponent(/datum/component/rot))
 
 /mob/living/proc/remove_CC(should_update_mobility = TRUE)

@@ -82,3 +82,11 @@
 	..()
 	var/obj/item/organ/filling_organ/vagina/vagina_organ = organ
 	vagina_organ.fertility = fertility
+
+/datum/organ_dna/butt
+	var/organ_size = DEFAULT_BUTT_SIZE
+
+/datum/organ_dna/butt/imprint_organ(obj/item/organ/organ)
+	..()
+	var/obj/item/organ/butt/butt_organ = organ
+	butt_organ.organ_size = organ_size

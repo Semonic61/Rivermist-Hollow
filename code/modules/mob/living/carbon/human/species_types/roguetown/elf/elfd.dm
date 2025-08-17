@@ -94,11 +94,13 @@
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/bodypart_feature/legwear,
+		/datum/customizer/bodypart_feature/piercing,
 		/datum/customizer/organ/ears/elf,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/human,
 		/datum/customizer/organ/belly/human,
+		/datum/customizer/organ/butt/human,
 		/datum/customizer/organ/vagina/human_anthro,
 		)
 	body_marking_sets = list(

@@ -55,12 +55,14 @@
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/bodypart_feature/legwear,
+		/datum/customizer/bodypart_feature/piercing,
 		/datum/customizer/organ/horns/humanoid/aura,
 		/datum/customizer/organ/tail/aura,
 		/datum/customizer/organ/testicles/human,
 		/datum/customizer/organ/penis/human,
 		/datum/customizer/organ/breasts/human,
 		/datum/customizer/organ/belly/human,
+		/datum/customizer/organ/butt/human,
 		/datum/customizer/organ/vagina/human,
 		)
 	body_marking_sets = list(

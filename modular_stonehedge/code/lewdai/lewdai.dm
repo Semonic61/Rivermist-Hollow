@@ -215,7 +215,6 @@
 	. = ..()
 	if(erpable)
 		addtimer(CALLBACK(src, PROC_REF(give_genitals)), 0)
-		//give_genitals()
 	if(prob(hornychance))
 		seeksfuck = TRUE
 		fuckcd = rand(0,20)
@@ -406,7 +405,6 @@
 	. = ..()
 	if(erpable)
 		addtimer(CALLBACK(src, PROC_REF(give_genitals)), 0)
-		//give_genitals()
 	if(prob(hornychance))
 		seeksfuck = TRUE
 		fuckcd = rand(0,20)
@@ -442,10 +440,10 @@
 			penis.organ_size = rand(MAX_PENIS_SIZE)
 			penis.Insert(user, TRUE)
 		if(gender == FEMALE)
-			//var/obj/item/organ/butt/buttie = user.getorganslot(ORGAN_SLOT_BUTT)
-			//if(buttie)
-			//	buttie.organ_size = rand(MAX_BUTT_SIZE)
-			//	buttie.Insert(user, TRUE)
+			var/obj/item/organ/butt/buttie = user.getorganslot(ORGAN_SLOT_BUTT)
+			if(buttie)
+				buttie.organ_size = rand(MAX_BUTT_SIZE)
+				buttie.Insert(user, TRUE)
 			var/obj/item/organ/filling_organ/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
 			if(!show_genitals)
 				breasts = new /obj/item/organ/filling_organ/breasts/internal

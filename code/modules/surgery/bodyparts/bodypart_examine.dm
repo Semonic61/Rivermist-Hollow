@@ -144,9 +144,9 @@
 			if(ownerussy.getorganslot(ORGAN_SLOT_BELLY))
 				var/obj/item/organ/belly/ownerussybelly = ownerussy.getorganslot(ORGAN_SLOT_BELLY)
 				bodypart_status += "[ownerussy] has a [find_key_by_value(GLOB.named_belly_sizes, ownerussybelly.organ_size)] belly."
-			//if(ownerussy.getorganslot(ORGAN_SLOT_BUTT))
-			//	var/obj/item/organ/butt/ownerussybutt = ownerussy.getorganslot(ORGAN_SLOT_BUTT)
-			//	bodypart_status += "[ownerussy] has a [find_key_by_value(GLOB.uns_named_butt_sizes, ownerussybutt.organ_size)] butt."
+			if(ownerussy.getorganslot(ORGAN_SLOT_BUTT))
+				var/obj/item/organ/butt/ownerussybutt = ownerussy.getorganslot(ORGAN_SLOT_BUTT)
+				bodypart_status += "[ownerussy] has a [find_key_by_value(GLOB.uns_named_butt_sizes, ownerussybutt.organ_size)] butt."
 			if(ownerussy.getorganslot(ORGAN_SLOT_VAGINA))
 				bodypart_status += "[ownerussy] has a vagina."
 
