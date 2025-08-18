@@ -2210,6 +2210,10 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/banditcamp)
+"wy" = (
+/obj/structure/chair/frankenstein/zizo,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/cave/inhumen)
 "wA" = (
 /obj/structure/rack/rogue,
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm,
@@ -2553,6 +2557,21 @@
 	icon_state = "rockwd"
 	},
 /area/rogue/outdoors/woods)
+"CM" = (
+/obj/effect/landmark/vteleport,
+/obj/machinery/light/rogue/wallfire/candle/blue/r,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors)
+"CQ" = (
+/turf/open/floor/rogue/blocks/stonered,
+/area/rogue/indoors/eventarea)
+"Dh" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/reagent_containers/glass/bottle,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/cave/inhumen)
 "Dk" = (
 /obj/structure/mineral_door/wood/deadbolt,
 /turf/open/floor/rogue/herringbone,
@@ -2669,6 +2688,15 @@
 /obj/structure/roguemachine/bounty,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/cave/inhumen)
+"EC" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/cave/inhumen)
+"EO" = (
+/obj/structure/bars,
+/obj/machinery/light/rogue/wallfire/candle/blue/l,
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors)
 "EP" = (
 /obj/effect/landmark/start/banditlate,
 /turf/open/floor/rogue/tile{
@@ -3383,6 +3411,10 @@
 /area/rogue)
 "Vp" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/reagent_containers/glass/bottle,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/cave/inhumen)
 "Vz" = (
@@ -16107,9 +16139,9 @@ rQ
 rQ
 wN
 TS
-FG
 Qn
-ws
+Qn
+Qn
 Xr
 ws
 Qn
@@ -16237,9 +16269,9 @@ rQ
 rQ
 wN
 TS
-ws
 Qn
-ws
+wy
+Qn
 gN
 ws
 ws
@@ -16367,9 +16399,9 @@ rQ
 rQ
 wN
 TS
-uf
+EC
 Qn
-ws
+Qn
 Xr
 ws
 ws
@@ -16498,8 +16530,8 @@ rQ
 wN
 TS
 ph
-Qn
-FG
+ws
+ws
 If
 Ez
 ws
@@ -16627,7 +16659,7 @@ rQ
 rQ
 wN
 TS
-FG
+Dh
 Vp
 fk
 xL
