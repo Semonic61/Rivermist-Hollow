@@ -406,6 +406,7 @@
 		set_glide_size(glide_size_override)
 
 	last_move = direct
+	last_move_time = world.time
 	if(!nodirchange && !throwing)
 		setDir(direction_to_move)
 	if(. && has_buckled_mobs() && !handle_buckled_mob_movement(loc,direct, glide_size_override)) //movement failed due to buckled mob(s)

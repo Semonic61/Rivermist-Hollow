@@ -71,6 +71,7 @@
 	handle_liver()
 	update_stamina()
 	update_energy()
+	handle_comfy()
 	if(charflaw && !charflaw.ephemeral && mind)
 		charflaw.flaw_on_life(src)
 	if(health <= 0)
