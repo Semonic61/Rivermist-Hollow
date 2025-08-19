@@ -13,6 +13,7 @@
 	var/base_state = "window-solid"
 	var/lockdir = 0
 	var/brokenstate = 0
+	var/latched = 0
 	blade_dulling = DULLING_BASHCHOP
 	pass_flags = LETPASSTHROW
 	climb_time = 20
@@ -51,7 +52,7 @@
 	icon_state = null
 	base_state = null
 	opacity = TRUE
-	max_integrity = 200 
+	max_integrity = 200
 	integrity_failure = 0.5
 
 /obj/structure/roguewindow/stained/silver
@@ -61,7 +62,7 @@
 /obj/structure/roguewindow/stained/yellow
 	icon_state = "stained-yellow"
 	base_state = "stained-yellow"
-	
+
 /obj/structure/roguewindow/stained/zizo
 	icon_state = "stained-zizo"
 	base_state = "stained-zizo"
@@ -163,17 +164,56 @@
 		else
 			icon_state = "w-[base_state]"
 
+/obj/structure/roguewindow/examine(mob/user)
+	. = ..()
+
+	var/msg = "It is [latched ? "latched" : "unlatched"]<br/>"
+	. += msg
+
+
 /obj/structure/roguewindow/openclose/attack_right(mob/user)
+	if(brokenstate)
+		to_chat(user, span_warning("It's broken, that would be foolish."))
+		return
+
 	if(get_dir(src,user) == lockdir)
-		if(brokenstate)
-			to_chat(user, span_warning("It's broken, that would be foolish."))
-			return
-		if(climbable)
-			close_up(user)
-		else
-			open_up(user)
+
+		var/choice = alert(user, "Open|Close or Latch [src]?", "", "Latch", "Open|Close")
+		switch(choice)
+			if("Latch")
+				togglelatch(user)
+			if("Open|Close")
+				if(latched)
+					to_chat(user, span_warning("It's latched, I can't do that."))
+					return
+				else
+					if(climbable)
+						close_up(user)
+					else
+						open_up(user)
+
 	else
-		to_chat(user, span_warning("The window doesn't close from this side."))
+		if(latched)
+			to_chat(user, span_warning("It's latched from inside, I can't do that."))
+			return
+		else
+			if(climbable)
+				close_up(user)
+			else
+				open_up(user)
+
+/obj/structure/roguewindow/proc/togglelatch(mob/living/user, silent)
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(latched)
+		user.visible_message(span_warning("[user] unlatches [src]."), \
+			span_notice("I unlatch [src]."))
+		playsound(src, 'sound/foley/doors/lock.ogg', 100)
+		latched = FALSE
+	else
+		user.visible_message(span_warning("[user] latches [src]."), \
+			span_notice("I latch [src]."))
+		playsound(src, 'sound/foley/doors/lock.ogg', 100)
+		latched = TRUE
 
 /obj/structure/roguewindow/proc/open_up(mob/user)
 	visible_message(span_info("[user] opens [src]."))
