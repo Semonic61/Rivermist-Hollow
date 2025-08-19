@@ -9,8 +9,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	throwforce = 0
 	var/check_counter = 0
-	var/list/attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10,
-										/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
+	var/list/attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
 									/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 33,
 									/mob/living/simple_animal/hostile/retaliate/rogue/mudcrab/cabbit = 33,
 									/mob/living/simple_animal/hostile/retaliate/rogue/chicken = 55)
@@ -109,10 +108,7 @@
 							/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 33,
 							/mob/living/simple_animal/hostile/retaliate/rogue/mudcrab/cabbit = 40, 	// Rabbits love sweet things
 							/mob/living/simple_animal/hostile/retaliate/rogue/saiga = 20,
-							/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck = 20,
-							/mob/living/simple_animal/hostile/retaliate/rogue/fox = 20,				//Scavenger, so lower chance
-							/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10,			//Scavenger, so lower chance
-							/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 5)				//Predator, doesn't eat berries but attacted to prey
+							/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck = 20)
 
 
 /obj/item/bait/bloody
@@ -121,7 +117,7 @@
 	icon_state = "baitb"
 	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 35,
 							/mob/living/simple_animal/hostile/retaliate/rogue/mole = 20,
-							/mob/living/simple_animal/hostile/retaliate/rogue/fox = 20,	
+							/mob/living/simple_animal/hostile/retaliate/rogue/fox = 20,
 							/mob/living/simple_animal/hostile/retaliate/rogue/wolf/bobcat = 15,		//Annoying bastards
 							/mob/living/simple_animal/hostile/retaliate/rogue/direbear = 10,
 							/mob/living/simple_animal/hostile/retaliate/rogue/troll/bog = 5)			//RUH-ROH
