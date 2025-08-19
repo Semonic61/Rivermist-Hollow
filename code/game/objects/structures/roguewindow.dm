@@ -51,7 +51,7 @@
 	icon_state = null
 	base_state = null
 	opacity = TRUE
-	max_integrity = 200 
+	max_integrity = 200
 	integrity_failure = 0.5
 
 /obj/structure/roguewindow/stained/silver
@@ -61,7 +61,7 @@
 /obj/structure/roguewindow/stained/yellow
 	icon_state = "stained-yellow"
 	base_state = "stained-yellow"
-	
+
 /obj/structure/roguewindow/stained/zizo
 	icon_state = "stained-zizo"
 	base_state = "stained-zizo"
@@ -164,16 +164,13 @@
 			icon_state = "w-[base_state]"
 
 /obj/structure/roguewindow/openclose/attack_right(mob/user)
-	if(get_dir(src,user) == lockdir)
-		if(brokenstate)
-			to_chat(user, span_warning("It's broken, that would be foolish."))
-			return
-		if(climbable)
-			close_up(user)
-		else
-			open_up(user)
+	if(brokenstate)
+		to_chat(user, span_warning("It's broken, that would be foolish."))
+		return
+	if(climbable)
+		close_up(user)
 	else
-		to_chat(user, span_warning("The window doesn't close from this side."))
+		open_up(user)
 
 /obj/structure/roguewindow/proc/open_up(mob/user)
 	visible_message(span_info("[user] opens [src]."))
