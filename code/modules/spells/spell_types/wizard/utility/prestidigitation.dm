@@ -184,6 +184,8 @@
 
 	icon = 'icons/roguetown/items/lighting.dmi'
 	icon_state = "wisp"
+	layer = WALL_OBJ_LAYER
+	plane = GAME_PLANE_HIGHEST
 
 #undef PRESTI_CLEAN
 #undef PRESTI_SPARK

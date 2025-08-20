@@ -274,6 +274,8 @@
 	max_integrity = 10
 	layer = 4.1
 	blade_dulling = DULLING_CUT
+	layer = WALL_OBJ_LAYER
+	plane = GAME_PLANE_HIGHEST
 
 /obj/structure/flora/roguegrass/water/update_icon()
 	dir = pick(GLOB.cardinals)
@@ -623,7 +625,7 @@
 
 /obj/structure/flora/roguegrass/pyroclasticflowers/update_icon()
 	icon_state = "pyroflower[rand(1,3)]"
-	
+
 /obj/structure/flora/roguegrass/pyroclasticflowers/Initialize()
 	. = ..()
 	if(prob(88))
