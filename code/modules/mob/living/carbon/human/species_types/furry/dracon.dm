@@ -74,6 +74,7 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/bodypart_feature/bodyhair,
 		/datum/customizer/organ/vagina/animal,
 		/datum/customizer/organ/ears/anthro,
 		)

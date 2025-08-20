@@ -11,7 +11,7 @@
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY,MUTCOLORS_PARTSONLY)
 	
 	allowed_custom_name = TRUE
-	
+
 	allowed_taur_types = list(
 		/obj/item/bodypart/taur/lamia,
 		/obj/item/bodypart/taur/spider,
@@ -75,6 +75,7 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/bodypart_feature/bodyhair,
 		/datum/customizer/organ/vagina/animal,
 		)
 	body_marking_sets = list(

@@ -18,7 +18,7 @@
 		LIPS,
 		HAIR,
 	)
-	
+
 	allowed_custom_name = TRUE
 
 	allowed_taur_types = list(
@@ -91,6 +91,7 @@
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,
 		/datum/customizer/organ/breasts/animal,
+		/datum/customizer/bodypart_feature/bodyhair,
 		/datum/customizer/organ/vagina/anthro,
 		)
 	body_marking_sets = list(
