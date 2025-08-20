@@ -2590,6 +2590,7 @@
 #include "modular_rmh\code\game\objects\structures\hay.dm"
 #include "modular_rmh\code\game\objects\structures\ladder.dm"
 #include "modular_rmh\code\game\objects\structures\ship.dm"
+#include "modular_rmh\code\game\objects\structures\vendor.dm"
 #include "modular_rmh\code\game\objects\structures\waterwheel.dm"
 #include "modular_rmh\code\game\objects\structures\woodcutter.dm"
 #include "modular_rmh\modular\comfy\comfy.dm"
