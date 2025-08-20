@@ -742,7 +742,7 @@
 	tiled_dirt = FALSE
 	landsound = 'sound/foley/jumpland/dirtland.wav'
 	smooth = SMOOTH_TRUE
-	canSmoothWith = list(/turf/open/floor/rogue/dirt/road,/turf/open/floor/rogue/dirt)
+	canSmoothWith = list(/turf/open/floor/rogue,/turf/open/lava) // /rogue/dirt/road,/turf/open/floor/rogue/dirt)
 	neighborlay = "lavedge"
 
 /turf/open/floor/rogue/volcanic/Initialize()
@@ -1177,7 +1177,7 @@
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/rogue,
 						/turf/closed/mineral,
-						/turf/closed/wall/mineral)
+						/turf/closed/wall/mineral,)
 
 /turf/open/floor/rogue/cobblerock/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
@@ -1464,6 +1464,7 @@
 	smooth = SMOOTH_MORE
 	canSmoothWith = list(/turf/open/floor/rogue,
 						/turf/closed/mineral,
+						/turf/open/lava,
 						/turf/closed/wall/mineral)
 
 /turf/open/floor/rogue/naturalstone/cardinal_smooth(adjacencies)
