@@ -3207,7 +3207,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town)
 "cHQ" = (
-/obj/structure/ladder/earth,
+/obj/structure/ladder/hatch,
 /obj/structure/flora/roguetree/stump/log{
 	layer = 3
 	},
@@ -3885,6 +3885,14 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
+"dmc" = (
+/obj/structure/flora/roguegrass,
+/obj/structure/hay_stack,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "dmd" = (
 /obj/structure/fluff/railing/border{
 	dir = 5
@@ -4407,6 +4415,10 @@
 "dEI" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors/shelter/mountains)
+"dEK" = (
+/obj/structure/fluff/woodcutter,
+/turf/open/floor/rogue/blocks,
+/area/rogue/indoors/town/dwarfin)
 "dEM" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -13127,6 +13139,10 @@
 /obj/item/natural/stone,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/cave/minotaurcave)
+"ljy" = (
+/obj/structure/underworld/ship/smol,
+/turf/open/water/cleanshallow,
+/area/rogue/outdoors/river)
 "ljP" = (
 /obj/structure/stairs{
 	dir = 4
@@ -13780,7 +13796,7 @@
 	aportalgoesto = "mapforest";
 	aportalid = "mainmapforest"
 	},
-/turf/open/floor/rogue/grass,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
 "lLG" = (
 /obj/structure/fluff/walldeco/church/line{
@@ -17151,7 +17167,7 @@
 	pixel_y = 0;
 	pixel_x = 8
 	},
-/obj/structure/roguemachine/vendor/inn{
+/obj/structure/roguemachine/vendor/inn_rmh{
 	pixel_x = 32
 	},
 /turf/open/floor/rogue/wood,
@@ -19502,6 +19518,13 @@
 /obj/item/natural/bundle/stoneblock,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/cave/minotaurcave)
+"qSD" = (
+/obj/structure/hay_stack/rope,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "qTB" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/rogue/dirt,
@@ -20726,6 +20749,10 @@
 /obj/structure/ladder,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/cave)
+"rRr" = (
+/obj/structure/hay_stack,
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town)
 "rRM" = (
 /obj/structure/flora/roguegrass,
 /obj/structure/fluff/railing/border{
@@ -21279,6 +21306,19 @@
 "sry" = (
 /turf/closed/mineral/random/rogue/high,
 /area/rogue/under/underdark)
+"srE" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 2;
+	pixel_y = 0
+	},
+/obj/structure/waterwheel{
+	pixel_y = 8
+	},
+/turf/open/floor/rogue/ruinedwood/turned,
+/area/rogue/outdoors/river)
 "srI" = (
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/blocks,
@@ -24294,6 +24334,14 @@
 	},
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town)
+"uPf" = (
+/obj/structure/flora/roguegrass,
+/obj/structure/hay_stack/rope,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "uPv" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle,
 /area/rogue/indoors/town/church/chapel{
@@ -24303,6 +24351,10 @@
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/wood/herringbone,
 /area/rogue/indoors/town/tavern)
+"uPD" = (
+/obj/structure/hay_stack/rope,
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/town)
 "uPS" = (
 /obj/structure/flora/roguetree/stump{
 	pixel_x = -8
@@ -24432,7 +24484,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "uVw" = (
-/obj/structure/ladder/earth,
+/obj/structure/ladder/hatch,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/town{
 	name = "Rivermist Hollow";
@@ -25922,7 +25974,7 @@
 /area/rogue/indoors/town/shop)
 "wqU" = (
 /obj/structure/flora/roguegrass/bush,
-/obj/structure/ladder/earth,
+/obj/structure/ladder/hatch,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town{
 	name = "Rivermist Hollow";
@@ -58386,7 +58438,7 @@ eWM
 rAW
 jyx
 hbX
-hbX
+dEK
 rAW
 niE
 ufZ
@@ -64764,7 +64816,7 @@ xtS
 xtS
 xtS
 icT
-sOP
+srE
 cpA
 rgo
 mTx
@@ -80459,7 +80511,7 @@ oBb
 oBb
 oBb
 oBb
-icT
+ljy
 cjO
 etB
 aqJ
@@ -124461,7 +124513,7 @@ gVA
 gVA
 xmT
 goE
-gVA
+dmc
 gVA
 tZt
 soN
@@ -124719,7 +124771,7 @@ gVA
 gVA
 pZb
 eUR
-pZb
+qSD
 pxk
 lUG
 jxs
@@ -126015,7 +126067,7 @@ dRA
 btY
 btY
 lBF
-gVA
+uPf
 eWM
 eWM
 eWM
@@ -128067,7 +128119,7 @@ eUR
 pNZ
 yge
 wUH
-hpr
+uPD
 pjL
 bOZ
 mwk
@@ -129096,7 +129148,7 @@ vsP
 wUH
 tcR
 mMb
-hpr
+rRr
 rAl
 eqD
 btS
