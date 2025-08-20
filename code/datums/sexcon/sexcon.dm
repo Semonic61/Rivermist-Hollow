@@ -590,8 +590,8 @@
 /datum/sex_controller/proc/check_active_ejaculation()
 	if(arousal < ACTIVE_EJAC_THRESHOLD)
 		return FALSE
-	if(is_spent() && !issimple(user))
-		return FALSE
+	//if(is_spent() && !issimple(user))
+	//	return FALSE
 	if(!can_ejaculate())
 		return FALSE
 	return TRUE
@@ -608,8 +608,8 @@
 /datum/sex_controller/proc/handle_passive_ejaculation()
 	if(arousal < PASSIVE_EJAC_THRESHOLD)
 		return
-	if(is_spent() && !issimple(user))
-		return
+	//if(is_spent() && !issimple(user))
+	//	return
 	if(!can_ejaculate())
 		return FALSE
 	ejaculate()
@@ -629,8 +629,8 @@
 /datum/sex_controller/proc/handle_cock_milking(mob/living/carbon/human/milker)
 	if(arousal < ACTIVE_EJAC_THRESHOLD)
 		return
-	if(is_spent())
-		return
+	//if(is_spent())
+	//	return
 	if(!can_ejaculate())
 		return FALSE
 	ejaculate_container(milker.get_active_held_item())
@@ -649,7 +649,7 @@
 	if(arousal >= AROUSAL_HARD_ON_THRESHOLD)
 		return FALSE
 	return TRUE
-
+/*
 /datum/sex_controller/proc/is_spent()
 	if(charge < CHARGE_FOR_CLIMAX)
 		return TRUE
@@ -675,11 +675,11 @@
 		if(arousal > 60)
 			to_chat(user, span_warning("I'm too spent!"))
 			adjust_arousal(-20)
-		adjust_arousal(-dt * SPENT_AROUSAL_RATE)
+		adjust_arousal(-dt * SPENT_AROUSAL_RATE)*/
 
 /datum/sex_controller/proc/process_sexcon(dt)
 	handle_arousal_unhorny(dt)
-	handle_charge(dt)
+	//handle_charge(dt)
 	handle_passive_ejaculation()
 
 /datum/sex_controller/proc/handle_arousal_unhorny(dt)
