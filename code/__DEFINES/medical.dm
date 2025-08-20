@@ -99,7 +99,7 @@
 #define BODYPART_FEATURE_CREST "crest"
 #define BODYPART_FEATURE_LEGWEAR "legwear"
 #define BODYPART_FEATURE_PIERCINGS "piercings"
-#define BODYPART_FEATURE_BODYHAIR "bodyhair"
+#define BODYPART_FEATURE_BODYHAIR "body_hair"
 
 //flags for requirements for a surgery step
 #define SURGERY_BLOODY (1<<0)

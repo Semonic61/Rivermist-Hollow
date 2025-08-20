@@ -2,7 +2,7 @@
 	abstract_type = /datum/sprite_accessory/piercing
 	icon = 'modular_rmh/icons/mob/sprite_accessory/piercings/rings.dmi'
 	color_key_name = "Piercings"
-	layer = BODY_ADJ_LAYER
+	layer = BODY_FRONT_FRONT_FRONT_LAYER
 	color_disabled = TRUE
 	var/piercing_type
 

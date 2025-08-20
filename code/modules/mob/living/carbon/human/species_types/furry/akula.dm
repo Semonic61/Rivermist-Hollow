@@ -80,7 +80,7 @@
 		/datum/customizer/organ/breasts/human,
 		/datum/customizer/organ/belly/human,
 		/datum/customizer/organ/butt/human,
-		/datum/customizer/bodypart_feature/bodyhair,
+		///datum/customizer/bodypart_feature/bodyhair,
 		/datum/customizer/organ/vagina/human_anthro,
 		)
 	body_marking_sets = list(
