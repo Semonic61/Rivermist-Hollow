@@ -938,7 +938,7 @@
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
 	lockid = "underdark_dsl";
-	name = "ssssssss";
+	name = "Temple Quarters";
 	max_integrity = 5000
 	},
 /turf/open/floor/rogue/concrete,
