@@ -142,3 +142,5 @@
 
 	/// Whether our job title is adaptive to our skills.
 	var/adaptive_name
+
+	var/custom_race_name = null

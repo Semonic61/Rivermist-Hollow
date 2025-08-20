@@ -467,6 +467,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["highlight_color"]	>> highlight_color
 	S["taur_type"]			>> taur_type
 	S["taur_color"]			>> taur_color
+	S["custom_race_name"]	>> custom_race_name
 
 /datum/preferences/proc/load_character(slot)
 	if(!path)
@@ -570,6 +571,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if (!features["body_size"])
 		features["body_size"] = BODY_SIZE_NORMAL
 	//try to fix any outdated data if necessary
+	S["custom_race_name"]			>> custom_race_name
+	if(!valid_custom_race_name(null, custom_race_name, TRUE))
+		custom_race_name = null
+
 	if(needs_update >= 0)
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
 
@@ -737,6 +742,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["virtuetwo"], virtuetwo.type)
 	WRITE_FILE(S["combat_music"], combat_music.type)
 	WRITE_FILE(S["body_size"] , features["body_size"])
+	WRITE_FILE(S["custom_race_name"] , custom_race_name)
 	if(loadout)
 		WRITE_FILE(S["loadout"] , loadout.type)
 	else

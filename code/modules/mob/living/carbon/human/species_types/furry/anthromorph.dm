@@ -18,6 +18,8 @@
 		LIPS,
 		HAIR,
 	)
+	
+	allowed_custom_name = TRUE
 
 	allowed_taur_types = list(
 		/obj/item/bodypart/taur/lamia,

@@ -81,11 +81,11 @@
 			if(islatejoin)
 				is_returning = TRUE
 		if(display_as_wanderer)
-			. = list(span_info("ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [race_name]."))
+			. = list(span_info("ø ------------ ø\nThis is <EM>[used_name]</EM>, the wandering [custom_race_name ? "[custom_race_name] ([race_name])" : "[race_name]"]."))
 		else if(used_title)
-			. = list(span_info("ø ------------ ø\nThis is <EM>[used_name]</EM>, the [is_returning ? "returning " : ""][race_name] [used_title]."))
+			. = list(span_info("ø ------------ ø\nThis is <EM>[used_name]</EM>, the [is_returning ? "returning " : ""][custom_race_name ? "[custom_race_name] ([race_name])" : "[race_name]"] [used_title]."))
 		else
-			. = list(span_info("ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name]."))
+			. = list(span_info("ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [custom_race_name ? "[custom_race_name] ([race_name])" : "[race_name]"]."))
 
 		if(HAS_TRAIT(src, TRAIT_WITCH))
 			if(HAS_TRAIT(user, TRAIT_NOBLE) || HAS_TRAIT(user, TRAIT_INQUISITION) || HAS_TRAIT(user, TRAIT_WITCH))

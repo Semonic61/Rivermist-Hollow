@@ -190,6 +190,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/taur_type = null
 	var/taur_color = "ffffff"
+	var/custom_race_name				//custom race name for furries
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -379,6 +380,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				var/name = ispath(T) ? T::name : "None"
 				dat += "<b>Taur Body Type:</b> <a href='?_src_=prefs;preference=taur_type;task=input'>[name]</a><BR>"
 				dat += "<b>Taur Color:</b><span style='border: 1px solid #161616; background-color: #[taur_color];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=taur_color;task=input'>Change</a><BR>"
+			
+			if(pref_species.allowed_custom_name)
+				dat += "<b>Race Name:</b> <a href='?_src_=prefs;preference=customracename;task=input'>Change: [custom_race_name]</a><BR>"
 
 			// LETHALSTONE EDIT BEGIN: add voice type prefs
 			dat += "<b>Voice Type</b>: <a href='?_src_=prefs;preference=voicetype;task=input'>[voice_type]</a><BR>"
@@ -1797,6 +1801,23 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					if(new_color)
 						highlight_color = sanitize_hexcolor(new_color)
 
+				if("customracename")
+					to_chat(user, "<span class='notice'>What are you?</span>")
+					var/new_custom_race_name = input(user, "Input your custom race name:", "Custom Race Name", custom_race_name) as message|null
+					if(new_custom_race_name == null)
+						return
+					if(new_custom_race_name == "")
+						custom_race_name = null
+						ShowChoices(user)
+						return
+					if(!valid_custom_race_name(user, new_custom_race_name))
+						custom_race_name = null
+						ShowChoices(user)
+						return
+					custom_race_name = new_custom_race_name
+					to_chat(user, "<span class='notice'>Successfully updated Race Name</span>")
+					log_game("[user] has set their Race Name to '[custom_race_name]'.")
+
 				if("headshot")
 					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
@@ -2680,6 +2701,8 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 		generate_selectable_moanpacks()
 		character.moan_selection = GLOB.selectable_moanpacks[moan_selection]
 
+	character.custom_race_name = custom_race_name
+
 	// LETHALSTONE ADDITION END
 
 	if(parent)
@@ -2824,6 +2847,12 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 			to_chat(usr, "<span class='warning'>The image must be hosted on one of the following sites: 'Gyazo, Lensdump, Imgbox, Catbox'</span>")
 		return FALSE
 	return TRUE //TA edit end
+
+/proc/valid_custom_race_name(mob/user, value, silent = FALSE)
+
+	if(!length(value))
+		return FALSE
+	return TRUE
 
 /datum/preferences/proc/is_active_migrant()
 	if(!migrant)

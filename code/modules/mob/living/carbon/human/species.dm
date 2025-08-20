@@ -128,6 +128,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/list/allowed_taur_types = list()
 
+	var/allowed_custom_name = FALSE //rhm edit
+
 	/// List of descriptor choices this species gets in preferences customization
 	var/list/descriptor_choices = list(
 		/datum/descriptor_choice/height,

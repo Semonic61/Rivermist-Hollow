@@ -104,7 +104,7 @@ GLOBAL_LIST_INIT(customizers, build_customizers())
 		.[type] = new type()
 	return .
 
-/proc/color_pick_sanitized(mob/user, description, title, default_value, min_tag = 0.07, max_tag = 0.80)
+/proc/color_pick_sanitized(mob/user, description, title, default_value, min_tag = 0.02, max_tag = 0.95) //RMH edit - expanded range
 	var/color = input(user, description, title, default_value) as color|null
 	var/good = TRUE
 	if(!color)
@@ -112,11 +112,11 @@ GLOBAL_LIST_INIT(customizers, build_customizers())
 	color = sanitize_hexcolor(color)
 	var/list/hsl = rgb2hsl(hex2num(copytext(color,1,3)),hex2num(copytext(color,3,5)),hex2num(copytext(color,5,7)))
 	if(hsl[3] < min_tag)
-		to_chat(user, span_warning("The picked color is too dark! Raising Luminosity to minimum 20%."))
+		to_chat(user, span_warning("The picked color is too dark! Raising Luminosity to minimum 2%."))
 		hsl[3] = min_tag
 		good = FALSE
 	if(hsl[2] > max_tag)
-		to_chat(user, span_warning("The picked color is too bright! Lowering Saturation to maximum 80%."))
+		to_chat(user, span_warning("The picked color is too bright! Lowering Saturation to maximum 95%."))
 		hsl[2] = max_tag
 		good = FALSE
 	if(!good)

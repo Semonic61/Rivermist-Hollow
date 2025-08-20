@@ -141,8 +141,7 @@
 		var/obj/item/organ/filling_organ/breasts/breasties = owner.getorganslot(ORGAN_SLOT_BREASTS)
 		if(!breasties.refilling)
 			breasties.refilling = TRUE
-			if(owner.has_quirk(/datum/quirk/selfawaregeni))
-				to_chat(owner, span_love("My breasts should start lactating soon..."))
+			to_chat(owner, span_love("I feel damp warmness on my nipples, I'm definitely leaking milk..."))
 	if(owner.getorganslot(ORGAN_SLOT_BELLY)) //shitty default behavior i guess, i aint gonna customiza-ble this fuck that.
 		var/obj/item/organ/belly/belly = owner.getorganslot(ORGAN_SLOT_BELLY)
 		pre_pregnancy_size = belly.organ_size
