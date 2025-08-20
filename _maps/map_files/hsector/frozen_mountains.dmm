@@ -615,7 +615,7 @@
 /area/rogue/under/town/basement/keep)
 "cG" = (
 /turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave/underdark)
+/area/rogue/under/underdark/south)
 "cK" = (
 /obj/structure/bars/cemetery,
 /obj/structure/bars/cemetery,
@@ -630,6 +630,7 @@
 /obj/structure/flora/roguegrass{
 	color = "#4dc6eb"
 	},
+/turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/mountains/decap{
 	ambush_mobs = null;
 	name = "Lord Mansion";
@@ -2617,6 +2618,13 @@
 /obj/structure/flora/roguetree/stump/log,
 /turf/open/floor/rogue/snow,
 /area/rogue/outdoors/mountains/decap)
+"mv" = (
+/obj/structure/fluff/traveltile{
+	aportalgoesto = "underdark1";
+	aportalid = "underdarkd"
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/underdark/south)
 "my" = (
 /obj/structure/bars/pipe{
 	dir = 1;
@@ -3401,16 +3409,13 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains/decap)
 "qL" = (
-/obj/structure/bars/grille{
-	layer = 4
-	},
 /obj/structure/table/optable{
 	layer = 4.1
 	},
 /obj/structure/fluff/walldeco/med4{
 	pixel_x = -32
 	},
-/turf/open/water/bloody,
+/turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/manor)
 "qM" = (
 /obj/effect/decal/cleanable/debris/stony,
@@ -3774,7 +3779,9 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/manor)
 "sr" = (
-/obj/structure/fluff/walldeco/bigpainting,
+/obj/structure/fluff/walldeco/bigpainting{
+	pixel_x = -32
+	},
 /turf/open/floor/rogue/ruinedwood/herringbone,
 /area/rogue/indoors/town/manor)
 "st" = (
@@ -4044,7 +4051,7 @@
 /area/rogue/under/town/basement/keep)
 "tH" = (
 /turf/closed/mineral/random/rogue/high,
-/area/rogue/indoors/cave/underdark)
+/area/rogue/under/underdark/south)
 "tI" = (
 /obj/effect/decal/cobbleedge{
 	icon = 'icons/roguetown/misc/tables.dmi';
@@ -4245,7 +4252,7 @@
 	name = "fog"
 	},
 /turf/open/floor/rogue/dirt,
-/area/rogue/indoors/cave/underdark)
+/area/rogue/under/underdark/south)
 "uI" = (
 /obj/effect/decal/cleanable/debris/stony,
 /obj/effect/decal/remains/human,
@@ -4309,7 +4316,7 @@
 "uX" = (
 /obj/effect/decal/cleanable/debris/stony,
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/cave/underdark)
+/area/rogue/under/underdark/south)
 "va" = (
 /obj/structure/closet/crate/roguecloset/inn,
 /turf/open/floor/rogue/tile/harem1,
@@ -4510,7 +4517,7 @@
 "vQ" = (
 /obj/effect/decal/cleanable/debris/stony,
 /turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave/underdark)
+/area/rogue/under/underdark/south)
 "vR" = (
 /obj/structure/bars/tough{
 	opacity = 1
@@ -5444,7 +5451,8 @@
 /area/rogue/indoors/shelter/mountains)
 "Ao" = (
 /obj/structure/mineral_door/bars{
-	locked = 1
+	locked = 1;
+	lockid = "mansionvampire"
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/mountains/decap{
@@ -5625,7 +5633,7 @@
 	name = "fog"
 	},
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/cave/underdark)
+/area/rogue/under/underdark/south)
 "Bp" = (
 /obj/structure/table/church/end/alt,
 /obj/structure/fermentation_keg/random/beer{
@@ -6222,7 +6230,7 @@
 /area/rogue/outdoors/mountains/decap)
 "Er" = (
 /turf/closed/mineral/rogue/bedrock,
-/area/rogue/indoors/cave/underdark)
+/area/rogue/under/underdark/south)
 "Es" = (
 /obj/structure/stairs/fancy/c{
 	dir = 1
@@ -7633,7 +7641,7 @@
 /area/rogue/indoors/shelter/mountains)
 "Ld" = (
 /turf/closed/wall/mineral/rogue/stone,
-/area/rogue/indoors/cave/underdark)
+/area/rogue/under/underdark/south)
 "Le" = (
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/town/bath)
@@ -8138,7 +8146,7 @@
 /area/rogue/under/town/basement/keep)
 "Ns" = (
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/indoors/cave/underdark)
+/area/rogue/under/underdark/south)
 "Nt" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -8477,7 +8485,7 @@
 /area/rogue/indoors/shelter/mountains)
 "Pb" = (
 /turf/open/floor/rogue/dirt,
-/area/rogue/indoors/cave/underdark)
+/area/rogue/under/underdark/south)
 "Pc" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur,
 /turf/open/floor/rogue/herringbone,
@@ -9214,6 +9222,13 @@
 /area/rogue/outdoors/town/dwarf{
 	first_time_text = "The Dwarven Smith Room"
 	})
+"SQ" = (
+/obj/structure/fluff/traveltile{
+	aportalgoesto = "underdark1";
+	aportalid = "underdarkd"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/underdark/south)
 "SS" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -33436,7 +33451,7 @@ Ns
 cG
 Ns
 Pb
-cG
+SQ
 uD
 mE
 mE
@@ -33565,7 +33580,7 @@ vQ
 cG
 Ns
 Ns
-Ns
+mv
 Bo
 mE
 mE
@@ -33694,7 +33709,7 @@ vQ
 uX
 Pb
 Pb
-cG
+SQ
 Bo
 mE
 mE
@@ -83683,7 +83698,7 @@ nX
 nX
 nX
 nX
-BD
+Jl
 aS
 aS
 aS
