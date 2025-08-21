@@ -2581,6 +2581,7 @@
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\orc.dm"
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\rogue_corpse.dm"
 #include "modular_hearthstone\code\modules\reagents\reagent_containers\lux.dm"
+#include "modular_rmh\code\area\rmh_areas.dm"
 #include "modular_rmh\code\game\modules\crafting\lewd\dildo_crafting.dm"
 #include "modular_rmh\code\game\modules\jobs\job_types\roguetown\vampire\vampguard.dm"
 #include "modular_rmh\code\game\modules\jobs\job_types\roguetown\vampire\vamplord.dm"

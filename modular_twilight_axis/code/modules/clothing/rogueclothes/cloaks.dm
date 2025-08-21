@@ -1,6 +1,6 @@
 /obj/item/clothing/cloak/captain
 	name = "captain's cape"
-	desc = "A cape with a gold embroided heraldry of Twilight Axis."
+	desc = "A cape with a gold embroided heraldry of Rivermist Hollow."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/special/captain.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/special/onmob/captain.dmi'
 	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/special/onmob/captain.dmi'
@@ -21,7 +21,7 @@
 		var/list/things = STR.contents()
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
-		
+
 /obj/item/clothing/cloak/captain/update_icon()
 	cut_overlays()
 	if(get_detail_tag())

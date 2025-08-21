@@ -219,7 +219,7 @@ GLOBAL_LIST_EMPTY(heretical_players)
 		for(var/obj/effect/proc_holder/spell/S in mind.spell_list)
 			if(S.type in whitelist)
 				mind.RemoveSpell(S)
-		
+
 		for(var/spell_type in god.miracles)
 			if(god.miracles[spell_type] <= CLERIC_T4 && (spell_type in whitelist))
 				var/obj/effect/proc_holder/spell/new_spell = new spell_type
@@ -283,7 +283,7 @@ GLOBAL_LIST_EMPTY(heretical_players)
 		var/dispjob = mind.assigned_role
 		removeomen(OMEN_NOLORD)
 		say("By the authority of the gods, I pronounce you Ruler of all Azuria!")
-		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of TWILIGHT AXIS!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
+		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of RIVERMIST HOLLOW!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
 		var/datum/job/roguetown/nomoredukes = SSjob.GetJob("Grand Duke")
 		if(nomoredukes)
 			nomoredukes.total_positions = -1000 //We got what we got now.
@@ -604,7 +604,7 @@ code\modules\admin\verbs\divinewrath.dm has a variant with all the gods so keep 
 
 			COOLDOWN_START(src, priest_curse, PRIEST_CURSE_COOLDOWN)
 			H.add_curse(curse_type)
-			
+
 			priority_announce("[real_name] has stricken [H.real_name] with [curse_pick]! SHAME!", title = "JUDGEMENT", sound = 'sound/misc/excomm.ogg')
 			message_admins("DIVINE CURSE: [real_name] ([ckey]) has stricken [H.real_name] ([H.ckey] with [curse_pick])")
 			log_game("DIVINE CURSE: [real_name] ([ckey]) has stricken [H.real_name] ([H.ckey] with [curse_pick])")
