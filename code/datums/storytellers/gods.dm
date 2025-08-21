@@ -41,7 +41,7 @@
 		EVENT_TRACK_INTERVENTION = 0,			//No god intervention, cus he's asleep.
 		EVENT_TRACK_CHARACTER_INJECTION = 0,	//No antagonist spawns.
 	)
-
+/*
 /datum/storyteller/astrata
 	name = "Astrata"
 	desc = "Astrata will provide a balanced and varied experience. Consider this the default experience."
@@ -423,4 +423,4 @@
 		STATS_LOCKS_PICKED = list("points" = 4.5, "capacity" = 90),
 	)
 
-	cost_variance = 15  // Keeps a balance between predictability and randomness
+	cost_variance = 15  // Keeps a balance between predictability and randomness*/
