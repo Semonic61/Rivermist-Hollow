@@ -1,7 +1,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/captain
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "captain's brigandine"
-	desc = "A coat with plates specifically tailored and forged for the captain of Twilight Axis."
+	desc = "A coat with plates specifically tailored and forged for the captain of Rivermist Hollow."
 	body_parts_covered = COVERAGE_TORSO
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/special/captain.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/special/onmob/captain.dmi'
