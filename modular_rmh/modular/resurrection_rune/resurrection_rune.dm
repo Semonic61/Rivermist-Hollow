@@ -47,7 +47,7 @@
 	body.flash_act()
 
 	linked_users += body
-	body.apply_status_effect(/datum/status_effect/debuff/revived)
+	body.apply_status_effect(/datum/status_effect/debuff/revived/rune)
 	body.apply_status_effect(/datum/status_effect/debuff/rune_glow)
 	playsound(T, 'sound/misc/vampirespell.ogg', 100, FALSE, -1)
 	to_chat(body, span_blue("You are back."))
@@ -116,7 +116,7 @@
 	user.grab_ghost(TRUE)
 	body.flash_act()
 	resurrecting -= user
-	body.apply_status_effect(/datum/status_effect/debuff/revived)
+	body.apply_status_effect(/datum/status_effect/debuff/revived/rune)
 	body.apply_status_effect(/datum/status_effect/debuff/rune_glow)
 	playsound(T, 'sound/misc/vampirespell.ogg', 100, FALSE, -1)
 	to_chat(body, span_blue("You are back."))

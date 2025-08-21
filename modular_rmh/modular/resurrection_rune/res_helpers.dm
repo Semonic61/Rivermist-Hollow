@@ -11,6 +11,15 @@ GLOBAL_LIST_EMPTY(global_resurrunes)
 	desc = "You felt lyfe itself course through you, restoring your lux and your essance. You.. live - but your body aches. It still needs time to recover.."
 	icon_state = "revived"
 
+/datum/status_effect/debuff/rune_glow/on_apply()
+	. = ..()
+	ADD_TRAIT(owner, TRAIT_PACIFISM, TRAIT_GENERIC)
+	
+
+/datum/status_effect/debuff/rune_glow/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner, TRAIT_PACIFISM, TRAIT_GENERIC)
+
 #define REVIVAL_FILTER "revival_glow"
 /atom/movable/screen/alert/status_effect/debuff/rune_glow
 	name = "Revival Afterglow"

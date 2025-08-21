@@ -53,7 +53,7 @@
 	allowed_areas = list(/area/rogue/outdoors/bog)
 
 /datum/mapGeneratorModule/boggrass
-	clusterCheckFlags = CLUSTER_CHECK_NONE
+	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	allowed_turfs = list(/turf/open/floor/rogue/grass)
 	excluded_turfs = list()
 	clusterMax = 2
