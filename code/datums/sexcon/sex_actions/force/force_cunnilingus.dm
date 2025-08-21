@@ -44,12 +44,12 @@
 	do_thrust_animate(target, user)
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
-	if(user.sexcon.check_active_ejaculation())
-		user.visible_message(span_love("[user] ejaculates into [target]'s mouth!"))
+	if(user.sexcon.check_active_orgasm())
+		user.visible_message(span_love("[user] orgasms into [target]'s mouth!"))
 		user.sexcon.cum_into(girljuice = TRUE)
 
 	user.sexcon.perform_sex_action(target, 0, 2, FALSE)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/force_cunnilingus/on_finish(mob/living/user, mob/living/target)
 	..()

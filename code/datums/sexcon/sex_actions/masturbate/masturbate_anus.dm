@@ -34,7 +34,7 @@
 	playsound(user, 'sound/misc/mat/fingering.ogg', segsovolume, TRUE, -2, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(user, 2, 6, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/masturbate_anus/on_finish(mob/living/user, mob/living/target)
 	..()

@@ -2,9 +2,9 @@ GLOBAL_LIST_INIT(sex_actions, build_sex_actions())
 
 #define SEX_ACTION(sex_action_type) GLOB.sex_actions[sex_action_type]
 
-#define MAX_AROUSAL 150
-#define PASSIVE_EJAC_THRESHOLD 108
-#define ACTIVE_EJAC_THRESHOLD 100
+#define MAX_AROUSAL 500
+#define PASSIVE_ORGASM_THRESHOLD 108
+#define ACTIVE_ORGASM_THRESHOLD 100
 #define SEX_MAX_CHARGE 300
 #define CHARGE_FOR_CLIMAX 100
 #define AROUSAL_HARD_ON_THRESHOLD 20
@@ -54,6 +54,12 @@ GLOBAL_LIST_INIT(sex_actions, build_sex_actions())
 #define PAIN_DAMAGE_DIVISOR 50
 
 #define VIOLATED_ALLOWED_TIME (1 MINUTES)
+
+#define LOW_ORGASM_THRESHOLD 3
+#define HIGH_ORGASM_THRESHOLD 5
+#define OVER_THE_TOP_ORGASM_THRESHOLD 10
+#define ORGASM_RESET_TIME (2 MINUTES)
+#define ORGASM_COOLDOWN_TIME (10 SECONDS)
 
 /proc/build_sex_actions()
 	. = list()

@@ -44,7 +44,7 @@
 	user.sexcon.perform_sex_action(target, 0, 7, FALSE)
 	if(!user.sexcon.considered_limp())
 		user.sexcon.perform_deepthroat_oxyloss(target, 0.6)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 	var/obj/item/organ/filling_organ/breasts/tiddies = user.getorganslot(ORGAN_SLOT_BREASTS)
 	var/milk_to_add = min(max(tiddies.organ_size, 1), tiddies.reagents.total_volume)

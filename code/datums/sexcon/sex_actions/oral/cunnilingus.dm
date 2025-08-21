@@ -49,8 +49,8 @@
 	do_thrust_animate(user, target)
 
 	user.sexcon.perform_sex_action(target, 2, 3, TRUE)
-	if(target.sexcon.check_active_ejaculation())
-		target.visible_message(span_love("[target] ejaculates into [user]'s mouth!"))
+	if(target.sexcon.check_active_orgasm())
+		target.visible_message(span_love("[target] orgasms into [user]'s mouth!"))
 		target.sexcon.cum_into(girljuice = TRUE)
 
 /datum/sex_action/cunnilingus/on_finish(mob/living/user, mob/living/target)

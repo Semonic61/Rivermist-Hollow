@@ -21,7 +21,7 @@
 
 	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	user.sexcon.perform_sex_action(target, 4, 0, TRUE)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 
 /datum/sex_action/npc_rimming/on_finish(mob/living/user, mob/living/target)

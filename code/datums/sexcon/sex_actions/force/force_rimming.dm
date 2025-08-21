@@ -40,10 +40,10 @@
 	do_thrust_animate(target, user)
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
 	user.sexcon.perform_sex_action(target, 0, 2, FALSE)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/force_rimming/on_finish(mob/living/user, mob/living/target)
 	..()

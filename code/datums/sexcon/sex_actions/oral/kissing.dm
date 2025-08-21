@@ -25,10 +25,10 @@
 	user.make_sucking_noise()
 
 	user.sexcon.perform_sex_action(user, 1, 2, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
 	user.sexcon.perform_sex_action(target, 1, 2, TRUE)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/kissing/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	..()

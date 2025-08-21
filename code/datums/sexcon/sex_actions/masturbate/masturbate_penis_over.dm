@@ -43,7 +43,7 @@
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
 
-	if(user.sexcon.check_active_ejaculation())
+	if(user.sexcon.check_active_orgasm())
 		user.visible_message(span_love("[user] cums over [target]'s body!"))
 		user.sexcon.cum_onto()
 

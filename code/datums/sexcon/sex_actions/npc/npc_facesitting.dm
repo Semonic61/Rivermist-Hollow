@@ -22,12 +22,12 @@
 	target.make_sucking_noise()
 
 	user.sexcon.perform_sex_action(user, 14, 3, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
 	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	user.sexcon.perform_deepthroat_oxyloss(target, 1.3)
 	user.sexcon.perform_sex_action(target, 0, 2, FALSE)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/npc_facesitting/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] gets off [target]'s face."))

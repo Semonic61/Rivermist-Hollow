@@ -82,7 +82,7 @@
 		target.apply_damage(10, BRUTE, target.get_bodypart(BODY_ZONE_CHEST))
 		target.apply_damage(3, BRUTE, target.get_bodypart(BODY_ZONE_PRECISE_GROIN))*/
 
-	if(user.sexcon.check_active_ejaculation())
+	if(user.sexcon.check_active_orgasm())
 		user.visible_message(span_love("[user] cums into [target]'s cunt!"))
 		user.sexcon.cum_into(vaginal = TRUE)
 //		user.try_impregnate(target)
@@ -95,7 +95,7 @@
 	else
 		user.sexcon.perform_sex_action(user, 2.4, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 2.4, 7, FALSE)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/vaginal_sex/on_finish(mob/living/user, mob/living/target)
 	..()

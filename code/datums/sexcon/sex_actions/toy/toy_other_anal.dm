@@ -61,7 +61,7 @@
 	user.sexcon.perform_sex_action(target, 2, 6, TRUE)
 	if(check_dildo_silver(user))
 		other_dildoburn(user, target)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/toy_other_anal/on_finish(mob/living/user, mob/living/target)
 	var/obj/item/dildo = get_dildo_in_either_hand(user)

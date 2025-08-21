@@ -22,8 +22,8 @@
 
 	target.heal_overall_damage(3,3,0, updating_health = TRUE)
 	user.sexcon.perform_sex_action(target, 4, 3, TRUE)
-	if(target.sexcon.check_active_ejaculation())
-		target.visible_message(span_love("[target] ejaculates into [user]'s mouth!"))
+	if(target.sexcon.check_active_orgasm())
+		target.visible_message(span_love("[target] orgasms into [user]'s mouth!"))
 		target.sexcon.cum_into(girljuice = TRUE)
 
 /datum/sex_action/npc_cunnilingus/on_finish(mob/living/user, mob/living/target)

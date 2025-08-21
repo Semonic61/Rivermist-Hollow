@@ -43,8 +43,17 @@
 /datum/sex_action/store_vagina_other/on_start(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/vagina/targetvag = target.getorgan(/obj/item/organ/filling_organ/vagina)
+	if(useditem.w_class > WEIGHT_CLASS_NORMAL)
+		to_chat(user, span_smallred("This won't fit inside [target]'s [targetvag]!"))
+		user.sexcon.desire_stop = TRUE
+		return
 	if(istype(useditem, /obj/item/rogueweapon))
-		to_chat(user, span_userdanger("[useditem] may cut [target] while i put it in, depending on my precision of hand."))
+		//to_chat(user, span_userdanger("[useditem] may cut [target] while i put it in, depending on my precision of hand."))
+		var/obj/item/rogueweapon/wdildo = useditem
+		if(wdildo.sharpness >= IS_SHARP)
+			to_chat(user, span_userdanger("\the [wdildo] is sharp, this will hurt!"))
+			user.sexcon.desire_stop = TRUE
+			return
 	if(user.m_intent != MOVE_INTENT_SNEAK && !targetvag.contents.len)
 		user.visible_message(span_warning("[user] starts to stuff \the [useditem] in [target]'s cunt..."))
 	if(user.m_intent != MOVE_INTENT_SNEAK && targetvag.contents.len)
@@ -53,7 +62,7 @@
 /datum/sex_action/store_vagina_other/is_finished(mob/living/user, mob/living/target)
 	var/obj/item/useditem = user.get_active_held_item()
 	var/obj/item/organ/filling_organ/vagina/targetvag = target.getorgan(/obj/item/organ/filling_organ/vagina)
-	var/mob/living/carbon/human/targetussy = target
+	//var/mob/living/carbon/human/targetussy = target
 	var/stealskill =  max(1,user.get_skill_level(/datum/skill/misc/stealing))
 	var/medicineskill =  max(1,user.get_skill_level(/datum/skill/misc/medicine))
 	var/flubchance = 100
@@ -63,7 +72,7 @@
 		else
 			flubchance = flubchance/medicineskill
 
-	if(istype(useditem, /obj/item/rogueweapon) && prob(flubchance))
+	/*if(istype(useditem, /obj/item/rogueweapon) && prob(flubchance))
 		to_chat(user, span_smallnotice("[flubchance]% failure chance with skill."))
 		if(prob(75))
 			target.visible_message(span_userdanger("\the [useditem] bleeds [target]'s cunt!!!"))
@@ -72,7 +81,7 @@
 		else
 			target.visible_message(span_userdanger("\the [useditem] TEARS [target]'s cunt!!!"))
 			var/obj/item/bodypart/chest/gr = targetussy.get_bodypart(BODY_ZONE_PRECISE_GROIN)
-			gr.add_wound(/datum/wound/slash, TRUE, FALSE)
+			gr.add_wound(/datum/wound/slash, TRUE, FALSE)*/
 	if(!targetvag.contents.len)
 		if(user.m_intent != MOVE_INTENT_SNEAK)
 			user.visible_message(span_warning("[user] manages to stuff \the [useditem] in [target]'s cunt."))

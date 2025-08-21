@@ -69,9 +69,9 @@
 	else
 		user.sexcon.perform_sex_action(user, 4.8, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 2.4, 7, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
-	if(target.sexcon.check_active_ejaculation())
+	if(target.sexcon.check_active_orgasm())
 		target.visible_message(span_love("[target] cums into [user]'s ass!"))
 		target.sexcon.cum_into(anal = TRUE)
 //		target.try_impregnate(user)

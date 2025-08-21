@@ -42,7 +42,7 @@
 
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
 
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/masturbate_penis/on_finish(mob/living/user, mob/living/target)
 	..()

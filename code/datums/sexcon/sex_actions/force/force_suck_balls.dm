@@ -39,14 +39,14 @@
 	target.make_sucking_noise()
 
 	user.sexcon.perform_sex_action(user, 2, 4, TRUE)
-	if(user.sexcon.check_active_ejaculation())
+	if(user.sexcon.check_active_orgasm())
 		user.visible_message(span_love("cums on [target]'s head!"))
 		user.sexcon.cum_onto()
 
 	user.sexcon.perform_sex_action(target, 0, 7, FALSE)
 	if(!user.sexcon.considered_limp())
 		user.sexcon.perform_deepthroat_oxyloss(target, 0.6)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/force_suck_balls/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] pulls their balls out of [target]'s mouth."))

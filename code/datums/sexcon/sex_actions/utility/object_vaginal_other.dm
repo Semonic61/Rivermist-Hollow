@@ -38,17 +38,20 @@
 
 /datum/sex_action/object_vaginal_other/on_start(mob/living/user, mob/living/target)
 	var/obj/item/dildo = user.get_active_held_item()
+	if(dildo.w_class > WEIGHT_CLASS_NORMAL)
+		to_chat(user, span_smallred("This won't fit inside [target]!"))
+		user.sexcon.desire_stop = TRUE
+		return
 	if(dildo.get_temperature() >= FIRE_MINIMUM_TEMPERATURE_TO_SPREAD)
 		to_chat(user, span_userdanger("\the [dildo] is flaming hot, this will hurt [target]!"))
 		to_chat(user, span_smallred("Nothing I do except extinguishing this will help."))
-	if(istype(user.get_active_held_item(), /obj/item/rogueweapon))
-		var/obj/item/rogueweapon/wdildo = dildo
-		if(wdildo.sharpness >= IS_SHARP)
-			to_chat(user, span_userdanger("\the [wdildo] is sharp, this will hurt [target]!"))
-			to_chat(user, span_smallred("I must control my <bold>speed</bold> for lesser risk."))
-		if(wdildo.sharpness == IS_BLUNT)
-			to_chat(user, span_userdanger("\the [wdildo] will mush [target]'s insides if i am not careful.!"))
-			to_chat(user, span_smallred("I must control my <bold>speed</bold> for lesser risk."))
+		user.sexcon.desire_stop = TRUE
+		return
+
+	if(istype(user.get_active_held_item(), /obj/item/rogueweapon) || istype(user.get_active_held_item(), /obj/item/ammo_casing/caseless/rogue))
+		to_chat(user, span_userdanger("\the [dildo] will hurt [target]!"))
+		user.sexcon.desire_stop = TRUE
+		return
 
 	if(istype(user.get_active_held_item(), /obj/item/reagent_containers/glass))
 		var/obj/item/reagent_containers/glass/contdildo = dildo
@@ -59,7 +62,7 @@
 	if(istype(user.get_active_held_item(), /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/fooddildo = dildo
 		to_chat(user, span_info("\the [fooddildo] is food, this is the wrong hole, but..."))
-		to_chat(user, span_smallred("I can <bold>force</bold> this in for faster success."))
+		//to_chat(user, span_smallred("I can <bold>force</bold> this in for faster success."))
 
 	user.visible_message(span_warning("[user] stuffs \the [dildo] in [target]'s cunt..."))
 
@@ -77,7 +80,7 @@
 		target.apply_damage(rand(4,6), BURN, BODY_ZONE_PRECISE_GROIN)
 		pain_amt *= 2
 
-	var/datum/sex_controller/sc = user.sexcon
+	/*var/datum/sex_controller/sc = user.sexcon
 	if(istype(user.get_active_held_item(), /obj/item/rogueweapon))
 		var/obj/item/rogueweapon/wdildo = dildo
 		var/cutchance = 15*sc.speed //multiplies with speed
@@ -151,9 +154,9 @@
 			target.visible_message(span_info(pick("Chunks of \the [fooddildo] fill [user]'s cunt.", "[user] feeds [user]'s cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into [user]'s cunt.", "Chunks of \the [fooddildo] gets packed into [user]'s pussy.")), span_info(pick("Chunks of \the [fooddildo] fill my cunt.", "I feed my cunt with chunks of \The [fooddildo]", "Chunks of \the [fooddildo] gets stuffed into my cunt.", "Chunks of \the [fooddildo] gets packed into my pussy.")))
 			playsound(target.loc, 'sound/misc/mat/insert (2).ogg', 100, TRUE)
 			target.heal_bodypart_damage(1,0,0,TRUE) //mm nutritions.
-
+*/
 	user.sexcon.perform_sex_action(target, 2, pain_amt, TRUE)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/object_vaginal_other/on_finish(mob/living/user, mob/living/target)
 	var/obj/item/dildo = get_funobject_in_hand(user)

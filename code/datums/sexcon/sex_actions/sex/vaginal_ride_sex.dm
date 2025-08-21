@@ -63,7 +63,7 @@
 	playsound(target, 'sound/misc/mat/segso.ogg', segsovolume, TRUE, -2, ignore_walls = FALSE)
 	do_thrust_animate(user, target)
 
-	if(target.sexcon.check_active_ejaculation())
+	if(target.sexcon.check_active_orgasm())
 		target.visible_message(span_love("[target] cums into [user]'s cunt!"))
 		target.sexcon.cum_into(vaginal = TRUE)
 //		target.try_impregnate(user)
@@ -76,7 +76,7 @@
 	else
 		user.sexcon.perform_sex_action(user, 2.4, 0, TRUE)
 		user.sexcon.perform_sex_action(target, 2.4, 7, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/vaginal_ride_sex/on_finish(mob/living/user, mob/living/target)
 	..()

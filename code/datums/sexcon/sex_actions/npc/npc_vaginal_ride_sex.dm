@@ -29,10 +29,10 @@
 		user.sexcon.perform_sex_action(target, 2.4, 3, TRUE)
 	else
 		user.sexcon.perform_sex_action(target, 4.8, 7, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
 	user.sexcon.perform_sex_action(target, 2, 4, FALSE)
-	if(target.sexcon.check_active_ejaculation())
+	if(target.sexcon.check_active_orgasm())
 		target.visible_message(span_love("[target] cums into [user]'s cunt!"))
 		if(issimple(user))
 			target.sexcon.cum_into()

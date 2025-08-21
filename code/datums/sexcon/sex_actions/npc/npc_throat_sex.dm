@@ -24,7 +24,7 @@
 	playsound(target, 'sound/misc/mat/segso.ogg', segsovolume, TRUE, -2, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(user, 4, 0, TRUE)
-	if(user.sexcon.check_active_ejaculation())
+	if(user.sexcon.check_active_orgasm())
 		user.visible_message(span_love("[user] cums into [target]'s throat!"))
 		user.sexcon.cum_into(oral = TRUE)
 
@@ -34,7 +34,7 @@
 	else
 		user.sexcon.perform_sex_action(target, 0, 7, FALSE)
 		user.sexcon.perform_deepthroat_oxyloss(target, 1.3)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/npc_throat_sex/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] pulls their cock out of [target]'s throat."))

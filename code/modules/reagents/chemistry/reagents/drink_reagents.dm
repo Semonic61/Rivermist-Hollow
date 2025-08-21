@@ -198,6 +198,7 @@
 	glass_icon_state = "glass_white"
 	glass_name = "glass of milk"
 	glass_desc = ""
+	nutriment_factor = 7 * REAGENTS_METABOLISM
 
 /datum/reagent/consumable/milk/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() && prob(20))
@@ -918,6 +919,7 @@
 	glass_icon_state = "glass_white"
 	glass_name = "glass of semen"
 	glass_desc = ""
+	nutriment_factor = 5 * REAGENTS_METABOLISM
 	var/virile = TRUE
 
 

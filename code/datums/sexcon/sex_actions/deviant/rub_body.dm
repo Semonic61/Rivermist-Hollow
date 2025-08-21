@@ -35,7 +35,7 @@
 	user.make_sucking_noise()
 
 	user.sexcon.perform_sex_action(target, 0.5, 0, TRUE)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/rub_body/on_finish(mob/living/user, mob/living/target)
 	..()

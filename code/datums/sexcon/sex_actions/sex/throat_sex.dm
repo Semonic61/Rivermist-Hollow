@@ -46,7 +46,7 @@
 	do_thrust_animate(user, target)
 
 	user.sexcon.perform_sex_action(user, 2, 0, TRUE)
-	if(user.sexcon.check_active_ejaculation())
+	if(user.sexcon.check_active_orgasm())
 		user.visible_message(span_love("[user] cums into [target]'s throat!"))
 		user.sexcon.cum_into(oral = TRUE)
 		user.virginity = FALSE
@@ -60,7 +60,7 @@
 		if(!isseelie(user)) //cock too small
 			user.sexcon.perform_sex_action(target, 0, 7, FALSE)*/
 		user.sexcon.perform_deepthroat_oxyloss(target, oxyloss)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/throat_sex/on_finish(mob/living/user, mob/living/target)
 	..()

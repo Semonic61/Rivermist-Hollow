@@ -44,11 +44,11 @@
 	do_thrust_animate(user, target)
 
 	user.sexcon.perform_sex_action(user, 1, 3, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
 	user.sexcon.perform_deepthroat_oxyloss(target, 1.3)
 	user.sexcon.perform_sex_action(target, 0, 2, FALSE)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/facesitting/on_finish(mob/living/user, mob/living/target)
 	..()
@@ -104,11 +104,11 @@
 	target.make_sucking_noise()
 
 	user.sexcon.perform_sex_action(user, 1, 3, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
 	user.sexcon.perform_deepthroat_oxyloss(target, 1.3)
 	user.sexcon.perform_sex_action(target, 0, 2, FALSE)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/facesittingtwo/on_finish(mob/living/user, mob/living/target)
 	user.visible_message(span_warning("[user] gets off [target]'s face."))

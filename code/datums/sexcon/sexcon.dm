@@ -16,17 +16,22 @@
 	/// Our arousal
 	var/arousal = 0
 	/// Our charge
-	var/charge = 0
+	//var/charge = 0
 	/// Whether we want to screw until finished, or non stop
 	var/do_until_finished = TRUE
 	/// Arousal won't change if active.
 	var/arousal_frozen = FALSE
 	var/last_arousal_increase_time = 0
-	var/last_ejaculation_time = 0
+	var/last_climax_time = 0
+	var/last_reset_time = 0
 	var/last_moan = 0
 	var/last_pain = 0
 	var/msg_signature = ""
 	var/last_msg_signature = 0
+	/// 25% arousal loss after each orgasm
+	var/arousal_falloff_coeff = 0.75
+	var/recent_orgasm_count = 0
+	var/aphrodisiac = 1
 
 /datum/sex_controller/New(mob/living/owner)
 	user = owner
@@ -72,7 +77,7 @@
 /datum/sex_controller/proc/finished_check()
 	if(!do_until_finished)
 		return FALSE
-	if(!just_ejaculated())
+	if(!just_climaxed())
 		return FALSE
 	return TRUE
 
@@ -208,7 +213,7 @@
 		target.add_stress(/datum/stressevent/cumok)
 	playsound(target, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(target))
-	after_ejaculation()
+	after_climax()
 
 /datum/sex_controller/proc/cum_into(oral = FALSE, vaginal = FALSE, anal = FALSE, nipple = FALSE, girljuice = FALSE)
 	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
@@ -237,16 +242,16 @@
 	if(girljuice)
 		if(!issimple(target))
 			target.reagents.add_reagent(/datum/reagent/water/pussjuice, 10)
-			after_ejaculation()
+			after_climax()
 		else
-			after_ejaculation()
+			after_climax()
 		return
 	if(issimple(target))
 		if(testes) //simple target just remove the coom.
 			var/cum_to_take = CLAMP((testes.reagents.maximum_volume/2), 1, testes.reagents.total_volume)
 			testes.reagents.remove_reagent(testes.reagent_to_make, cum_to_take)
 			user.add_stress(/datum/stressevent/cumok)
-			after_ejaculation()
+			after_climax()
 			return
 	if(!issimple(target) && testes)
 		if(oral)
@@ -271,13 +276,13 @@
 		playsound(target, 'sound/misc/mat/endin.ogg', 50, TRUE, ignore_walls = FALSE)
 	if(testes && testes.reagents.total_volume <= testes.reagents.maximum_volume / 4)
 		to_chat(user, span_info("Damn, my [pick(testes.altnames)] are pretty dry now."))
-	after_ejaculation()
+	after_climax()
 	if(!oral)
 		after_intimate_climax()
 
-/datum/sex_controller/proc/ejaculate()
+/datum/sex_controller/proc/climax()
 	if(!issimple(user))
-		log_combat(user, user, "Ejaculated")
+		log_combat(user, user, "Orgasmed")
 	user.visible_message(span_love("[user] makes a mess!"))
 	//small heal burst, this should not happen often due the delay on how often one can cum.
 	var/sexhealrand = rand(5, 15)
@@ -294,7 +299,7 @@
 
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(user))
-	after_ejaculation()
+	after_climax()
 
 /datum/sex_controller/proc/ejaculate_container(obj/item/reagent_containers/glass/C)
 	log_combat(user, user, "Ejaculated into a container")
@@ -303,7 +308,7 @@
 	var/obj/item/organ/filling_organ/testicles/testes = user.getorganslot(ORGAN_SLOT_TESTICLES)
 	var/cum_to_take = CLAMP((testes.reagents.maximum_volume), 1, min(testes.reagents.total_volume, C.volume - C.reagents.total_volume))
 	testes.reagents.trans_to(C, cum_to_take, transfered_by = user)
-	after_ejaculation()
+	after_climax()
 
 /datum/sex_controller/proc/milk_container(obj/item/reagent_containers/glass/C)
 	log_combat(user, user, "Was milked into a container")
@@ -312,10 +317,10 @@
 	var/obj/item/organ/filling_organ/breasts/tiddies = user.getorganslot(ORGAN_SLOT_BREASTS) // tiddy hehe
 	var/milk_to_take = CLAMP((tiddies.reagents.maximum_volume), 1, min(tiddies.reagents.total_volume, C.volume - C.reagents.total_volume))
 	tiddies.reagents.trans_to(C, milk_to_take, transfered_by = user)
-	after_ejaculation()
+	after_climax()
 
-/datum/sex_controller/proc/after_ejaculation()
-	set_arousal(40)
+/datum/sex_controller/proc/after_climax()
+	set_arousal(arousal * arousal_falloff_coeff)
 	if(user.has_flaw(/datum/charflaw/addiction/lovefiend))
 		user.sate_addiction()
 	if(!user.rogue_sneaking && user.alpha > 100) //stealth sex, keep your voice down.
@@ -324,10 +329,14 @@
 		else
 			user.emote("sexmoanhvy", forced = TRUE)
 	user.playsound_local(user, 'sound/misc/mat/end.ogg', 100)
-	last_ejaculation_time = world.time
-	/*if(HAS_TRAIT(user, TRAIT_BAOTHA_CURSE)||HAS_TRAIT(user, TRAIT_NYMPHO_CURSE))
-		user.apply_status_effect(/datum/status_effect/debuff/cumbrained)*/
-	//SSticker.cums++
+	last_climax_time = world.time
+	recent_orgasm_count += 1
+	if(recent_orgasm_count > OVER_THE_TOP_ORGASM_THRESHOLD)
+		user.apply_status_effect(/datum/status_effect/debuff/orgasmbroken)
+	if(recent_orgasm_count > HIGH_ORGASM_THRESHOLD)
+		user.apply_status_effect(/datum/status_effect/debuff/cumbrained)
+	else if(recent_orgasm_count > LOW_ORGASM_THRESHOLD)
+		user.apply_status_effect(/datum/status_effect/debuff/loinspent)
 
 /datum/sex_controller/proc/after_intimate_climax()
 	if(user == target)
@@ -351,8 +360,8 @@
 	else
 		target.add_stress(/datum/stressevent/cumok)
 
-/datum/sex_controller/proc/just_ejaculated()
-	return (last_ejaculation_time + 2 SECONDS >= world.time)
+/datum/sex_controller/proc/just_climaxed()
+	return (last_climax_time + 2 SECONDS >= world.time)
 
 
 /datum/sex_controller/proc/set_arousal(amount)
@@ -404,6 +413,25 @@
 	/*if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
 		if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 			pain_amt *= 2.5*/
+	if(recent_orgasm_count > OVER_THE_TOP_ORGASM_THRESHOLD)
+		arousal_amt *= 2
+		update_aching(1)
+		var/lovermessage = pick("This feels too good!", "I wish to never stop!", "I want MORE!", "I need this!")
+		if(prob(25))
+			to_chat(action_target, span_love(lovermessage))
+	else if(recent_orgasm_count > HIGH_ORGASM_THRESHOLD)
+		arousal_amt *= 0.5
+		update_aching(5)
+		var/lovermessage = pick("My mind is going blank!", "I'm too spent, it hurts!", "I don't want to anymore!")
+		if(prob(25))
+			to_chat(action_target, span_love(lovermessage))
+	else if(recent_orgasm_count > LOW_ORGASM_THRESHOLD)
+		arousal_amt *= 0.8
+		update_aching(2)
+		var/lovermessage = pick("This is starting to feel unpleasant...", "Maybe I should rest soon...", "My loins are starting to chafe a bit.")
+		if(prob(25))
+			to_chat(action_target, span_love(lovermessage))
+
 	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
 
 /datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed)
@@ -587,16 +615,18 @@
 	else if (pain_amt <= LOINHURT_LOSE_THRESHOLD)
 		user.remove_stress(/datum/stressevent/loinache)
 
-/datum/sex_controller/proc/check_active_ejaculation()
-	if(arousal < ACTIVE_EJAC_THRESHOLD)
+/datum/sex_controller/proc/check_active_orgasm()
+	if(arousal < ACTIVE_ORGASM_THRESHOLD)
 		return FALSE
 	//if(is_spent() && !issimple(user))
 	//	return FALSE
-	if(!can_ejaculate())
+	if(!can_climax())
+		return FALSE
+	if(last_climax_time + ORGASM_COOLDOWN_TIME > world.time)
 		return FALSE
 	return TRUE
 
-/datum/sex_controller/proc/can_ejaculate()
+/datum/sex_controller/proc/can_climax()
 	if(user.seeksfuck) //should filter down to only npcs with seeksfuck behavior.
 		return TRUE
 	if(!user.getorganslot(ORGAN_SLOT_TESTICLES) && !user.getorganslot(ORGAN_SLOT_VAGINA))
@@ -605,38 +635,40 @@
 		return FALSE
 	return TRUE
 
-/datum/sex_controller/proc/handle_passive_ejaculation()
-	if(arousal < PASSIVE_EJAC_THRESHOLD)
+/datum/sex_controller/proc/handle_passive_orgasm()
+	if(arousal < PASSIVE_ORGASM_THRESHOLD)
 		return
 	//if(is_spent() && !issimple(user))
 	//	return
-	if(!can_ejaculate())
+	if(!can_climax())
 		return FALSE
-	ejaculate()
+	if(last_climax_time + ORGASM_COOLDOWN_TIME > world.time)
+		return FALSE
+	climax()
 
 /datum/sex_controller/proc/handle_container_ejaculation()
-	if(arousal < PASSIVE_EJAC_THRESHOLD)
+	if(arousal < PASSIVE_ORGASM_THRESHOLD)
 		return
-	if(!can_ejaculate())
+	if(!can_climax())
 		return FALSE
 	ejaculate_container(user.get_active_held_item())
 
 /datum/sex_controller/proc/handle_container_milk()
-	if(arousal < PASSIVE_EJAC_THRESHOLD)
+	if(arousal < PASSIVE_ORGASM_THRESHOLD)
 		return
 	milk_container(user.get_active_held_item())
 
 /datum/sex_controller/proc/handle_cock_milking(mob/living/carbon/human/milker)
-	if(arousal < ACTIVE_EJAC_THRESHOLD)
+	if(arousal < ACTIVE_ORGASM_THRESHOLD)
 		return
 	//if(is_spent())
 	//	return
-	if(!can_ejaculate())
+	if(!can_climax())
 		return FALSE
 	ejaculate_container(milker.get_active_held_item())
 
 /datum/sex_controller/proc/handle_breast_milking(mob/living/carbon/human/milker)
-	if(arousal < ACTIVE_EJAC_THRESHOLD)
+	if(arousal < ACTIVE_ORGASM_THRESHOLD)
 		return
 	milk_container(milker.get_active_held_item())
 
@@ -680,12 +712,22 @@
 /datum/sex_controller/proc/process_sexcon(dt)
 	handle_arousal_unhorny(dt)
 	//handle_charge(dt)
-	handle_passive_ejaculation()
+	handle_orgasm_charge()
+	handle_passive_orgasm()
+
+/datum/sex_controller/proc/handle_orgasm_charge()
+	//if(user.has_status_effect(/datum/status_effect/debuff/orgasmbroken))
+	//	adjust_arousal(AROUSAL_HIGH_UNHORNY_RATE - 0.1) //too many orgasms keeps arousal at the edge //maybe a little bit hacky, we'll see
+	if(!recent_orgasm_count)
+		return
+	if(last_reset_time + ORGASM_RESET_TIME < world.time)
+		recent_orgasm_count -= 1
+		last_reset_time = world.time
 
 /datum/sex_controller/proc/handle_arousal_unhorny(dt)
 	if(arousal_frozen)
 		return
-	if(!can_ejaculate())
+	if(!can_climax())
 		adjust_arousal(-dt * IMPOTENT_AROUSAL_LOSS_RATE)
 	if(last_arousal_increase_time + AROUSAL_TIME_TO_UNHORNY >= world.time)
 		return
@@ -712,7 +754,7 @@
 	else
 		dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a> ~|~ <a href='?src=[REF(src)];task=manual_arousal_down'>\<</a> [manual_arousal_name] <a href='?src=[REF(src)];task=manual_arousal_up'>\></a></center>"
 	dat += "<center>| <a href='?src=[REF(src)];task=toggle_finished'>[do_until_finished ? "UNTIL IM FINISHED" : "UNTIL I STOP"]</a> |</center>"
-	dat += "<center><a href='?src=[REF(src)];task=set_arousal'>SET AROUSAL</a> | <a href='?src=[REF(src)];task=freeze_arousal'>[arousal_frozen ? "UNFREEZE AROUSAL" : "FREEZE AROUSAL"]</a></center>"
+	//dat += "<center><a href='?src=[REF(src)];task=set_arousal'>SET AROUSAL</a> | <a href='?src=[REF(src)];task=freeze_arousal'>[arousal_frozen ? "UNFREEZE AROUSAL" : "FREEZE AROUSAL"]</a></center>"
 	if(target == user)
 		dat += "<center>Doing unto yourself</center>"
 	else

@@ -42,7 +42,7 @@
 	user.make_sucking_noise()
 
 	user.sexcon.perform_sex_action(target, 1, 3, TRUE)
-	target.sexcon.handle_passive_ejaculation()
+	target.sexcon.handle_passive_orgasm()
 
 	var/obj/item/organ/filling_organ/breasts/tiddies = target.getorganslot(ORGAN_SLOT_BREASTS)
 	var/milk_to_add = min(max(tiddies.organ_size, 1), tiddies.reagents.total_volume)

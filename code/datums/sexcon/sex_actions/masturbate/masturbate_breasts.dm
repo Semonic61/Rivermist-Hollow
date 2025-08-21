@@ -35,7 +35,7 @@
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fondles her breasts..."))
 
 	user.sexcon.perform_sex_action(user, 1, 4, TRUE)
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/masturbate_breasts/on_finish(mob/living/user, mob/living/target)
 	..()

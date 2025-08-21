@@ -54,7 +54,7 @@
 	user.sexcon.perform_sex_action(target, 2, 0, TRUE)
 	if(!target.sexcon.considered_limp())
 		user.sexcon.perform_deepthroat_oxyloss(user, 1.3)
-	if(target.sexcon.check_active_ejaculation())
+	if(target.sexcon.check_active_orgasm())
 		/*if(HAS_TRAIT(user, TRAIT_TINY) && !(HAS_TRAIT(target, TRAIT_TINY)))
 			target.visible_message(span_love("[target] cums onto [user]'s hair and face!"))
 			target.sexcon.cum_onto()

@@ -146,13 +146,54 @@
 	trait = TRAIT_CURSE_MATTHIOS
 
 /datum/curse/baotha
-	name = "Curse of Baotha"
-	description = "I am forsaken by the Heartbreaker. I am drowning in her promises."
+	name = "Curse of Pleasure"
+	description = "I'm in a constant state of arousal, and I cannot control my urges."
 	trait = TRAIT_CURSE_BAOTHA
+
+//////////////////////
+///	MISC CURSES	 ///
+//////////////////////
+
+/datum/curse/nympho
+	name = "Nymph's Curse"
+	description = "I'm in a constant state of arousal, and I cannot control my urges, even clothes get me off..."
+	trait = TRAIT_NYMPHO_CURSE
 
 //////////////////////
 ///	ON LIFE	 ///
 //////////////////////
+
+/datum/curse/baotha/on_life(mob/living/carbon/human/owner)
+	. = ..()
+	if(owner.mob_timers["baotha_curse_passive"])
+		if(world.time < owner.mob_timers["baotha_curse"] + rand(2,10)SECONDS)
+			return
+	owner.mob_timers["baotha_curse_passive"] = world.time
+	owner.sexcon.arousal += 1
+	if(owner.mob_timers["baotha_curse"])
+		if(world.time < owner.mob_timers["baotha_curse"] + rand(15,90)SECONDS)
+			return
+	owner.mob_timers["baotha_curse"] = world.time
+	owner.sexcon.arousal += rand(-20,50)
+
+/datum/curse/nympho/on_life(mob/living/carbon/human/owner)
+	. = ..()
+	if(owner.mob_timers["nympho_curse_passive"])
+		if(world.time < owner.mob_timers["nympho_curse"] + rand(2,10)SECONDS)
+			return
+	owner.mob_timers["nympho_curse_passive"] = world.time
+	if(owner.wear_pants)
+		if(owner.wear_pants.flags_inv & HIDECROTCH && !owner.wear_pants.genitalaccess)
+			owner.sexcon.arousal += 1
+	if(owner.mob_timers["nympho_curse"])
+		if(world.time < owner.mob_timers["nympho_curse"] + rand(15,90)SECONDS)
+			return
+	owner.mob_timers["nympho_curse"] = world.time
+	if(owner.wear_pants)
+		if(owner.wear_pants.flags_inv & HIDECROTCH && !owner.wear_pants.genitalaccess)
+			if(rand(5))
+				to_chat(owner, span_love("I feel my [owner.wear_pants] rub against me..."))
+			owner.sexcon.arousal += rand(5,50)
 
 /datum/curse/astrata/on_life(mob/user)
 	if(!user)
@@ -305,11 +346,11 @@
 		ADD_TRAIT(owner, TRAIT_NUDIST, TRAIT_GENERIC)
 	if(prob(curse_chance))
 		ADD_TRAIT(owner, TRAIT_NUDE_SLEEPER, TRAIT_GENERIC)
-	if(prob(curse_chance))
-		ADD_TRAIT(owner, TRAIT_LIMPDICK, TRAIT_GENERIC)
+	//if(prob(curse_chance))
+	//	ADD_TRAIT(owner, TRAIT_LIMPDICK, TRAIT_GENERIC)
 
 /datum/curse/baotha/on_loss(mob/living/carbon/human/owner, curse_resist = FALSE)
 	. = ..()
 	REMOVE_TRAIT(owner, TRAIT_NUDIST, TRAIT_GENERIC)
 	REMOVE_TRAIT(owner, TRAIT_NUDE_SLEEPER, TRAIT_GENERIC)
-	REMOVE_TRAIT(owner, TRAIT_LIMPDICK, TRAIT_GENERIC)
+	//REMOVE_TRAIT(owner, TRAIT_LIMPDICK, TRAIT_GENERIC)

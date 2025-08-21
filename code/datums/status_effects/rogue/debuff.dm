@@ -525,3 +525,58 @@
 	desc = "I was on the sermon. My patron is not proud of me."
 	icon_state = "debuff"
 	color ="#af9f9f"
+
+/datum/status_effect/debuff/orgasmbroken
+	id = "orgasmbroken"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/orgasmbroken
+	effectedstats = list("intelligence" = -20, "strength" = -8, "speed" = -6, "perception" = -5, "endurance" = 2, "constitution" = -2)
+	duration = 3 MINUTES
+
+/datum/status_effect/debuff/orgasmbroken/on_apply()
+	. = ..()
+	var/mob/living/carbon/human/human = owner
+	human.charflaw = new /datum/charflaw/addiction/lovefiend(human)
+	human.add_curse(/datum/curse/baotha)
+
+/datum/status_effect/debuff/orgasmbroken/on_remove()
+	. = ..()
+	var/mob/living/carbon/human/human = owner
+	human.add_curse(/datum/curse/baotha)
+
+/atom/movable/screen/alert/status_effect/debuff/orgasmbroken
+	name = "Orgasm Broken"
+	desc = "Sex. Sex. Sex."
+	icon_state = "fentanyl"
+
+/datum/status_effect/debuff/cumbrained
+	id = "cumbrained"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/cumbrained
+	effectedstats = list("intelligence" = -10, "strength" = -6, "speed" = -6)
+	duration = 2 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/cumbrained
+	name = "Cum Brained"
+	desc = "It's hard to think..."
+	icon_state = "fentanyl"
+
+/datum/status_effect/debuff/cumbrained/process()
+	. = ..()
+	var/mob/living/carbon/human/human = owner
+	if(!owner)
+		return
+	if(human.wear_pants)
+		if(human.wear_pants.flags_inv & HIDECROTCH && !human.wear_pants.genitalaccess)
+			if(rand(5))
+				to_chat(human, span_love("I feel my [human.wear_pants] rub against me..."))
+			human.sexcon.arousal += rand(5,50)
+	
+/datum/status_effect/debuff/loinspent
+	id = "loinspent"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/loinspent
+	//effectedstats = list("intelligence" = -10, "strength" = -6, "speed" = -6)
+	duration = 2 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/loinspent
+	name = "Spent Loins"
+	desc = "It's starting to hurt a bit..."
+	icon_state = "fentanyl"

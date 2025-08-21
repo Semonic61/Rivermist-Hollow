@@ -190,7 +190,7 @@
 	chasesfuck = FALSE
 	seekboredom = 0
 	toggle_ai(AI_ON)
-	if(sexcon.just_ejaculated() || timedout) //is it satisfied or given up
+	if(sexcon.just_climaxed() || timedout) //is it satisfied or given up
 		fuckcd = rand(50,350)
 	else
 		fuckcd = rand(20,40)
@@ -387,7 +387,7 @@
 	seekboredom = 0
 	START_PROCESSING(SShumannpc,src)
 	mode = AI_IDLE
-	if(sexcon.just_ejaculated() || timedout) //is it satisfied or given up
+	if(sexcon.just_climaxed() || timedout) //is it satisfied or given up
 		fuckcd = rand(50,350)
 	else
 		fuckcd = rand(20,40)

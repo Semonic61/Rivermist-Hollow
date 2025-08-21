@@ -55,7 +55,7 @@
 	user.sexcon.perform_sex_action(user, 2, 6, TRUE)
 	if(check_dildo_silver(user))
 		dildoburn(user)
-	user.sexcon.handle_passive_ejaculation()
+	user.sexcon.handle_passive_orgasm()
 
 /datum/sex_action/toy_anal/on_finish(mob/living/user, mob/living/target)
 	..()
