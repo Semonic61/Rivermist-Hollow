@@ -423,4 +423,5 @@
 		STATS_LOCKS_PICKED = list("points" = 4.5, "capacity" = 90),
 	)
 
-	cost_variance = 15  // Keeps a balance between predictability and randomness*/
+	cost_variance = 15  // Keeps a balance between predictability and randomness
+*/
