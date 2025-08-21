@@ -101,7 +101,7 @@
 //MOUNTAINS
 
 /area/rogue/outdoors/mountains/rmh_mountains
-	name = "Dusk Spire Mountains"
+	name = "Dusk Spire Mountains Pass"
 	icon_state = "decap"
 	ambush_mobs = null
 	droning_sound = 'sound/music/area/decap.ogg'
@@ -109,11 +109,12 @@
 	droning_sound_night = null
 	first_time_text = "DUSK SPIRE PASS"
 	ambush_times = null
-	converted_type = /area/rogue/indoors/shelter/mountains/decap
+	converted_type = /area/rogue/indoors/shelter/mountains/rmh_mountains
 	deathsight_message = "a spire pass"
 
 /area/rogue/indoors/shelter/mountains/rmh_mountains
-	icon_state = "decap"
+	icon = 'modular_rmh/icons/turf/areas.dmi'
+	icon_state = "indoors"
 	droning_sound = 'sound/music/area/decap.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -441,3 +442,10 @@
 /area/rogue/indoors/town/rmh/witch
 	name = "Witch's Hut"
 	first_time_text = "WITCH'S HUT"
+
+//BEDROCK BORDERS
+/area/rogue/under/rmh_bedrock
+	name = "Bedrock Border"
+	first_time_text = "BEDROCK BORDER"
+	icon_state = "unknown"
+	deathsight_message = "out of bounds"
