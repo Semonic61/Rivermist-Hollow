@@ -70,35 +70,12 @@
 			if(80 to 160)
 				disttext = " far"
 			else
-				disttext = " very far" 
-		
+				disttext = " very far"
+
 		var/placetext
 		var/area/localarea = get_area_name(src)
-		switch(localarea)
-			if("mountains")
-				placetext = " In the Mountains!"
-			if("mt decapitation")
-				placetext = " from Mt Decapitation!"
-			if("azure basin")
-				placetext = " in the The Azure Basin!"
-			if("wilderness")
-				placetext = " in the The Azure Grove!"
-			if("bog", "dense bog")
-				placetext = " in the The Terrorbog!"
-			if("coast", "coastforest")
-				placetext = " on the Azure Coast!"
-			if("indoors", "Shop", "Physician", "outdoors", "roofs")
-				placetext = " somewhere in town!"
-			if("Manor", "Wizard's Tower")
-				placetext = " from the Keep!"
-			if("Garrison", "dungeon cell")
-				placetext = " from the Garrison!"
-			if("Baths", "tavern")
-				placetext = " from the Inn!"
-			if("church")
-				placetext = " from the Church!"
-			else
-				placetext = " I cannot discern where it came from exactly!"
+		placetext = "[localarea]"
+
 
 		//sound played for other players
 		switch(user.job)

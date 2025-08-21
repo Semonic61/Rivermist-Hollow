@@ -106,7 +106,7 @@
 
 /datum/quirk/resident
 	name = "Resident"
-	desc = "I'm a resident of Twilight Axis. I have an account in the city's treasury and a home in the city."
+	desc = "I'm a resident of Rivermist Hollow. I have an account in the city's treasury and a home in the city."
 	value = 0
 	mob_trait = TRAIT_RESIDENT
 
@@ -153,7 +153,7 @@
 				var/obj/structure/chair/chosen_chair = pick(possible_chairs)
 				recipient.forceMove(get_turf(chosen_chair))
 				chosen_chair.buckle_mob(recipient)
-				to_chat(recipient, span_notice("As a resident of Twilight Axis, you find yourself seated at a chair in the local tavern."))
+				to_chat(recipient, span_notice("As a resident of Rivermist Hollow, you find yourself seated at a chair in the local tavern."))
 			else
 				var/list/possible_spawns = list()
 				for(var/turf/T in spawn_area)
@@ -163,4 +163,4 @@
 				if(length(possible_spawns))
 					var/turf/spawn_loc = pick(possible_spawns)
 					recipient.forceMove(spawn_loc)
-					to_chat(recipient, span_notice("As a resident of Twilight Axis, you find yourself in the local tavern."))
+					to_chat(recipient, span_notice("As a resident of Rivermist Hollow, you find yourself in the local tavern."))
