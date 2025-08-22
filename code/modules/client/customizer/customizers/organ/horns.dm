@@ -59,7 +59,10 @@
 		/datum/sprite_accessory/horns/sheephorns,
 		/datum/sprite_accessory/horns/doublehorns,
 		/datum/sprite_accessory/horns/tiefling,
-		/datum/sprite_accessory/horns/tieflingalt
+		/datum/sprite_accessory/horns/tieflingalt,
+
+		//RMH
+		/datum/sprite_accessory/horns/cow,
 		)
 
 /datum/customizer/organ/horns/demihuman

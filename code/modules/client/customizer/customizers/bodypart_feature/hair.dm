@@ -511,6 +511,9 @@
 		/datum/sprite_accessory/hair/head/wavy_medium,
 		/datum/sprite_accessory/hair/head/charlotta,
 
+		//RMH
+		/datum/sprite_accessory/hair/head/cowlick,
+
 		)
 
 /datum/customizer_choice/bodypart_feature/hair/head/humanoid/get_random_accessory(datum/customizer_entry/entry, datum/preferences/prefs)
