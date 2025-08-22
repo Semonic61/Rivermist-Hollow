@@ -15,6 +15,10 @@
 /obj/structure/underworld/ship/smol
 	name = "Transport Boat"
 	desc = "It's time to sail."
+	icon_state = "boat"
 	icon = 'modular_rmh/icons/obj/structures/ship_smol.dmi'
 	icon_state = "boat"
 	pixel_x = 0
+
+/obj/structure/underworld/ship/smol/old
+	icon_state = "boat_old"

@@ -58,12 +58,21 @@
 		if(QUEST_COURIER)
 			new_quest.title = "Deliver [pick("an important", "a sealed", "a confidential", "a valuable")] [pick("package", "parcel", "letter", "delivery")]"
 			new_quest.target_delivery_location = pick(
-				/area/rogue/indoors/town/tavern,
-				/area/rogue/indoors/town/church,
-				/area/rogue/indoors/town/dwarfin,
-				/area/rogue/indoors/town/shop,
-				/area/rogue/indoors/town/manor,
-				/area/rogue/indoors/town/magician,
+				/area/rogue/indoors/town/rmh/garrison,
+				/area/rogue/indoors/town/rmh/magician,
+				/area/rogue/indoors/town/rmh/barber,
+				/area/rogue/indoors/town/rmh/farm,
+				/area/rogue/indoors/town/rmh/bank,
+				/area/rogue/indoors/town/rmh/sawmill,
+				/area/rogue/indoors/town/rmh/library,
+				/area/rogue/indoors/town/rmh/bath,
+				/area/rogue/indoors/town/rmh/crafters_guild,
+				/area/rogue/indoors/town/rmh/merchant,
+				/area/rogue/indoors/town/rmh/tavern,
+				/area/rogue/indoors/town/rmh/town_hall,
+				/area/rogue/outdoors/exposed/rmh/chapel,
+				/area/rogue/indoors/town/rmh/miner,
+				/area/rogue/indoors/town/rmh/witch,
 			)
 			spawn_courier_item(new_quest, new_quest.target_delivery_location)
 		if(QUEST_OUTLAW)
@@ -116,7 +125,7 @@
 
 	if(!length(possible_landmarks))
 		possible_landmarks += src
-	
+
 	var/obj/effect/landmark/quest_spawner/selected_landmark = pick(possible_landmarks)
 	var/list/possible_turfs = list()
 
@@ -141,44 +150,70 @@
 
 	var/obj/item/parcel/delivery_parcel = new(spawn_turf)
 	var/static/list/area_delivery_items = list(
-		/area/rogue/indoors/town/tavern = list(
-			/obj/item/cooking/pan,
+		/area/rogue/indoors/town/rmh/garrison = list(
 			/obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian,
-			/obj/item/reagent_containers/food/snacks/rogue/cheddar,
+			/obj/item/ration,
 		),
-		/area/rogue/indoors/town/bath = list(
-			/obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian,
-			/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/crab,
-			/obj/item/perfume/random,
-		),
-		/area/rogue/indoors/town/church = list(
-			/obj/item/natural/cloth,
-			/obj/item/reagent_containers/powder/ozium,
-			/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
-		),
-		/area/rogue/indoors/town/dwarfin = list(
-			/obj/item/ingot/iron,
-			/obj/item/ingot/bronze,
-			/obj/item/rogueore/coal,
-		),
-		/area/rogue/indoors/town/shop = list(
-			/obj/item/roguecoin/gold,
-			/obj/item/clothing/ring/silver,
-			/obj/item/scomstone/bad,
-		),
-		/area/rogue/indoors/town/manor = list(
-			/obj/item/clothing/cloak/raincloak/furcloak,
-			/obj/item/reagent_containers/glass/bottle/rogue/whitewine,
-			/obj/item/reagent_containers/food/snacks/rogue/cheddar/aged,
-			/obj/item/perfume/random,
-		),
-		/area/rogue/indoors/town/magician = list(
+		/area/rogue/indoors/town/rmh/magician = list(
 			/obj/item/book/spellbook,
 			/obj/item/roguegem/yellow,
 			/obj/item/reagent_containers/glass/bottle/rogue/manapot,
 		),
-		/area/rogue/indoors/town = list(
+		/area/rogue/indoors/town/rmh/barber = list(
+			/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
+		),
+
+		/area/rogue/indoors/town/rmh/farm = list(
+			/obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian,
 			/obj/item/ration,
+		),
+		/area/rogue/indoors/town/rmh/bank = list(
+			/obj/item/roguecoin/gold,
+			/obj/item/clothing/ring/silver,
+		),
+		/area/rogue/indoors/town/rmh/sawmill = list(
+			/obj/item/grown/log/tree,
+			/obj/item/ration,
+		),
+		/area/rogue/indoors/town/rmh/library = list(
+			/obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian,
+			/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/crab,
+			/obj/item/perfume/random,
+		),
+		/area/rogue/indoors/town/rmh/bath = list(
+			/obj/item/soap,
+			/obj/item/perfume/random,
+		),
+		/area/rogue/indoors/town/rmh/crafters_guild = list(
+			/obj/item/ingot/iron,
+			/obj/item/ingot/bronze,
+			/obj/item/rogueore/coal,
+		),
+		/area/rogue/indoors/town/rmh/merchant = list(
+			/obj/item/roguecoin/gold,
+			/obj/item/clothing/ring/silver,
+			/obj/item/scomstone/bad,
+		),
+		/area/rogue/indoors/town/rmh/tavern = list(
+			/obj/item/cooking/pan,
+			/obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian,
+			/obj/item/reagent_containers/food/snacks/rogue/cheddar,
+			/obj/item/reagent_containers/glass/bottle/rogue/healthpot,
+		),
+		/area/rogue/indoors/town/rmh/chapel = list(
+			/obj/item/natural/cloth,
+			/obj/item/reagent_containers/powder/ozium,
+			/obj/item/reagent_containers/food/snacks/rogue/crackerscooked,
+		),
+		/area/rogue/indoors/town/rmh/miner = list(
+			/obj/item/flashlight/flare/torch/lantern,
+			/obj/item/rogueweapon/pick/steel,
+			/obj/item/ration,
+		),
+		/area/rogue/indoors/town/rmh/witch = list(
+			/obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian,
+			/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/crab,
+			/obj/item/perfume/random,
 		)
 	)
 
@@ -211,7 +246,7 @@
 		var/turf/spawn_turf = get_safe_spawn_turf()
 		if(!spawn_turf)
 			return
-		
+
 		var/mob/living/new_mob = new mob_type(spawn_turf)
 		new_mob.faction |= "quest"
 		new_mob.AddComponent(/datum/component/quest_object, quest)
@@ -223,7 +258,7 @@
 	var/turf/spawn_turf = get_safe_spawn_turf()
 	if(!spawn_turf)
 		return
-	
+
 	var/mob/living/new_mob = new boss_type(spawn_turf)
 	new_mob.faction |= "quest"
 	new_mob.AddComponent(/datum/component/quest_object, quest)
