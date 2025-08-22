@@ -146,7 +146,7 @@
 "cz" = (
 /obj/structure/mineral_door/wood/donjon/stone{
 	locked = 1;
-	lockid = s;
+	lockid = /obj/effect/landmark/start/steward;
 	name = "Laboratory Chamber";
 	max_integrity = 5000
 	},

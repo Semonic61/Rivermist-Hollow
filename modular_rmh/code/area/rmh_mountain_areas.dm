@@ -4,6 +4,8 @@
 	name = "Dusk Spire Mountains"
 	icon_state = "decap"
 	ambush_mobs = null
+	ambientsounds = AMB_MOUNTAIN
+	ambientnight = AMB_MOUNTAIN
 	droning_sound = 'sound/music/area/decap.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -46,6 +48,8 @@
 	droning_sound_dusk = null
 	droning_sound_night = null
 	keep_area = TRUE
+	ambientsounds = AMB_MOUNTAIN
+	ambientnight = AMB_MOUNTAIN
 
 /area/rogue/indoors/town/rmh/manor/basement
 	name = "Dusk Spire Manor Basement"
@@ -160,3 +164,9 @@
 /area/rogue/outdoors/rmh_field/tavel/mount_to_rivermist
 	name = "Mountain To Rivermist Hollow"
 	first_time_text = "TO RIVERMIST HOLLOW"
+	ambientsounds = AMB_MOUNTAIN
+	ambientnight = AMB_MOUNTAIN
+
+/area/rogue/outdoors/rmh_field/tavel/mount_to_underdark
+	name = "Mountain Descent To Underdark"
+	first_time_text = "DESCENT TO UNDERDARK"

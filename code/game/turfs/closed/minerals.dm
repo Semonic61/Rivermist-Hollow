@@ -237,7 +237,7 @@
 		/turf/closed/mineral/rogue/cinnabar = 15,
 		/turf/closed/mineral/rogue/copper = 15,
 		/turf/closed/mineral/rogue/tin = 10,
-		/turf/closed/mineral/rogue/coal = 14, 
+		/turf/closed/mineral/rogue/coal = 14,
 		/turf/closed/mineral/rogue/gem = 1)
 
 /turf/closed/mineral/random/rogue/high
@@ -252,7 +252,7 @@
 		/turf/closed/mineral/rogue/iron = 33,
 		/turf/closed/mineral/rogue/copper = 20,
 		/turf/closed/mineral/rogue/tin = 12,
-		/turf/closed/mineral/rogue/coal = 19, 
+		/turf/closed/mineral/rogue/coal = 19,
 		/turf/closed/mineral/rogue/gem = 3)
 
 
@@ -354,6 +354,7 @@
 	max_integrity = 10000000
 	damage_deflection = 99999999
 	above_floor = /turf/closed/mineral/rogue/bedrock
+	smooth_icon = 'modular_rmh/icons/turf/bedrock_wall.dmi'
 
 /turf/closed/mineral/rogue/bedrock/attackby(obj/item/I, mob/user, params, multiplier)
 	to_chat(user, span_warning("TOO HARD!"))

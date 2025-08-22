@@ -62,6 +62,16 @@
 	ambientnight = AMB_GENCAVE
 	soundenv = 8
 	deathsight_message = "a dark cave"
+	converted_type = /area/rogue/outdoors/caves
+
+/area/rogue/outdoors/caves_rmh
+	name = "Caves"
+	first_time_text = "CAVES"
+	icon_state = "caves"
+	droning_sound = 'sound/music/area/caves.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+
 
 /area/rogue/indoors/cave/rmh_cave/mine
 	name = "Abandoned Mines"
@@ -443,9 +453,17 @@
 	name = "Witch's Hut"
 	first_time_text = "WITCH'S HUT"
 
-//BEDROCK BORDERS
+//BEDROCK AND BORDERS
 /area/rogue/under/rmh_bedrock
 	name = "Bedrock Border"
 	first_time_text = "BEDROCK BORDER"
 	icon_state = "unknown"
 	deathsight_message = "out of bounds"
+
+/area/rogue/outdoors/rmh_air
+	name = "In Air"
+	icon = 'modular_rmh/icons/turf/areas.dmi'
+	icon_state = "air"
+	deathsight_message = "open air"
+	ambientsounds = AMB_MOUNTAIN
+	ambientnight = AMB_MOUNTAIN
