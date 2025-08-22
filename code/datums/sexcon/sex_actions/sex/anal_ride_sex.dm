@@ -54,7 +54,7 @@
 
 /datum/sex_action/anal_ride_sex/on_perform(mob/living/user, mob/living/target)
 	//if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
-	user.sexcon.try_pelvis_crush(target)
+	//user.sexcon.try_pelvis_crush(target)
 
 	if(user.sexcon.do_message_signature("[type]"))
 		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] anally rides [target]."))

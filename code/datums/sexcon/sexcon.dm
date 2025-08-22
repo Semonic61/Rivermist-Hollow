@@ -29,7 +29,7 @@
 	var/msg_signature = ""
 	var/last_msg_signature = 0
 	/// 25% arousal loss after each orgasm
-	var/arousal_falloff_coeff = 0.75
+	var/arousal_falloff_coeff = 0.6
 	var/recent_orgasm_count = 0
 	var/aphrodisiac = 1
 
@@ -331,11 +331,16 @@
 	user.playsound_local(user, 'sound/misc/mat/end.ogg', 100)
 	last_climax_time = world.time
 	recent_orgasm_count += 1
-	if(recent_orgasm_count > OVER_THE_TOP_ORGASM_THRESHOLD)
+	var/isnymph = 0
+	if(HAS_TRAIT(user, TRAIT_CURSE_BAOTHA) || HAS_TRAIT(user, TRAIT_NYMPHO_CURSE) || user.has_flaw(/datum/charflaw/addiction/lovefiend))
+		isnymph = 5
+	if(recent_orgasm_count > OVER_THE_TOP_ORGASM_THRESHOLD + isnymph)
+		user.apply_status_effect(/datum/status_effect/debuff/nympho_addiction)
+	else if(recent_orgasm_count > HIGH_ORGASM_THRESHOLD + isnymph)
 		user.apply_status_effect(/datum/status_effect/debuff/orgasmbroken)
-	if(recent_orgasm_count > HIGH_ORGASM_THRESHOLD)
+	else if(recent_orgasm_count > MED_ORGASM_THRESHOLD + isnymph)
 		user.apply_status_effect(/datum/status_effect/debuff/cumbrained)
-	else if(recent_orgasm_count > LOW_ORGASM_THRESHOLD)
+	else if(recent_orgasm_count > LOW_ORGASM_THRESHOLD + isnymph)
 		user.apply_status_effect(/datum/status_effect/debuff/loinspent)
 
 /datum/sex_controller/proc/after_intimate_climax()
@@ -413,22 +418,35 @@
 	/*if(HAS_TRAIT(user, TRAIT_DEATHBYSNOOSNOO))
 		if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 			pain_amt *= 2.5*/
-	if(recent_orgasm_count > OVER_THE_TOP_ORGASM_THRESHOLD)
+	var/isnymph = 0
+	if(HAS_TRAIT(user, TRAIT_CURSE_BAOTHA) || HAS_TRAIT(user, TRAIT_NYMPHO_CURSE) || user.has_flaw(/datum/charflaw/addiction/lovefiend))
+		isnymph = 5
+	if(recent_orgasm_count > HIGH_ORGASM_THRESHOLD)
 		arousal_amt *= 2
 		update_aching(1)
 		var/lovermessage = pick("This feels too good!", "I wish to never stop!", "I want MORE!", "I need this!")
 		if(prob(25))
 			to_chat(action_target, span_love(lovermessage))
-	else if(recent_orgasm_count > HIGH_ORGASM_THRESHOLD)
-		arousal_amt *= 0.5
+	else if(recent_orgasm_count > MED_ORGASM_THRESHOLD)
+		if(!isnymph)
+			arousal_amt *= 0.5
 		update_aching(5)
-		var/lovermessage = pick("My mind is going blank!", "I'm too spent, it hurts!", "I don't want to anymore!")
+		var/lovermessage
+		if(isnymph)
+			lovermessage = pick("My mind is going blank!", "I'm too spent, it hurts!", "I don't want to anymore!")
+		else
+			lovermessage = pick("My mind is getting fucked out!", "I'm soo full!", "I LOVE this!")
 		if(prob(25))
 			to_chat(action_target, span_love(lovermessage))
 	else if(recent_orgasm_count > LOW_ORGASM_THRESHOLD)
-		arousal_amt *= 0.8
+		if(!isnymph)
+			arousal_amt *= 0.8
 		update_aching(2)
-		var/lovermessage = pick("This is starting to feel unpleasant...", "Maybe I should rest soon...", "My loins are starting to chafe a bit.")
+		var/lovermessage
+		if(isnymph)
+			lovermessage = pick("This is starting to feel unpleasant...", "Maybe I should rest soon...", "My loins are starting to chafe a bit.")
+		else
+			lovermessage = pick("This is starting to feel interesting.", "We're getting there...", "I love this feeling.")
 		if(prob(25))
 			to_chat(action_target, span_love(lovermessage))
 
@@ -491,11 +509,11 @@
 /datum/sex_controller/proc/damage_from_pain(pain_amt)
 	if(pain_amt < PAIN_MINIMUM_FOR_DAMAGE)
 		return
-	var/damage = (pain_amt / PAIN_DAMAGE_DIVISOR)
+	//var/damage = (pain_amt / PAIN_DAMAGE_DIVISOR)
 	var/obj/item/bodypart/part = user.get_bodypart(BODY_ZONE_CHEST)
 	if(!part)
 		return
-	user.apply_damage(damage, BRUTE, part)
+	//user.apply_damage(damage, BRUTE, part)
 	update_aching(pain_amt)
 
 /datum/sex_controller/proc/try_do_moan(arousal_amt, pain_amt, applied_force, giving)
@@ -1049,11 +1067,11 @@
 			return "<span class='love_high'>[string]</span>"
 		if(SEX_FORCE_EXTREME)
 			return "<span class='love_extreme'>[string]</span>"
-
+/*
 /datum/sex_controller/proc/try_pelvis_crush(mob/living/carbon/human/target)
 	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
 		if(!target.has_wound(/datum/wound/fracture/groin))
 			if(prob(5)){
 				var/obj/item/bodypart/groin = target.get_bodypart(check_zone(BODY_ZONE_PRECISE_GROIN))
 				groin.add_wound(/datum/wound/fracture)
-			}
+			}*/

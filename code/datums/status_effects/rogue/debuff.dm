@@ -530,12 +530,11 @@
 	id = "orgasmbroken"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/orgasmbroken
 	effectedstats = list("intelligence" = -20, "strength" = -8, "speed" = -6, "perception" = -5, "endurance" = 2, "constitution" = -2)
-	duration = 3 MINUTES
+	duration = 8 MINUTES
 
 /datum/status_effect/debuff/orgasmbroken/on_apply()
 	. = ..()
 	var/mob/living/carbon/human/human = owner
-	human.charflaw = new /datum/charflaw/addiction/lovefiend(human)
 	human.add_curse(/datum/curse/baotha)
 
 /datum/status_effect/debuff/orgasmbroken/on_remove()
@@ -548,16 +547,32 @@
 	desc = "Sex. Sex. Sex."
 	icon_state = "fentanyl"
 
+/datum/status_effect/debuff/nympho_addiction
+	id = "nympho_addiction"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/nympho_addiction
+	//effectedstats = list("intelligence" = -20, "strength" = -8, "speed" = -6, "perception" = -5, "endurance" = 2, "constitution" = -2)
+	duration = 30 SECONDS
+
+/datum/status_effect/debuff/nympho_addiction/on_apply()
+	. = ..()
+	var/mob/living/carbon/human/human = owner
+	human.charflaw = new /datum/charflaw/addiction/lovefiend(human)
+
+/atom/movable/screen/alert/status_effect/debuff/nympho_addiction
+	name = "Addicted to Sex"
+	desc = "I want to do it again. And again. And again."
+	icon_state = "debuff"
+
 /datum/status_effect/debuff/cumbrained
 	id = "cumbrained"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/cumbrained
 	effectedstats = list("intelligence" = -10, "strength" = -6, "speed" = -6)
-	duration = 2 MINUTES
+	duration = 5 MINUTES
 
 /atom/movable/screen/alert/status_effect/debuff/cumbrained
 	name = "Cum Brained"
 	desc = "It's hard to think..."
-	icon_state = "fentanyl"
+	icon_state = "debuff"
 
 /datum/status_effect/debuff/cumbrained/process()
 	. = ..()
@@ -574,12 +589,12 @@
 	id = "loinspent"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/loinspent
 	//effectedstats = list("intelligence" = -10, "strength" = -6, "speed" = -6)
-	duration = 2 MINUTES
+	duration = 8 MINUTES
 
 /atom/movable/screen/alert/status_effect/debuff/loinspent
 	name = "Spent Loins"
 	desc = "It's starting to hurt a bit..."
-	icon_state = "fentanyl"
+	icon_state = "debuff"
 
 /datum/status_effect/debuff/bigboobs
 	id = "bigboobs"
