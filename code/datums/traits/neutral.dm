@@ -72,7 +72,7 @@
 	lose_text = span_notice("I no longer am a degenerate.")
 */
 
-/datum/quirk/monsterhuntermale
+/*/datum/quirk/monsterhuntermale
 	name = "Monster \"Hunter\" (Males)"
 	desc = "Allows targeting by specific monsters (such as werewolves, goblins and minotaurs etc.) for something very lewd. May be unfair to you in combat. Male monsters lust for me..."
 	value = 0
@@ -80,7 +80,7 @@
 /datum/quirk/monsterhunterfemale
 	name = "Monster \"Hunter\" (Females)"
 	desc = "Allows targeting by specific monsters (such as werewolves, goblins and minotaurs etc.) for something very lewd. May be unfair to you in combat. Female monsters lust for me... "
-	value = 0
+	value = 0*/
 
 /datum/quirk/selfawaregeni
 	name = "Sensitiveness"
