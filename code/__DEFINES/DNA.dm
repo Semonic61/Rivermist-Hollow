@@ -160,6 +160,7 @@
 #define MIN_PENIS_SIZE 1
 #define MAX_PENIS_SIZE 3
 #define DEFAULT_PENIS_SIZE 2
+#define TOTAL_PENIS_SIZE 3
 
 #define PENIS_TYPE_PLAIN 1
 #define PENIS_TYPE_KNOTTED 2
@@ -182,16 +183,19 @@
 #define DEFAULT_BELLY_SIZE 0
 #define MIN_BELLY_SIZE 0
 #define MAX_BELLY_SIZE 3
+#define TOTAL_BELLY_SIZE 3
 
 #define MIN_TESTICLES_SIZE 1
 #define MAX_TESTICLES_SIZE 3
 #define DEFAULT_TESTICLES_SIZE 2
+#define TOTAL_TESTICLES_SIZE 3
 
 #define MIN_BREASTS_SIZE 0
 #define MAX_BREASTS_SIZE 5
 #define DEFAULT_BREASTS_SIZE 3
+#define TOTAL_BREASTS_SIZE 7
 
 #define DEFAULT_BUTT_SIZE 0
 #define MIN_BUTT_SIZE 0
-#define MAX_BUTT_SIZE 4 //5 available, above 4 may be too big.
-#define TOTAL_BUTT_SIZE 5
+#define MAX_BUTT_SIZE 3 //5 available, above 4 may be too big.
+#define TOTAL_BUTT_SIZE 3

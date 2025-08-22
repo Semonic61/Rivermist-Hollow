@@ -111,7 +111,7 @@
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /datum/sprite_accessory/breasts
-	icon = 'icons/mob/sprite_accessory/genitals/breasts.dmi'
+	icon = 'modular_rmh/icons/mob/sprite_accessory/genitals/breasts.dmi'
 	color_key_name = "Breasts"
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_FRONT_LAYER)
 
@@ -186,7 +186,7 @@
 	default_colors = list("f99696")
 
 /datum/sprite_accessory/belly
-	icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/belly.dmi'
+	icon = 'modular_rmh/icons/mob/sprite_accessory/genitals/belly.dmi'
 	color_key_name = "Belly"
 	relevant_layers = list(BODY_BEHIND_LAYER,BODY_FRONT_LAYER)
 
@@ -206,7 +206,7 @@
 	color_key_defaults = list(KEY_CHEST_COLOR)
 
 /datum/sprite_accessory/butt
-	icon = 'modular_stonehedge/icons/mob/sprite_accessory/genitals/butt.dmi'
+	icon = 'modular_rmh/icons/mob/sprite_accessory/genitals/butt.dmi'
 	color_key_name = "Butt"
 	relevant_layers = list(BODY_ADJ_LAYER)
 

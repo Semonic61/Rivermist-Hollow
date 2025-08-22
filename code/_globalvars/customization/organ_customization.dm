@@ -35,7 +35,9 @@ GLOBAL_LIST_INIT(named_breast_sizes, list(
 	"Small" = 2,
 	"Normal" = 3,
 	"Large" = 4,
-	"Enormous" = 5
+	"Enormous" = 5//,
+	//"Ludicrous" = 6,
+	//"Insane" = 7
 ))
 
 //unselectables included.
@@ -70,8 +72,7 @@ GLOBAL_LIST_INIT(named_butt_sizes, list(
 	"flat" = 0,
 	"small" = 1,
 	"medium" = 2,
-	"large" = 3,
-	"massive" = 4,
+	"large" = 3
 ))
 
 //unselectables included.

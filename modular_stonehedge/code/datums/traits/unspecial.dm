@@ -643,16 +643,16 @@
 	ADD_TRAIT(H, TRAIT_PACIFISM, QUIRK_TRAIT)
 
 
-/*/datum/quirk/endowed
-	name = "Endowment Curse"
-	desc = "I was cursed with endowment... This makes life hard."
+/datum/quirk/endowed
+	name = "Naturally Endowed"
+	desc = "I have massive bits... This makes life hard."
 	value = -2
 
 /datum/quirk/endowed/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.apply_status_effect(/datum/status_effect/debuff/bigboobs/permanent)
 
-/datum/quirk/endowedlite
+/*/datum/quirk/endowedlite
 	name = "Naturally Endowed"
 	desc = "I have massive bits, they are natural and not emburdening like an enchanted endowment."
 	value = 0
