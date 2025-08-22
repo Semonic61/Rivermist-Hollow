@@ -167,6 +167,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/headshot_link
 	var/nsfw_headshot_link //Twilight Axis edit далее TA
+	var/chatheadshot = FALSE
 	var/ooc_extra_link
 	var/ooc_extra
 	var/list/descriptor_entries = list()
