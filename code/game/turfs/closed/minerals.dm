@@ -354,7 +354,7 @@
 	max_integrity = 10000000
 	damage_deflection = 99999999
 	above_floor = /turf/closed/mineral/rogue/bedrock
-//	smooth_icon = 'modular_rmh/icons/turf/bedrock_wall.dmi'
+	smooth_icon = 'modular_rmh/icons/turf/bedrock_wall.dmi'
 
 /turf/closed/mineral/rogue/bedrock/attackby(obj/item/I, mob/user, params, multiplier)
 	to_chat(user, span_warning("TOO HARD!"))
