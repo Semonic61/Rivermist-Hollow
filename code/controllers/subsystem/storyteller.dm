@@ -197,7 +197,7 @@ SUBSYSTEM_DEF(gamemode)
 		event_pools[track] = list()
 
 	// Populate storytellers
-	if(!length(storytellers))//unit tests can force this before init.
+	if(!length(storytellers))//unit tests can force this before init.	
 		for(var/type in subtypesof(/datum/storyteller))
 			storytellers[type] = new type()
 
@@ -670,11 +670,12 @@ SUBSYSTEM_DEF(gamemode)
 	point_thresholds[EVENT_TRACK_RAIDS] = CONFIG_GET(number/objectives_point_threshold) * 2
 
 /datum/controller/subsystem/gamemode/proc/handle_picking_storyteller()
-	if(length(GLOB.clients) > MAX_POP_FOR_STORYTELLER_VOTE)
+	set_storyteller(/datum/storyteller/psydon)
+	/*if(length(GLOB.clients) > MAX_POP_FOR_STORYTELLER_VOTE)
 		secret_storyteller = TRUE
 		selected_storyteller = pickweight(get_valid_storytellers(TRUE))
 		return
-	pick_most_influential(TRUE)
+	pick_most_influential(TRUE)*/
 
 /datum/controller/subsystem/gamemode/proc/storyteller_vote_choices()
 	var/list/final_choices = list()
