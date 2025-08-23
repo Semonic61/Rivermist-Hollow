@@ -605,7 +605,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 	omegalist += list(GLOB.peasant_positions)
 	omegalist += list(GLOB.mercenary_positions)
 	omegalist += list(GLOB.youngfolk_positions)
-	omegalist += list(GLOB.vampire_positions)
+	//omegalist += list(GLOB.vampire_positions) //DISABLE VAMPIRE
 
 	for(var/list/category in omegalist)
 		if(!SSjob.name_occupations[category[1]])
