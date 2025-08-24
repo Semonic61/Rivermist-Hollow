@@ -132,7 +132,7 @@
 	using.screen_loc = ui_ghost_movedown
 	static_inventory += using
 
-	using = new /atom/movable/screen/ghost/bigassuselessbutton(null, src)
+	using = new /atom/movable/screen/ghost/orbit/rogue(null, src)
 	static_inventory += using
 
 /datum/hud/ghost/show_hud(version = 0, mob/viewmob)

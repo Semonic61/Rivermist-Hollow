@@ -161,10 +161,11 @@
 /obj/item/organ/filling_organ/vagina/proc/handle_preggoness()
 	if(owner.getorganslot(ORGAN_SLOT_BELLY))
 		var/obj/item/organ/belly/bellyussy = owner.getorganslot(ORGAN_SLOT_BELLY)
-		if(bellyussy.organ_size < 4)
-			to_chat(owner, span_love("I notice my belly has grown due to pregnancy...")) //dont need to repeat this probably if size cant grow anyway.
-			bellyussy.organ_size = bellyussy.organ_size + 1
-			owner.update_body_parts(TRUE)
+		if(bellyussy.organ_size < 3)
+			if(prob(30))
+				to_chat(owner, span_love("I notice my belly has grown due to pregnancy...")) //dont need to repeat this probably if size cant grow anyway.
+				bellyussy.organ_size = bellyussy.organ_size + 1
+				owner.update_body_parts(TRUE)
 			preggotimer = addtimer(CALLBACK(src, PROC_REF(handle_preggoness)), 30 MINUTES, TIMER_STOPPABLE)
 		else
 			deltimer(preggotimer)

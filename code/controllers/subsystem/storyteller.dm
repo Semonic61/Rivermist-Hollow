@@ -579,7 +579,8 @@ SUBSYSTEM_DEF(gamemode)
 				return TRUE
 		else
 			if(!SSvote.mode)
-				SSvote.initiate_vote("endround", pick("Zlod", "Sun King", "Gaia", "Moon Queen", "Aeon", "Gemini", "Aries"))
+				message_admins("Storyteler tried to end round.")
+				//SSvote.initiate_vote("endround", pick("Zlod", "Sun King", "Gaia", "Moon Queen", "Aeon", "Gemini", "Aries"))
 
 	if(SSmapping.retainer.head_rebel_decree)
 		if(reb_end_time == 0)
